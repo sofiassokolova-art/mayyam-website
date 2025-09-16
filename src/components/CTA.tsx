@@ -40,7 +40,7 @@ const CTA = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-black section-padding overflow-hidden">
+    <section id="contact" className="relative bg-ink section-padding overflow-hidden">
       {/* Background portrait */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -68,7 +68,7 @@ const CTA = () => {
 
           <motion.button
             variants={itemVariants}
-            className="btn-primary h-14 md:h-16 px-10 rounded-full font-extrabold hover:shadow-glow mb-8"
+            className="btn-capsule bg-lime text-ink h-14 md:h-16 px-10 hover:shadow-glow mb-8"
           >
             Записаться
           </motion.button>
@@ -81,7 +81,7 @@ const CTA = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-[#C6FF00] transition-colors duration-200 text-lg"
+                className="text-white hover:text-lime transition-colors duration-200 text-lg"
               >
                 {link.name}
               </a>

@@ -50,7 +50,7 @@ const Approach = () => {
   };
 
   return (
-    <section id="approach" className="bg-white section-padding">
+    <section id="approach" className="bg-paper section-padding">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -61,7 +61,7 @@ const Approach = () => {
         >
           <motion.h3
             variants={itemVariants}
-            className="text-black text-4xl md:text-5xl font-extrabold mb-16"
+            className="text-ink text-4xl md:text-5xl font-extrabold mb-16"
           >
             мой подход
           </motion.h3>
@@ -72,17 +72,17 @@ const Approach = () => {
                 key={step.number}
                 variants={itemVariants}
                 className={`flex items-start gap-8 ${
-                  index < steps.length - 1 ? "border-b border-neutral-200 pb-6" : ""
+                  index < steps.length - 1 ? "border-t border-neutral-200 mt-6 pt-6" : ""
                 }`}
               >
-                <div className="text-[#C6FF00] text-[64px] md:text-[80px] font-extrabold leading-none min-w-[120px]">
+                <div className="text-lime text-[64px] md:text-[80px] font-extrabold leading-none min-w-[120px]">
                   {step.number}
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-black text-2xl md:text-3xl font-bold mb-2">
+                  <h4 className="text-ink text-2xl md:text-3xl font-bold mb-2">
                     {step.title}
                   </h4>
-                  <p className="text-[#AAAAAA] text-base md:text-lg leading-relaxed">
+                  <p className="text-muted text-base md:text-lg leading-relaxed">
                     {step.description}
                   </p>
                 </div>

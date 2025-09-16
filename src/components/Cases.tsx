@@ -59,7 +59,7 @@ const Cases = () => {
           src="/images/orange-texture-1.jpg"
           alt="фон кейсов"
           fill
-          className="object-cover opacity-40"
+          className="object-cover bg-center"
         />
         <div className="absolute inset-0 bg-black/20" />
       </div>
@@ -123,7 +123,7 @@ const Cases = () => {
                   <h3 className="text-xl md:text-2xl font-bold mb-2">
                     {caseItem.title}
                   </h3>
-                  <div className="text-[#C6FF00] text-3xl md:text-4xl font-extrabold mb-2">
+                  <div className="text-lime text-3xl md:text-4xl font-extrabold mt-2">
                     {caseItem.metric}
                   </div>
                   <p className="text-sm text-neutral-300 leading-relaxed">

@@ -49,7 +49,7 @@ const Manifest = () => {
   };
 
   return (
-    <section id="manifest" className="relative bg-black section-padding overflow-hidden">
+    <section id="manifest" className="relative bg-ink section-padding overflow-hidden">
       {/* Orange texture background */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -77,7 +77,7 @@ const Manifest = () => {
             >
               {item.isAccent && item.accentWord ? (
                 <>
-                  <span className="text-[#C6FF00] font-serif italic">
+                  <span className="text-lime font-serif italic">
                     {item.accentWord}
                   </span>{" "}
                   {item.text.replace(item.accentWord, "").trim()}

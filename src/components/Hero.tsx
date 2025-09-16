@@ -55,7 +55,7 @@ const Hero = () => {
               {/* Brand Name */}
               <motion.h1
                 variants={itemVariants}
-                className="text-[clamp(64px,10vw,140px)] text-[#C6FF00] font-extrabold leading-none uppercase tracking-[-0.02em] mb-6"
+                className="text-[clamp(64px,10vw,140px)] text-lime font-extrabold leading-none uppercase tracking-[-0.02em] mb-6"
               >
                 МАРЬЯМ
               </motion.h1>
@@ -72,7 +72,7 @@ const Hero = () => {
               {/* Subline */}
               <motion.p
                 variants={itemVariants}
-                className="text-[#AAAAAA] text-base md:text-lg max-w-xl mb-8"
+                className="text-muted text-base md:text-lg max-w-xl mb-8"
               >
                 Запуски, воронки, маркетинг и рост выручки под ключ
               </motion.p>
@@ -82,10 +82,10 @@ const Hero = () => {
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-3 md:gap-4"
               >
-                <button className="btn-primary">
+                <button className="btn-capsule bg-lime text-ink hover:shadow-glow">
                   НА СВЯЗЬ
                 </button>
-                <button className="btn-secondary">
+                <button className="btn-capsule border-2 border-lime text-white hover:bg-lime hover:text-ink">
                   МОЙ ПОДХОД
                 </button>
               </motion.div>

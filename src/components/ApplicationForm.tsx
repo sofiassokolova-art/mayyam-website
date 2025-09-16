@@ -53,7 +53,7 @@ const ApplicationForm = () => {
   };
 
   return (
-    <section id="application" className="bg-white section-padding">
+    <section id="application" className="bg-paper section-padding">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -64,14 +64,14 @@ const ApplicationForm = () => {
         >
           <motion.h3
             variants={itemVariants}
-            className="text-black text-4xl md:text-5xl font-extrabold mb-6"
+            className="text-ink text-4xl md:text-5xl font-extrabold mb-6"
           >
             Заполните анкету
           </motion.h3>
 
           <motion.p
             variants={itemVariants}
-            className="text-[#AAAAAA] text-base md:text-lg mb-12"
+            className="text-muted text-base md:text-lg mb-12"
           >
             Я выбираю проекты, с которыми работаю
           </motion.p>
@@ -82,7 +82,7 @@ const ApplicationForm = () => {
             className="space-y-6"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
                 Имя
               </label>
               <input
@@ -92,13 +92,13 @@ const ApplicationForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border-neutral-300 focus:border-[#C6FF00] focus:ring-[#C6FF00] px-6 py-4 text-black"
+                className="w-full rounded-xl border-neutral-300 focus:border-lime focus:ring-lime px-6 py-4 text-ink"
                 placeholder="Ваше имя"
               />
             </div>
 
             <div>
-              <label htmlFor="business" className="block text-sm font-medium text-black mb-2">
+              <label htmlFor="business" className="block text-sm font-medium text-ink mb-2">
                 Ниша / Бизнес
               </label>
               <input
@@ -108,13 +108,13 @@ const ApplicationForm = () => {
                 value={formData.business}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border-neutral-300 focus:border-[#C6FF00] focus:ring-[#C6FF00] px-6 py-4 text-black"
+                className="w-full rounded-xl border-neutral-300 focus:border-lime focus:ring-lime px-6 py-4 text-ink"
                 placeholder="Опишите ваш бизнес"
               />
             </div>
 
             <div>
-              <label htmlFor="request" className="block text-sm font-medium text-black mb-2">
+              <label htmlFor="request" className="block text-sm font-medium text-ink mb-2">
                 Основной запрос
               </label>
               <select
@@ -123,7 +123,7 @@ const ApplicationForm = () => {
                 value={formData.request}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border-neutral-300 focus:border-[#C6FF00] focus:ring-[#C6FF00] px-6 py-4 text-black"
+                className="w-full rounded-xl border-neutral-300 focus:border-lime focus:ring-lime px-6 py-4 text-ink"
               >
                 <option value="">Выберите запрос</option>
                 <option value="sales">Продажи</option>
@@ -133,7 +133,7 @@ const ApplicationForm = () => {
             </div>
 
             <div>
-              <label htmlFor="budget" className="block text-sm font-medium text-black mb-2">
+              <label htmlFor="budget" className="block text-sm font-medium text-ink mb-2">
                 Бюджет / готовность к инвестициям
               </label>
               <input
@@ -143,13 +143,13 @@ const ApplicationForm = () => {
                 value={formData.budget}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border-neutral-300 focus:border-[#C6FF00] focus:ring-[#C6FF00] px-6 py-4 text-black"
+                className="w-full rounded-xl border-neutral-300 focus:border-lime focus:ring-lime px-6 py-4 text-ink"
                 placeholder="Укажите бюджет"
               />
             </div>
 
             <div>
-              <label htmlFor="contacts" className="block text-sm font-medium text-black mb-2">
+              <label htmlFor="contacts" className="block text-sm font-medium text-ink mb-2">
                 Контакты (email/telegram)
               </label>
               <input
@@ -159,14 +159,14 @@ const ApplicationForm = () => {
                 value={formData.contacts}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border-neutral-300 focus:border-[#C6FF00] focus:ring-[#C6FF00] px-6 py-4 text-black"
+                className="w-full rounded-xl border-neutral-300 focus:border-lime focus:ring-lime px-6 py-4 text-ink"
                 placeholder="Email или Telegram"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full btn-primary h-14 px-8 rounded-full font-extrabold hover:shadow-glow"
+              className="w-full btn-capsule bg-lime text-ink hover:shadow-glow"
             >
               Отправить заявку
             </button>

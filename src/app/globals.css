@@ -8,40 +8,27 @@
   }
   
   body {
-    background-color: white;
-    color: black;
+    @apply bg-paper text-ink;
   }
 }
 
 @layer components {
-  .btn-capsule {
-    @apply inline-flex items-center justify-center h-14 px-8 rounded-full font-extrabold transition-all duration-200 active:scale-95;
-  }
-  
-  .btn-primary {
-    @apply btn-capsule text-black;
-    background-color: #C6FF00;
-    box-shadow: 0 12px 40px rgba(198,255,0,.35);
-  }
-  
-  .btn-secondary {
-    @apply btn-capsule border-2 text-white;
-    border-color: #C6FF00;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #C6FF00;
-    color: black;
-  }
-  
-  .section-padding {
-    @apply py-16 md:py-24 lg:py-28;
-  }
-  
+  /* Базовый контейнер секций */
   .container-custom {
     @apply container max-w-[1280px];
   }
   
+  /* Вертикальные отступы секций */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+  
+  /* Кнопки-капсулы */
+  .btn-capsule {
+    @apply inline-flex items-center justify-center h-14 px-8 rounded-full font-extrabold transition-all duration-200 active:scale-95;
+  }
+  
+  /* Микс типографики */
   .text-heading {
     @apply font-sans font-extrabold tracking-[-0.02em];
   }
@@ -50,6 +37,7 @@
     @apply font-serif italic;
   }
   
+  /* Линии подчёркивания/бордеры — в лайме, тонкие h-[2px] */
   .underline-lime {
     @apply relative;
   }

@@ -40,14 +40,14 @@ const Metrics = () => {
   };
 
   return (
-    <section id="metrics" className="bg-white section-padding">
+    <section id="metrics" className="bg-paper section-padding">
       <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-3 md:grid-cols-5 gap-8 md:gap-12 items-end"
+          className="grid grid-cols-3 md:grid-cols-5 gap-12 items-end"
         >
           {metrics.map((metric, index) => (
             <motion.div
@@ -57,10 +57,10 @@ const Metrics = () => {
                 index >= 3 ? "hidden md:block" : ""
               }`}
             >
-              <div className="text-[#C6FF00] font-extrabold text-5xl md:text-6xl leading-none mb-2">
+              <div className="text-lime font-extrabold text-5xl md:text-6xl leading-none">
                 {metric.value}
               </div>
-              <p className="text-black text-sm uppercase tracking-[0.12em]">
+              <p className="text-ink text-sm uppercase tracking-[0.12em] mt-2">
                 {metric.label}
               </p>
             </motion.div>
