@@ -40,14 +40,14 @@ const Metrics = () => {
   };
 
   return (
-    <section id="metrics" className="bg-paper section-padding">
+    <section id="metrics" className="bg-paper section-spacing">
       <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-3 md:grid-cols-5 gap-12 items-end"
+          className="grid grid-cols-3 md:grid-cols-5 gap-12 md:gap-16 items-end"
         >
           {metrics.map((metric, index) => (
             <motion.div

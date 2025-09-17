@@ -6,6 +6,15 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'font-script',
+    'text-accent',
+    'underline-lime',
+    'btn-capsule',
+    'section-padding',
+    'section-spacing',
+    'container-custom'
+  ],
   theme: {
     container: { 
       center: true, 
@@ -16,6 +25,11 @@ const config: Config = {
       } 
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "serif"],
+        script: ["var(--font-vibes)", "cursive"],
+      },
       colors: {
         ink: "#000000",
         paper: "#FFFFFF",

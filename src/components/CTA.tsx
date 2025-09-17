@@ -40,7 +40,7 @@ const CTA = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-ink section-padding overflow-hidden">
+    <section id="contact" className="relative bg-ink section-spacing overflow-hidden">
       {/* Background portrait */}
       <div className="absolute inset-0 -z-10">
         <Image

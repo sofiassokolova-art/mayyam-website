@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Cormorant_Garamond, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,6 +15,12 @@ const cormorant = Cormorant_Garamond({
   style: ["italic", "normal"],
 });
 
+const vibes = Great_Vibes({
+  subsets: ["latin"],
+  variable: "--font-vibes",
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "МАРЬЯМ - Продюсер роста продаж",
   description: "Запуски, воронки, маркетинг и рост выручки под ключ",
@@ -26,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className={`${inter.variable} ${cormorant.variable} font-sans antialiased`}>
+    <html lang="ru" className={vibes.variable}>
+      <body className={`${inter.variable} ${cormorant.variable} ${vibes.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

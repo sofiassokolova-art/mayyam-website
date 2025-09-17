@@ -39,7 +39,7 @@ const Hero = () => {
           priority
         />
         {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/30" />
       </div>
 
       {/* Content */}
@@ -55,7 +55,7 @@ const Hero = () => {
               {/* Brand Name */}
               <motion.h1
                 variants={itemVariants}
-                className="text-[clamp(64px,10vw,140px)] text-lime font-extrabold leading-none uppercase tracking-[-0.02em] mb-6"
+                className="text-[clamp(72px,10vw,160px)] text-lime font-extrabold leading-none uppercase tracking-[-0.02em] mb-6"
               >
                 МАРЬЯМ
               </motion.h1>
@@ -66,7 +66,7 @@ const Hero = () => {
                 className="text-white text-2xl md:text-3xl font-bold mb-6"
               >
                 продюсер{" "}
-                <span className="font-serif italic">роста</span> продаж
+                <span className="font-script">роста</span> продаж
               </motion.h2>
 
               {/* Subline */}

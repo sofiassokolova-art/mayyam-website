@@ -29,10 +29,16 @@ body {
   }
 }
 
-@media (min-width: 1024px) {
-  .section-padding {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+/* Больше отступов между основными секциями */
+.section-spacing {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 }
 
@@ -60,8 +66,11 @@ body {
 }
 
 .text-accent {
-  font-family: serif;
-  font-style: italic;
+  font-family: var(--font-vibes), cursive;
+}
+
+.font-script {
+  font-family: var(--font-vibes), cursive;
 }
 
 /* Линии подчёркивания/бордеры — в лайме, тонкие h-[2px] */

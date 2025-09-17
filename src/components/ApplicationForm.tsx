@@ -53,7 +53,7 @@ const ApplicationForm = () => {
   };
 
   return (
-    <section id="application" className="bg-paper section-padding">
+    <section id="application" className="bg-paper section-spacing">
       <div className="container-custom">
         <motion.div
           ref={ref}
