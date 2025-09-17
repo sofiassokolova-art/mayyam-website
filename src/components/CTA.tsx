@@ -43,13 +43,28 @@ const CTA = () => {
     <section id="contact" className="bg-gradient-to-b from-neutral-50 to-white py-20 md:py-32">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left column - Content */}
+          {/* Left column - Image */}
           <motion.div
             ref={ref}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="relative h-[400px] md:h-[500px] overflow-hidden shadow-soft order-2 md:order-1"
+          >
+            <Image
+              src="/images/portrait-overlay.png"
+              alt="Maryam portrait"
+              fill
+              className="object-cover object-center filter grayscale"
+            />
+          </motion.div>
+
+          {/* Right column - Content */}
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="max-w-xl"
+            className="max-w-xl order-1 md:order-2"
           >
             <motion.h3
               variants={itemVariants}
@@ -84,19 +99,6 @@ const CTA = () => {
             >
               © Марьям, 2025
             </motion.p>
-          </motion.div>
-
-          {/* Right column - Image */}
-          <motion.div
-            variants={itemVariants}
-            className="relative h-[400px] md:h-[500px] overflow-hidden shadow-soft"
-          >
-            <Image
-              src="/images/portrait-overlay.png"
-              alt="Maryam portrait"
-              fill
-              className="object-cover object-center filter grayscale"
-            />
           </motion.div>
         </div>
       </div>
