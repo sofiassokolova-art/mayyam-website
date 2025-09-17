@@ -104,9 +104,9 @@ const Cases = () => {
           </h2>
           <div className="mt-4 inline-block bg-white px-4 py-2 rounded-sm">
             <p 
-              className="text-ink font-medium"
+              className="text-ink font-medium italic"
               style={{
-                fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                fontFamily: 'Georgia, serif',
                 fontSize: 'clamp(14px, 2.5vw, 18px)'
               }}
             >
@@ -149,11 +149,12 @@ const Cases = () => {
           >
             {cases.map((caseItem) => (
               <SwiperSlide key={caseItem.id}>
-                {/* Fashion-журнальная карточка-обложка */}
-                <div className="relative h-80 md:h-96 mx-2" 
+                {/* Квадратная карточка-обложка */}
+                <div className="relative w-80 h-80 mx-2" 
                      style={{
                        background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)',
-                       backdropFilter: 'blur(10px)'
+                       backdropFilter: 'blur(10px)',
+                       aspectRatio: '1/1' // квадратная форма
                      }}>
                   
                   {/* Минималистичный контент */}
@@ -182,11 +183,6 @@ const Cases = () => {
                         <span className="u-lime-underline text-lime">{caseItem.keyword}</span>
                         <span className="text-white/60">{caseItem.niche.replace(caseItem.keyword, '')}</span>
                       </p>
-                      
-                      {/* Минимальный логотип внизу слева */}
-                      <div className="w-12 h-12 bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                        <div className="w-6 h-6 bg-white/60 rounded-full"></div>
-                      </div>
                     </div>
                   </div>
                 </div>
