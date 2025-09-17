@@ -12,6 +12,7 @@ const ApplicationForm = () => {
     name: "",
     business: "",
     request: "",
+    budget: "",
     contacts: "",
   });
 
@@ -69,21 +70,21 @@ const ApplicationForm = () => {
           animate={isInView ? "visible" : "hidden"}
           className="relative max-w-6xl mx-auto"
         >
-          {/* Оранжевая рамка без скруглений */}
+          {/* Оранжевая рамка увеличенная до 80-100px */}
           <div 
             className="absolute inset-0"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              padding: '30px'
+              padding: '80px'
             }}
           >
             <div className="w-full h-full bg-white"></div>
           </div>
           
           {/* Содержимое формы */}
-          <div className="relative bg-white p-8 md:p-12 m-[30px]">
+          <div className="relative bg-white p-8 md:p-12 m-[80px]">
             <motion.h3
               variants={itemVariants}
               className="text-ink text-2xl md:text-[32px] font-bold mb-4 text-center"
@@ -103,87 +104,114 @@ const ApplicationForm = () => {
             <motion.form
               variants={itemVariants}
               onSubmit={handleSubmit}
-              className="space-y-8"
+              className="space-y-6"
             >
-              {/* Первая строка: Имя | Ниша/Бизнес | Основной запрос */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
-                    Имя
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime"
-                    placeholder="Ваше имя"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="business" className="block text-sm font-medium text-ink mb-2">
-                    Ниша / Бизнес
-                  </label>
-                  <input
-                    type="text"
-                    id="business"
-                    name="business"
-                    value={formData.business}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime"
-                    placeholder="Опишите ваш бизнес"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="request" className="block text-sm font-medium text-ink mb-2">
-                    Основной запрос
-                  </label>
-                  <select
-                    id="request"
-                    name="request"
-                    value={formData.request}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime"
-                  >
-                    <option value="">Выберите запрос</option>
-                    <option value="sales">Продажи</option>
-                    <option value="funnel">Воронка</option>
-                    <option value="scaling">Масштабирование</option>
-                  </select>
-                </div>
+              {/* Все поля вертикально друг под другом */}
+              
+              {/* Поле: Имя */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
+                  Имя
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
+                  placeholder="Ваше имя"
+                />
               </div>
 
-              {/* Вторая строка: Контакты */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="contacts" className="block text-sm font-medium text-ink mb-2">
-                    Контакты (<span className="u-lime-underline">email</span> / <span className="u-lime-underline">telegram</span>)
-                  </label>
-                  <input
-                    type="text"
-                    id="contacts"
-                    name="contacts"
-                    value={formData.contacts}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime"
-                    placeholder="Email или Telegram"
-                  />
-                </div>
+              {/* Поле: Ниша / Бизнес */}
+              <div>
+                <label htmlFor="business" className="block text-sm font-medium text-ink mb-2">
+                  Ниша / Бизнес
+                </label>
+                <input
+                  type="text"
+                  id="business"
+                  name="business"
+                  value={formData.business}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
+                  placeholder="Опишите ваш бизнес"
+                />
               </div>
 
-              {/* Кнопка */}
-              <div className="text-center pt-4">
+              {/* Поле: Основной запрос */}
+              <div>
+                <label htmlFor="request" className="block text-sm font-medium text-ink mb-2">
+                  Основной запрос
+                </label>
+                <select
+                  id="request"
+                  name="request"
+                  value={formData.request}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
+                >
+                  <option value="">Выберите запрос</option>
+                  <option value="sales">Продажи</option>
+                  <option value="funnel">Воронка</option>
+                  <option value="scaling">Масштабирование</option>
+                  <option value="launch">Запуск с нуля</option>
+                  <option value="optimization">Оптимизация процессов</option>
+                </select>
+              </div>
+
+              {/* Поле: Бюджет / готовность к инвестициям */}
+              <div>
+                <label htmlFor="budget" className="block text-sm font-medium text-ink mb-2">
+                  Бюджет / готовность к инвестициям
+                </label>
+                <select
+                  id="budget"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
+                >
+                  <option value="">Выберите бюджет</option>
+                  <option value="50k-200k">50-200 тыс. руб.</option>
+                  <option value="200k-500k">200-500 тыс. руб.</option>
+                  <option value="500k-1m">500 тыс. - 1 млн руб.</option>
+                  <option value="1m+">От 1 млн руб.</option>
+                  <option value="discuss">Обсудим индивидуально</option>
+                </select>
+              </div>
+
+              {/* Поле: Контакты */}
+              <div>
+                <label htmlFor="contacts" className="block text-sm font-medium text-ink mb-2">
+                  Контакты (<span className="u-lime-underline">email</span> / <span className="u-lime-underline">telegram</span>)
+                </label>
+                <input
+                  type="text"
+                  id="contacts"
+                  name="contacts"
+                  value={formData.contacts}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
+                  placeholder="Email или Telegram"
+                />
+              </div>
+
+              {/* Кнопка CTA */}
+              <div className="pt-6">
                 <button
                   type="submit"
-                  className="w-full bg-ink text-white hover:bg-neutral-800 py-4 px-8 font-medium transition-all duration-300"
-                  style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+                  className="w-full bg-white text-ink border-2 border-ink hover:bg-orange-500 hover:text-white hover:border-orange-500 py-4 px-8 font-medium transition-all duration-300"
+                  style={{ 
+                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                    backgroundImage: 'none'
+                  }}
                 >
                   Давайте работать вместе
                 </button>
