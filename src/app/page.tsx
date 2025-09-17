@@ -6,6 +6,7 @@ import Cases from "@/components/Cases";
 import MyApproach from "@/components/MyApproach";
 import ApplicationForm from "@/components/ApplicationForm";
 import CTA from "@/components/CTA";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <MyApproach />
       <ApplicationForm />
       <CTA />
+      <ScrollToTop />
     </main>
   );
 }
