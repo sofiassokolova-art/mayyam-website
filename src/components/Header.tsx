@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
 
   const navItems = [
     { href: "#about", label: "обо мне" },
-    { href: "#services", label: "услуги" },
+    { href: "/services", label: "услуги" },
     { href: "#cases", label: "кейсы" },
     { href: "#faq", label: "вопросы" },
     { href: "#contact", label: "контакты" },
@@ -37,20 +38,31 @@ const Header = () => {
       <div className="container-custom">
         <nav className="flex items-center justify-end py-4">
           {/* Navigation */}
-          <ul className="flex items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 underline-lime ${
-                    isScrolled ? "text-ink" : "text-white"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+                      <ul className="flex items-center gap-8">
+                        {navItems.map((item) => (
+                          <li key={item.href}>
+                            {item.href.startsWith('/') ? (
+                              <Link
+                                href={item.href}
+                                className={`text-sm font-medium transition-colors duration-200 underline-lime ${
+                                  isScrolled ? "text-ink" : "text-white"
+                                }`}
+                              >
+                                {item.label}
+                              </Link>
+                            ) : (
+                              <a
+                                href={item.href}
+                                className={`text-sm font-medium transition-colors duration-200 underline-lime ${
+                                  isScrolled ? "text-ink" : "text-white"
+                                }`}
+                              >
+                                {item.label}
+                              </a>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
         </nav>
       </div>
     </motion.header>
