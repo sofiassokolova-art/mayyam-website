@@ -112,13 +112,13 @@ const Hero = () => {
                 className="flex flex-col sm:flex-row gap-4 md:gap-4 w-full sm:w-auto"
               >
                 <button
-                  className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white font-semibold py-4 px-8 text-base md:text-sm min-h-[52px]"
+                  className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white"
                   style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
                 >
                   НА СВЯЗЬ
                 </button>
                 <button
-                  className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent font-semibold py-4 px-8 text-base md:text-sm min-h-[52px]"
+                  className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent"
                   style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
                 >
                   МОЙ ПОДХОД
