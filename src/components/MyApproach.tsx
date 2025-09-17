@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
 
 const MyApproach = () => {
   const ref = useRef(null);
@@ -44,7 +43,7 @@ const MyApproach = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-ink font-bold uppercase mb-12 text-left"
+            className="text-ink font-bold uppercase mb-12 text-center"
             style={{
               fontFamily: 'var(--font-playfair), serif',
               fontWeight: 900,
@@ -55,10 +54,10 @@ const MyApproach = () => {
             Мой подход
           </motion.h2>
 
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-8 md:space-y-12 text-center">
             <motion.p
               variants={itemVariants}
-              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
+              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
               style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
               Начинаю с глубокого <span className="font-serif italic u-lime-underline">анализа</span> вашего бизнеса. Изучаю текущие процессы, выявляю узкие места и точки роста. 
@@ -67,7 +66,7 @@ const MyApproach = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
+              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
               style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
               Внедряю изменения поэтапно. Сначала запускаем минимальные изменения и тестируем результат. 
@@ -76,7 +75,7 @@ const MyApproach = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
+              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
               style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
               Строю системы, которые работают без вашего постоянного участия. Автоматизирую процессы, 

@@ -85,17 +85,18 @@ const Cases = () => {
 
   return (
     <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/20" />
+      {/* Dark overlay for text readability - усиленный */}
+      <div className="absolute inset-0 bg-black/35" />
       
       <div className="container-custom relative z-10">
-        {/* Подпись к блоку */}
+        {/* Подпись к блоку - увеличенная и жирная */}
         <div className="text-center mb-16">
           <h2 
-            className="text-white font-semibold"
+            className="text-white font-bold"
             style={{
               fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(20px, 4vw, 32px)'
+              fontSize: 'clamp(24px, 5vw, 40px)',
+              fontWeight: 800
             }}
           >
             Более 50 готовых успешных кейсов
@@ -136,27 +137,44 @@ const Cases = () => {
           >
             {cases.map((caseItem) => (
               <SwiperSlide key={caseItem.id}>
-                <div className="text-center space-y-6 p-6">
-                  {/* Logo */}
+                {/* Плиточная карточка с прозрачным чёрным фоном */}
+                <div className="text-center space-y-6 p-8 mx-2 backdrop-blur-sm" 
+                     style={{
+                       backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                       borderRadius: '16px',
+                       border: '1px solid rgba(255, 255, 255, 0.1)'
+                     }}>
+                  
+                  {/* Logo с подложкой */}
                   <div className="flex justify-center">
-                    <Image
-                      src={caseItem.logo}
-                      alt={`${caseItem.keyword} logo`}
-                      width={80}
-                      height={48}
-                      className="md:w-[100px] md:h-[60px] object-contain"
-                    />
+                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                      <Image
+                        src={caseItem.logo}
+                        alt={`${caseItem.keyword} logo`}
+                        width={80}
+                        height={48}
+                        className="md:w-[100px] md:h-[60px] object-contain filter brightness-0 invert"
+                      />
+                    </div>
                   </div>
                   
-                  {/* Metrics */}
-                  <h3 className="text-white text-xl md:text-[28px] lg:text-[32px] font-extrabold uppercase leading-tight">
+                  {/* Metrics - максимально крупные, белые, жирные */}
+                  <h3 className="text-white font-extrabold uppercase leading-tight"
+                      style={{
+                        fontSize: 'clamp(24px, 6vw, 48px)',
+                        fontWeight: 900,
+                        textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+                      }}>
                     {caseItem.metrics}
                   </h3>
                   
-                  {/* Niche with keyword highlight */}
-                  <p className="text-white text-sm md:text-base lg:text-[18px] font-serif italic">
-                    <span className="u-lime-underline">{caseItem.keyword}</span>
-                    {caseItem.niche.replace(caseItem.keyword, '')}
+                  {/* Niche - курсив, мелкий кегль, лаймовые акценты */}
+                  <p className="text-neutral-200 font-serif italic"
+                     style={{
+                       fontSize: 'clamp(12px, 2.5vw, 16px)'
+                     }}>
+                    <span className="u-lime-underline text-lime">{caseItem.keyword}</span>
+                    <span className="text-neutral-300">{caseItem.niche.replace(caseItem.keyword, '')}</span>
                   </p>
                 </div>
               </SwiperSlide>

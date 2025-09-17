@@ -103,6 +103,30 @@ body {
   letter-spacing: -0.02em; /* уменьшенный трекинг для плотности */
 }
 
+/* Стили для Swiper навигационных стрелок */
+.cases-swiper .swiper-button-next,
+.cases-swiper .swiper-button-prev {
+  color: white !important;
+  font-weight: 100 !important;
+  font-size: 18px !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: -20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.cases-swiper .swiper-button-next:hover,
+.cases-swiper .swiper-button-prev:hover {
+  color: #C6FF00 !important;
+  transform: scale(1.1);
+}
+
+.cases-swiper .swiper-button-next::after,
+.cases-swiper .swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: 100 !important;
+}
+
 /* Линии подчёркивания/бордеры — в лайме, тонкие h-[2px] */
 .underline-lime {
   position: relative;
