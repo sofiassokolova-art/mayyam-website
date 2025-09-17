@@ -67,48 +67,35 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-4xl mx-auto"
+          className="relative max-w-2xl mx-auto"
         >
-          {/* Fashion-журнальная толстая рамка-контейнер */}
+          {/* Перевёрнутый прямоугольник - высокий и узкий */}
           <div 
             className="relative"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              padding: '60px 60px 80px 60px', // больше снизу для fashion-эффекта
-              minHeight: '600px'
+              padding: '40px', // уменьшенные отступы
+              minHeight: '700px', // выше для перевёрнутого прямоугольника
+              aspectRatio: '3/4' // портретная ориентация
             }}
           >
             {/* Белый внутренний контейнер */}
-            <div className="bg-white h-full p-12 md:p-16" style={{ minHeight: '480px' }}>
-              {/* Fashion-журнальный заголовок */}
+            <div className="bg-white h-full p-8 md:p-10" style={{ minHeight: '620px' }}>
+              {/* Заголовок шрифтом как у Манифеста */}
               <motion.h3
                 variants={itemVariants}
-                className="text-ink uppercase text-center mb-3"
+                className="text-ink uppercase text-center mb-12"
                 style={{ 
-                  fontFamily: 'var(--font-playfair), serif',
-                  fontSize: 'clamp(32px, 5vw, 56px)',
-                  fontWeight: 900,
-                  letterSpacing: '3px',
-                  lineHeight: '1.1'
+                  fontFamily: 'var(--font-raleway), sans-serif',
+                  fontSize: 'clamp(28px, 8vw, 48px)',
+                  fontWeight: 800,
+                  letterSpacing: '2px'
                 }}
               >
-                АНКЕТА
+                СОТРУДНИЧЕСТВО
               </motion.h3>
-              
-              {/* Подзаголовок как в fashion-журналах */}
-              <motion.p
-                variants={itemVariants}
-                className="text-neutral-600 text-center mb-16 italic"
-                style={{ 
-                  fontFamily: 'Georgia, serif',
-                  fontSize: 'clamp(14px, 2.5vw, 18px)',
-                  letterSpacing: '1px'
-                }}
-              >
-                Кастинг на сотрудничество
-              </motion.p>
 
               <motion.form
                 variants={itemVariants}
@@ -232,16 +219,15 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Fashion-кнопка CTA */}
+                {/* Кнопка CTA с закруглёнными краями */}
                 <div className="pt-12">
                   <button
                     type="submit"
-                    className="w-full bg-ink text-white hover:bg-neutral-800 py-6 px-8 font-bold uppercase tracking-wider transition-all duration-300 border-0"
+                    className="w-full bg-ink text-white hover:bg-neutral-800 py-4 px-8 font-medium uppercase tracking-wider transition-all duration-300 rounded-full"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(14px, 2.5vw, 18px)',
-                      borderRadius: '0px', // строго прямоугольно
-                      letterSpacing: '2px'
+                      letterSpacing: '1px'
                     }}
                   >
                     ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ
