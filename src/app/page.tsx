@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Editorial from "@/components/Editorial";
 import Metrics from "@/components/Metrics";
-import WorkWithMaryam from "@/components/WorkWithMaryam";
 import Cases from "@/components/Cases";
 import Approach from "@/components/Approach";
 import Manifest from "@/components/Manifest";
@@ -16,7 +15,6 @@ export default function Home() {
       <Hero />
       <Editorial />
       <Metrics />
-      <WorkWithMaryam />
       <Cases />
       <Approach />
       <Manifest />
