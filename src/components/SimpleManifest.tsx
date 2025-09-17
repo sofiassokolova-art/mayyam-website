@@ -58,7 +58,7 @@ const SimpleManifest = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-ink text-3xl md:text-4xl font-extrabold uppercase mb-20"
+            className="text-ink text-2xl md:text-[36px] font-bold uppercase mb-20"
           >
             Манифест
           </motion.h2>
@@ -73,10 +73,10 @@ const SimpleManifest = () => {
                 variants={itemVariants}
                 className="text-center"
               >
-                <h3 className="text-ink text-2xl md:text-3xl font-normal leading-[1.8]">
-                  <span className="font-extrabold">{principle.title}</span>
+                <h3 className="text-ink text-lg md:text-[18px] font-normal leading-[1.8]">
+                  <span className="font-bold">{principle.title}</span>
                   {" вместо "}
-                  <span className="font-script underline decoration-lime decoration-2 underline-offset-4">
+                  <span className="font-serif italic text-base md:text-[16px] underline decoration-lime decoration-2 underline-offset-4">
                     {principle.accent}
                   </span>
                 </h3>

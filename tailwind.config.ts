@@ -17,9 +17,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif)", "serif"],
-        script: ["var(--font-vibes)", "cursive"],
+        sans: ["var(--font-sans)", "Helvetica Neue", "Helvetica", "Arial", "system-ui", "sans-serif"],
+        serif: ["Georgia", "serif"],
       },
       colors: {
         ink: "#000000",

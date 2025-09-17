@@ -55,7 +55,7 @@ const Hero = () => {
               {/* Brand Name */}
               <motion.h1
                 variants={itemVariants}
-                className="text-[clamp(80px,12vw,200px)] text-white font-extrabold leading-none uppercase tracking-[-0.02em] mb-8"
+                className="font-brand text-[clamp(60px,15vw,180px)] text-white leading-[1] uppercase mb-8"
               >
                 МАРЬЯМ
               </motion.h1>
@@ -63,11 +63,11 @@ const Hero = () => {
               {/* Role */}
               <motion.h2
                 variants={itemVariants}
-                className="text-white text-2xl md:text-3xl font-semibold mb-6"
+                className="text-white text-xl md:text-2xl font-normal mb-6"
               >
                 продюсер{" "}
-                <span className="font-serif italic underline decoration-lime decoration-2 underline-offset-4">роста</span>{" "}
-                <span className="font-bold">продаж</span>
+                <span className="font-serif italic text-lg md:text-xl underline decoration-lime decoration-2 underline-offset-4">роста</span>{" "}
+                <span className="font-normal">продаж</span>
               </motion.h2>
 
               {/* Subline */}

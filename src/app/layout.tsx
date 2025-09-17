@@ -1,24 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Great_Vibes } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["400", "600", "700", "800", "900"],
-  style: ["italic", "normal"],
-});
-
-const vibes = Great_Vibes({
-  subsets: ["latin"],
-  variable: "--font-vibes",
-  weight: ["400"],
+const raleway = Raleway({
+  weight: ["900"], // Heavy
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-raleway",
+  display: "swap",
 });
 
 
@@ -33,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={vibes.variable}>
-      <body className={`${inter.variable} ${playfair.variable} ${vibes.variable} font-sans antialiased`}>
+    <html lang="ru">
+      <body className={`${inter.variable} ${raleway.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

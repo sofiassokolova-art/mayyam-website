@@ -43,7 +43,7 @@ const MyApproach = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-ink text-3xl md:text-4xl font-extrabold uppercase mb-16 text-center"
+            className="text-ink text-2xl md:text-[36px] font-bold uppercase mb-16 text-center"
           >
             Мой подход
           </motion.h2>
@@ -51,7 +51,7 @@ const MyApproach = () => {
           <div className="space-y-8 md:space-y-12">
             <motion.p
               variants={itemVariants}
-              className="text-ink text-xl md:text-2xl leading-[1.6] font-normal"
+              className="text-ink text-base md:text-[18px] leading-[1.6] font-normal"
             >
               Начинаю с глубокого анализа вашего бизнеса. Изучаю текущие процессы, выявляю узкие места и точки роста. 
               Не работаю по шаблонам — каждое решение строится под конкретные задачи и особенности ниши.
@@ -59,7 +59,7 @@ const MyApproach = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-ink text-xl md:text-2xl leading-[1.6] font-normal"
+              className="text-ink text-base md:text-[18px] leading-[1.6] font-normal"
             >
               Внедряю изменения поэтапно. Сначала запускаем минимальные изменения и тестируем результат. 
               Затем масштабируем успешные решения и корректируем неработающие. Каждый шаг измеряем метриками.
@@ -67,7 +67,7 @@ const MyApproach = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-ink text-xl md:text-2xl leading-[1.6] font-normal"
+              className="text-ink text-base md:text-[18px] leading-[1.6] font-normal"
             >
               Строю системы, которые работают без вашего постоянного участия. Автоматизирую процессы, 
               выстраиваю воронки, внедряю инструменты аналитики. Результат — предсказуемый рост выручки месяц за месяцем.

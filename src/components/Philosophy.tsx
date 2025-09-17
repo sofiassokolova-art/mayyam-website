@@ -30,7 +30,7 @@ const Philosophy = () => {
           animate={isInView ? "visible" : "hidden"}
           className="max-w-4xl mx-auto text-center"
         >
-          <blockquote className="text-white text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] tracking-tight">
+          <blockquote className="text-white text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight">
             «Я строю системы роста.{" "}
             <span className="block mt-4">
               Моя метрика — выручка»

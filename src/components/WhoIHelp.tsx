@@ -8,24 +8,9 @@ const WhoIHelp = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const directions = [
-    "Стартапы и новые продукты",
-    "Бренды и e-commerce", 
-    "EdTech и образовательные проекты",
-    "B2B и корпоративные клиенты",
-    "Франшизы и сетевой бизнес"
-  ];
+  const fullText = `1 / Стартапы и новые продукты — запуск с нуля, MVP, первые продажи и масштабирование. 2 / Бренды и e-commerce — рост выручки через воронки и CRM. 3 / EdTech и услуги — разработка решений и оптимизация LTV. 4 / B2B и корпоративные клиенты — сложные воронки, длинные циклы продаж. 5 / Франшизы и сети — системность процессов, масштабируемые решения.`;
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
+  const keywords = ["Стартапы", "Бренды", "EdTech", "B2B", "Франшизы"];
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -39,40 +24,34 @@ const WhoIHelp = () => {
     },
   };
 
+  const renderStyledText = () => {
+    let result = fullText;
+    
+    // Стилизация нумерации с Raleway Heavy
+    result = result.replace(/(\d+)\s*\/\s*/g, '<span style="font-family: var(--font-raleway), sans-serif; font-weight: 900;">$1 /</span> ');
+    
+    // Стилизация ключевых слов Georgia italic с подчёркиванием
+    keywords.forEach(keyword => {
+      const regex = new RegExp(`(${keyword})`, 'g');
+      result = result.replace(regex, '<span class="font-serif italic underline decoration-lime decoration-2 underline-offset-4">$1</span>');
+    });
+    
+    return result;
+  };
+
   return (
     <section className="bg-paper py-20 md:py-32">
-      <div className="container-custom">
+      <div className="mx-auto max-w-[900px] w-[95%] md:w-full px-4">
         <motion.div
           ref={ref}
-          variants={containerVariants}
+          variants={itemVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="max-w-3xl mx-auto text-center"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-ink text-3xl md:text-4xl font-extrabold uppercase mb-16"
-          >
-            Кому помогает Марьям
-          </motion.h2>
-
-          <motion.div
-            variants={containerVariants}
-            className="space-y-8"
-          >
-            {directions.map((direction, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="text-ink text-xl md:text-2xl font-normal leading-relaxed"
-              >
-                <span className="font-extrabold text-2xl md:text-3xl mr-4">
-                  {index + 1}
-                </span>
-                {direction}
-              </motion.div>
-            ))}
-          </motion.div>
+          <p 
+            className="text-ink text-base md:text-[18px] leading-[160%] md:leading-[150%] text-left md:text-justify font-normal"
+            dangerouslySetInnerHTML={{ __html: renderStyledText() }}
+          />
         </motion.div>
       </div>
     </section>
