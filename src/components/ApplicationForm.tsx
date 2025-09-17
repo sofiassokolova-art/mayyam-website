@@ -78,40 +78,30 @@ const ApplicationForm = () => {
   return (
     <section 
       id="application" 
-      className="bg-white py-24 md:py-32"
+      className="relative py-24 md:py-32 bg-[url('/images/orange-texture-1.png')] bg-cover bg-center"
       style={{ 
         paddingTop: '120px',
         paddingBottom: '120px'
       }}
     >
-      <div className="container-custom">
+      {/* Полупрозрачный overlay для лучшей читаемости */}
+      <div className="absolute inset-0 bg-black/20" />
+      <div className="container-custom relative z-10">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative w-[90%] max-w-sm md:max-w-6xl mx-auto"
+          className="relative w-[90%] max-w-sm md:max-w-4xl mx-auto"
         >
-          {/* Мобильная вертикальная карточка с мягкой подложкой */}
-          <div className="relative">
-            {/* Мягкая оранжевая подложка для мобиле, обычная для десктопа */}
-            <div 
-              className="absolute inset-0 md:relative md:aspect-[4/3] md:p-8 mobile-form-bg" 
-              style={{
-                background: 'url(/images/orange-texture-1.png)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: '12px'
-              }}
-            />
-            
-            {/* Белая карточка */}
-            <div 
-              className="relative bg-white rounded-lg p-6 md:p-12 md:m-8 mobile-form-card" 
-              style={{ 
-                minHeight: '450px' // уменьшенная высота
-              }}
-            >
+          {/* Белая карточка наложенная на оранжевый фон */}
+          <div 
+            className="relative bg-white/95 backdrop-blur-sm rounded-xl p-6 md:p-12 shadow-2xl" 
+            style={{ 
+              minHeight: '450px',
+              border: '1px solid rgba(255, 255, 255, 0.2)'
+            }}
+          >
               {/* Заголовок шрифтом как у Манифеста */}
               <motion.h3
                 variants={itemVariants}
@@ -248,7 +238,6 @@ const ApplicationForm = () => {
                   )}
                 </div>
               </motion.form>
-            </div>
           </div>
         </motion.div>
       </div>

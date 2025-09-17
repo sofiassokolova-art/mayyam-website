@@ -85,8 +85,8 @@ const Cases = () => {
 
   return (
     <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
-      {/* Мягкий overlay для мобиле, усиленный для десктопа */}
-      <div className="absolute inset-0 bg-black/20 md:bg-black/45" />
+      {/* Усиленный overlay для лучшей читаемости */}
+      <div className="absolute inset-0 bg-black/35" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -124,44 +124,49 @@ const Cases = () => {
           >
             {cases.map((caseItem) => (
               <SwiperSlide key={caseItem.id}>
-                {/* Чистая карточка без прозрачности для мобиле */}
-                <div className="relative bg-white/95 backdrop-blur-sm rounded-lg mx-2 h-48 md:h-80 md:w-80" 
+                {/* Тёмная плиточная карточка с размытостью */}
+                <div className="relative w-80 h-80 mx-2" 
                      style={{
-                       boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                       background: 'rgba(0, 0, 0, 0.6)',
+                       backdropFilter: 'blur(12px)',
+                       borderRadius: '16px',
+                       border: '1px solid rgba(255, 255, 255, 0.1)'
                      }}>
                   
-                  {/* Минималистичный контент */}
-                  <div className="p-6 h-full flex flex-col justify-between text-center">
+                  {/* Контент карточки */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-between text-center">
                     
-                    {/* Метрика */}
+                    {/* Логотип вверху с подложкой */}
+                    <div className="flex justify-center">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <div className="w-8 h-8 bg-white/80 rounded-sm flex items-center justify-center">
+                          <div className="w-4 h-4 bg-neutral-600 rounded-sm"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Метрика - максимально крупная, белая, жирная */}
                     <div>
-                      <h3 className="text-ink font-extrabold uppercase leading-tight mb-4"
+                      <h3 className="text-white font-extrabold uppercase leading-tight"
                           style={{
-                            fontSize: 'clamp(18px, 4vw, 28px)',
+                            fontSize: 'clamp(24px, 6vw, 48px)',
                             fontWeight: 900,
-                            fontFamily: 'var(--font-raleway), sans-serif',
-                            letterSpacing: '0.5px'
+                            textShadow: '0 2px 8px rgba(0,0,0,0.7)'
                           }}>
                         {caseItem.metrics}
                       </h3>
                     </div>
                     
-                    {/* Ниша с иконкой под названием */}
+                    {/* Подпись курсивом с лаймовым подчёркиванием */}
                     <div>
-                      <p className="text-neutral-600 font-serif italic mb-3 text-sm"
+                      <p className="text-neutral-200 font-serif italic text-sm"
                          style={{
-                           letterSpacing: '0.3px'
+                           fontSize: 'clamp(12px, 2.5vw, 16px)',
+                           letterSpacing: '0.5px'
                          }}>
                         <span className="u-lime-underline text-lime">{caseItem.keyword}</span>
-                        <span className="text-neutral-500">{caseItem.niche.replace(caseItem.keyword, '')}</span>
+                        <span className="text-neutral-300">{caseItem.niche.replace(caseItem.keyword, '')}</span>
                       </p>
-                      
-                      {/* Мини-иконка логотипа под названием */}
-                      <div className="flex justify-center">
-                        <div className="w-6 h-6 bg-neutral-200 rounded-sm flex items-center justify-center">
-                          <div className="w-3 h-3 bg-neutral-400 rounded-sm"></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
