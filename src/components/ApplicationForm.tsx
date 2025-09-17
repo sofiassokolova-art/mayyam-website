@@ -86,9 +86,9 @@ const ApplicationForm = () => {
           animate={isInView ? "visible" : "hidden"}
           className="relative max-w-4xl mx-auto"
         >
-          {/* Слой 1: Оранжевая картинка (чуть больше белой анкеты) */}
+          {/* Слой 1: Оранжевая картинка (значительно больше белой анкеты) */}
           <div 
-            className="absolute inset-0 transform scale-105"
+            className="absolute inset-0 transform scale-110"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
@@ -109,7 +109,7 @@ const ApplicationForm = () => {
               {/* Заголовок */}
               <motion.h3
                 variants={itemVariants}
-                className="text-ink uppercase text-center mb-3"
+                className="text-ink uppercase text-center mb-12"
                 style={{ 
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontSize: 'clamp(28px, 5vw, 40px)',
@@ -120,19 +120,6 @@ const ApplicationForm = () => {
                 СОТРУДНИЧЕСТВО
               </motion.h3>
 
-              {/* Подзаголовок */}
-              <motion.p
-                variants={itemVariants}
-                className="text-center mb-12 italic"
-                style={{ 
-                  fontFamily: 'Georgia, serif',
-                  fontSize: 'clamp(16px, 3vw, 20px)',
-                  color: '#666',
-                  fontWeight: 300
-                }}
-              >
-                Я выбираю проекты, с которыми работаю
-              </motion.p>
 
               <motion.form
                 variants={itemVariants}
