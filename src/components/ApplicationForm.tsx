@@ -67,7 +67,7 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-2xl md:max-w-5xl mx-auto"
+          className="relative max-w-2xl md:max-w-6xl mx-auto"
         >
           {/* Адаптивный прямоугольник: вертикальный на мобиле, горизонтальный на десктопе */}
           <div 
@@ -85,10 +85,10 @@ const ApplicationForm = () => {
               {/* Заголовок шрифтом как у Манифеста */}
               <motion.h3
                 variants={itemVariants}
-                className="text-ink uppercase text-center mb-8"
+                className="text-ink uppercase text-center mb-6"
                 style={{ 
                   fontFamily: 'var(--font-raleway), sans-serif',
-                  fontSize: 'clamp(24px, 6vw, 40px)',
+                  fontSize: 'clamp(20px, 5vw, 32px)', // уменьшенный размер
                   fontWeight: 800,
                   letterSpacing: '2px'
                 }}
@@ -99,7 +99,7 @@ const ApplicationForm = () => {
               <motion.form
                 variants={itemVariants}
                 onSubmit={handleSubmit}
-                className="space-y-6"
+                className="space-y-4"
               >
                 {/* Fashion-модульная сетка */}
                 
@@ -115,7 +115,7 @@ const ApplicationForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px' // строго прямоугольно
@@ -136,7 +136,7 @@ const ApplicationForm = () => {
                     value={formData.business}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -156,7 +156,7 @@ const ApplicationForm = () => {
                     value={formData.request}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -182,7 +182,7 @@ const ApplicationForm = () => {
                     value={formData.budget}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -209,7 +209,7 @@ const ApplicationForm = () => {
                     value={formData.contacts}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -218,14 +218,14 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Кнопка CTA внутри анкеты с лаймовым hover */}
-                <div className="pt-6">
+                {/* Кнопка CTA в контейнере с лаймовым hover */}
+                <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full bg-ink text-white hover:bg-lime hover:text-ink py-4 px-8 font-medium uppercase tracking-wider transition-all duration-300 rounded-full"
+                    className="w-full bg-ink text-white hover:bg-lime hover:text-ink py-3 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-full"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      fontSize: 'clamp(14px, 2.5vw, 18px)',
+                      fontSize: 'clamp(12px, 2vw, 16px)', // уменьшенный шрифт
                       letterSpacing: '1px'
                     }}
                   >

@@ -103,7 +103,7 @@ body {
   letter-spacing: -0.02em; /* уменьшенный трекинг для плотности */
 }
 
-/* Стили для Swiper навигационных стрелок */
+/* Стили для Swiper навигационных стрелок - без кружочков, отодвинутые от блоков */
 .cases-swiper .swiper-button-next,
 .cases-swiper .swiper-button-prev {
   color: white !important;
@@ -113,6 +113,16 @@ body {
   height: 40px !important;
   margin-top: -20px !important;
   transition: all 0.3s ease !important;
+  background: none !important; /* убираем кружочки */
+  border: none !important;
+}
+
+.cases-swiper .swiper-button-next {
+  right: -60px !important; /* отодвигаем от блоков */
+}
+
+.cases-swiper .swiper-button-prev {
+  left: -60px !important; /* отодвигаем от блоков */
 }
 
 .cases-swiper .swiper-button-next:hover,

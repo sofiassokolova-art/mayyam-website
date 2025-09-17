@@ -89,31 +89,6 @@ const Cases = () => {
       <div className="absolute inset-0 bg-black/45" />
       
       <div className="container-custom relative z-10">
-        {/* Fashion-журнальный заголовок */}
-        <div className="text-center mb-20">
-          <h2 
-            className="text-white uppercase"
-            style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontWeight: 800,
-              fontSize: 'clamp(32px, 6vw, 48px)',
-              letterSpacing: '0.5px'
-            }}
-          >
-            КЕЙСЫ
-          </h2>
-          <div className="mt-4 inline-block bg-white px-4 py-2 rounded-sm">
-            <p 
-              className="text-ink font-medium italic"
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(14px, 2.5vw, 18px)'
-              }}
-            >
-              Более 50 успешных кейсов
-            </p>
-          </div>
-        </div>
         <motion.div
           ref={ref}
           variants={itemVariants}
@@ -173,9 +148,13 @@ const Cases = () => {
                       </h3>
                     </div>
                     
-                    {/* Ниша с лаймовым подчёркиванием и логотип внизу */}
-                    <div className="text-left">
-                      <p className="text-white/70 font-serif italic mb-3"
+                    {/* Ниша с мини-иконкой */}
+                    <div className="text-left flex items-center gap-3">
+                      {/* Мини-иконка логотипа */}
+                      <div className="w-6 h-6 bg-white/20 rounded-sm flex items-center justify-center flex-shrink-0">
+                        <div className="w-3 h-3 bg-white/60 rounded-sm"></div>
+                      </div>
+                      <p className="text-white/70 font-serif italic"
                          style={{
                            fontSize: 'clamp(12px, 2.5vw, 16px)',
                            letterSpacing: '0.5px'
