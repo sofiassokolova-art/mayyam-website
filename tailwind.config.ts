@@ -19,6 +19,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "serif"],
+        script: ["var(--font-vibes)", "cursive"],
       },
       colors: {
         ink: "#000000",

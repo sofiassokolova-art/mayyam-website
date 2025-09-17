@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Editorial from "@/components/Editorial";
+import WhoIHelp from "@/components/WhoIHelp";
+import SimpleManifest from "@/components/SimpleManifest";
 import Metrics from "@/components/Metrics";
 import Cases from "@/components/Cases";
-import Approach from "@/components/Approach";
-import Manifest from "@/components/Manifest";
+import MyApproach from "@/components/MyApproach";
+import Philosophy from "@/components/Philosophy";
 import ApplicationForm from "@/components/ApplicationForm";
 import CTA from "@/components/CTA";
 
@@ -13,11 +14,12 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Editorial />
+      <WhoIHelp />
+      <SimpleManifest />
       <Metrics />
       <Cases />
-      <Approach />
-      <Manifest />
+      <MyApproach />
+      <Philosophy />
       <ApplicationForm />
       <CTA />
     </main>

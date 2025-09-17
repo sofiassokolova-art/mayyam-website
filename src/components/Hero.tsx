@@ -35,7 +35,7 @@ const Hero = () => {
           src="/images/hero-phones.jpg"
           alt="Maryam"
           fill
-          className="object-cover object-center filter grayscale"
+          className="object-cover object-center object-top filter grayscale"
           priority
         />
         {/* Dark gradient overlay */}

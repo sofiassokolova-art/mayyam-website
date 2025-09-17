@@ -47,9 +47,10 @@ const CTA = () => {
           src="/images/portrait-overlay.jpg"
           alt="фон CTA"
           fill
-          className="object-cover object-center opacity-15 mix-blend-luminosity"
+          className="object-cover object-center object-top filter grayscale"
           priority
         />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <div className="container-custom relative z-10">
