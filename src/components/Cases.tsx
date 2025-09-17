@@ -22,7 +22,7 @@ const Cases = () => {
       title: "EdTech Проект", 
       tag: "EdTech",
       metrics: "+500K ВЫРУЧКА",
-      image: "/images/hero-phones.png"
+      image: "/images/phones.png"
     },
     {
       id: 3,

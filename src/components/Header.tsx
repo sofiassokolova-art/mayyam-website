@@ -16,11 +16,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { href: "#about", label: "about" },
-    { href: "#services", label: "services" },
-    { href: "#cases", label: "cases" },
-    { href: "#faq", label: "faq" },
-    { href: "#contact", label: "contact" },
+    { href: "#about", label: "обо мне" },
+    { href: "#services", label: "услуги" },
+    { href: "#cases", label: "кейсы" },
+    { href: "#faq", label: "вопросы" },
+    { href: "#contact", label: "контакты" },
   ];
 
   return (
@@ -35,7 +35,17 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <nav className="flex items-center justify-end py-4">
+        <nav className="flex items-center justify-between py-4">
+          {/* Logo */}
+          <div className="font-brand text-2xl md:text-3xl">
+            <span className={`transition-colors duration-200 ${
+              isScrolled ? "text-ink" : "text-white"
+            }`}>
+              МАРЬЯМ
+            </span>
+          </div>
+          
+          {/* Navigation */}
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.href}>

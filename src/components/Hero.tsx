@@ -35,7 +35,8 @@ const Hero = () => {
           src="/images/hero-main.png"
           alt="Maryam"
           fill
-          className="object-cover object-center object-top filter grayscale"
+          className="object-cover object-right-top filter grayscale"
+          style={{ transform: 'scale(0.85)' }}
           priority
         />
         {/* Dark gradient overlay */}
@@ -45,19 +46,19 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 h-full">
         <div className="container-custom h-full">
-          <div className="flex items-center justify-start h-full">
+          <div className="flex items-end justify-start h-full pb-20">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
               className="max-w-2xl"
             >
-              {/* Brand Name - занимает 40-50% высоты экрана */}
+              {/* New smaller title */}
               <motion.h1
                 variants={itemVariants}
-                className="font-brand text-[clamp(120px,25vw,400px)] text-white leading-[0.9] uppercase mb-6"
+                className="font-brand text-[clamp(40px,8vw,120px)] text-white leading-[0.9] mb-6"
               >
-                МАРЬЯМ
+                Марьям / Биктимирова
               </motion.h1>
 
               {/* Role - 1/6 от высоты МАРЬЯМ */}

@@ -39,10 +39,10 @@ const SimpleManifest = () => {
   const renderStyledText = () => {
     let result = manifestText;
     
-    // Стилизация акцентных слов Georgia italic с лайм подчёркиванием
+    // Стилизация акцентных слов Georgia italic с лаймовыми точками
     accents.forEach(accent => {
       const regex = new RegExp(`(${accent})`, 'g');
-      result = result.replace(regex, '<span class="font-serif italic u-lime-underline">$1</span>');
+      result = result.replace(regex, '<span class="font-serif italic relative"><span class="absolute -left-4 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-lime rounded-full"></span>$1<span class="absolute -right-4 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-lime rounded-full"></span></span>');
     });
     
     return result;
@@ -63,7 +63,7 @@ const SimpleManifest = () => {
             variants={itemVariants}
             className="order-2 md:order-1"
           >
-            <h2 className="font-brand text-ink uppercase mb-12 text-[clamp(32px, 6vw, 80px)]">
+            <h2 className="font-brand text-ink uppercase mb-12 text-[clamp(40px, 8vw, 120px)]">
               Манифест
             </h2>
             
@@ -80,7 +80,7 @@ const SimpleManifest = () => {
             className="order-1 md:order-2 relative h-[400px] md:h-[600px]"
           >
             <Image
-              src="/images/hero-phones.png"
+              src="/images/phones.png"
               alt="Maryam with phones"
               fill
               className="object-cover object-center filter grayscale"
