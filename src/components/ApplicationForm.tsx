@@ -86,14 +86,15 @@ const ApplicationForm = () => {
           animate={isInView ? "visible" : "hidden"}
           className="relative max-w-4xl mx-auto"
         >
-          {/* Слой 1: Оранжевая картинка (значительно больше белой анкеты) */}
+          {/* Слой 1: Оранжевая картинка с такими же пропорциями */}
           <div 
-            className="absolute inset-0 transform scale-110"
+            className="absolute inset-0"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              borderRadius: '0px'
+              borderRadius: '0px',
+              aspectRatio: '16/10' // такие же пропорции как у белой анкеты
             }}
           />
           
@@ -109,10 +110,10 @@ const ApplicationForm = () => {
               {/* Заголовок */}
               <motion.h3
                 variants={itemVariants}
-                className="text-ink uppercase text-center mb-12"
+                className="text-ink uppercase text-center mb-8"
                 style={{ 
                   fontFamily: 'var(--font-raleway), sans-serif',
-                  fontSize: 'clamp(28px, 5vw, 40px)',
+                  fontSize: 'clamp(24px, 4vw, 32px)', // уменьшенный размер
                   fontWeight: 900,
                   letterSpacing: '0.05em'
                 }}
@@ -124,7 +125,7 @@ const ApplicationForm = () => {
               <motion.form
                 variants={itemVariants}
                 onSubmit={handleSubmit}
-                className="space-y-8 max-w-2xl mx-auto w-full"
+                className="space-y-6 max-w-xl mx-auto w-full"
               >
                 {/* Поле: Имя */}
                 <div>
@@ -138,7 +139,7 @@ const ApplicationForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -159,7 +160,7 @@ const ApplicationForm = () => {
                     value={formData.business}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -180,7 +181,7 @@ const ApplicationForm = () => {
                     value={formData.contacts}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -190,14 +191,14 @@ const ApplicationForm = () => {
                 </div>
 
                 {/* Кнопка с закруглёнными углами */}
-                <div className="pt-6">
+                <div className="pt-4 pb-2"> {/* уменьшенные отступы чтобы кнопка не вываливалась */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-8 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md rounded-full"
+                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-3 px-6 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md rounded-full"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      fontSize: 'clamp(16px, 3vw, 20px)',
+                      fontSize: 'clamp(14px, 2.5vw, 18px)', // уменьшенный шрифт
                       letterSpacing: '0.5px'
                     }}
                   >
