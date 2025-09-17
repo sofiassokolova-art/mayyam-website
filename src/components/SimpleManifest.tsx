@@ -3,33 +3,23 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const SimpleManifest = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const principles = [
-    {
-      title: "Стратегия",
-      accent: "хаоса"
-    },
-    {
-      title: "Системность", 
-      accent: "случайности"
-    },
-    {
-      title: "Рост",
-      accent: "стагнации"
-    }
-  ];
+  const manifestText = `Я создаю системы роста, которые работают вместо хаоса. Для меня важна только выручка, измеримая в цифрах. Каждый запуск — это стратегия, а не случайность. Я работаю с теми, кто готов масштабироваться.`;
+
+  const accents = ["системы роста", "выручка", "стратегия"];
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
       },
     },
   };
@@ -46,42 +36,63 @@ const SimpleManifest = () => {
     },
   };
 
+  const renderStyledText = () => {
+    let result = manifestText;
+    
+    // Стилизация акцентных слов Georgia italic с подчёркиванием
+    accents.forEach(accent => {
+      const regex = new RegExp(`(${accent})`, 'g');
+      result = result.replace(regex, '<span class="font-serif italic underline decoration-lime decoration-2 underline-offset-4">$1</span>');
+    });
+    
+    return result;
+  };
+
   return (
-    <section className="bg-paper py-20 md:py-32">
-      <div className="container-custom">
+    <section className="bg-paper" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+      <div className="mx-auto max-w-[1200px] px-5 md:px-20">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="max-w-4xl mx-auto text-center"
+          className="grid md:grid-cols-2 gap-12 md:gap-16 items-center"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-ink text-2xl md:text-[36px] font-bold uppercase mb-20"
-          >
-            Манифест
-          </motion.h2>
-
+          {/* Left column - Text */}
           <motion.div
-            variants={containerVariants}
-            className="space-y-12 md:space-y-16"
+            variants={itemVariants}
+            className="order-2 md:order-1"
           >
-            {principles.map((principle, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="text-center"
-              >
-                <h3 className="text-ink text-lg md:text-[18px] font-normal leading-[1.8]">
-                  <span className="font-bold">{principle.title}</span>
-                  {" вместо "}
-                  <span className="font-serif italic text-base md:text-[16px] underline decoration-lime decoration-2 underline-offset-4">
-                    {principle.accent}
-                  </span>
-                </h3>
-              </motion.div>
-            ))}
+            <h2 
+              className="text-ink font-bold uppercase mb-12"
+              style={{ 
+                fontFamily: 'var(--font-raleway), sans-serif', 
+                fontWeight: 900,
+                fontSize: 'clamp(20px, 4vw, 28px)'
+              }}
+            >
+              Манифест
+            </h2>
+            
+            <div 
+              className="text-ink text-base md:text-[20px] leading-[160%] text-left"
+              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+              dangerouslySetInnerHTML={{ __html: renderStyledText() }}
+            />
+          </motion.div>
+
+          {/* Right column - Image */}
+          <motion.div
+            variants={itemVariants}
+            className="order-1 md:order-2 relative h-[400px] md:h-[600px]"
+          >
+            <Image
+              src="/images/hero-phones.jpg"
+              alt="Maryam with phones"
+              fill
+              className="object-cover object-center object-top filter grayscale"
+              priority
+            />
           </motion.div>
         </motion.div>
       </div>
