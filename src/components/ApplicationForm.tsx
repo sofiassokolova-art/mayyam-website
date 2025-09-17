@@ -76,7 +76,7 @@ const ApplicationForm = () => {
   return (
     <section 
       id="application" 
-      className="bg-paper py-32 md:py-40"
+      className="bg-paper py-32 md:py-40" // белый фон секции
     >
       <div className="container-custom">
         <motion.div
@@ -84,21 +84,28 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-5xl mx-auto"
+          className="relative max-w-4xl mx-auto"
         >
-          {/* Горизонтальная карточка с оранжевой рамкой */}
+          {/* Слой 1: Оранжевая картинка (чуть больше белой анкеты) */}
           <div 
-            className="relative bg-white shadow-2xl" 
+            className="absolute inset-0 transform scale-105"
+            style={{
+              background: 'url(/images/orange-texture-1.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              borderRadius: '0px'
+            }}
+          />
+          
+          {/* Слой 2: Белая анкета поверх оранжевой картинки */}
+          <div 
+            className="relative bg-white shadow-2xl p-12 md:p-16"
             style={{ 
-              border: '60px solid transparent',
-              backgroundImage: 'url(/images/orange-texture-1.png), linear-gradient(white, white)',
-              backgroundOrigin: 'border-box, padding-box',
-              backgroundClip: 'border-box, padding-box',
               borderRadius: '0px', // строго прямоугольная
-              aspectRatio: '16/9' // горизонтальная ориентация
+              aspectRatio: '16/10' // горизонтальная ориентация
             }}
           >
-            <div className="p-12 md:p-16 h-full flex flex-col justify-center">
+            <div className="h-full flex flex-col justify-center">
               {/* Заголовок */}
               <motion.h3
                 variants={itemVariants}
@@ -132,8 +139,6 @@ const ApplicationForm = () => {
                 onSubmit={handleSubmit}
                 className="space-y-8 max-w-2xl mx-auto w-full"
               >
-                {/* Все поля вертикально */}
-                
                 {/* Поле: Имя */}
                 <div>
                   <label htmlFor="name" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
@@ -197,17 +202,16 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Кнопка */}
+                {/* Кнопка с закруглёнными углами */}
                 <div className="pt-6">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-8 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-8 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md rounded-full"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(16px, 3vw, 20px)',
-                      letterSpacing: '0.5px',
-                      borderRadius: '0px' // строго прямоугольная
+                      letterSpacing: '0.5px'
                     }}
                   >
                     {isSubmitting ? 'ОТПРАВЛЯЕМ...' : 'ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ'}
