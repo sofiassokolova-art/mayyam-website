@@ -12,7 +12,6 @@ const ApplicationForm = () => {
     name: "",
     business: "",
     request: "",
-    budget: "",
     contacts: "",
   });
 
@@ -36,7 +35,6 @@ const ApplicationForm = () => {
         name: "",
         business: "",
         request: "",
-        budget: "",
         contacts: "",
       });
     } catch (error) {
@@ -80,14 +78,10 @@ const ApplicationForm = () => {
   return (
     <section 
       id="application" 
-      className="relative py-24 md:py-32 bg-[url('/images/orange-texture-1.png')] bg-cover bg-center"
-      style={{ 
-        paddingTop: '120px',
-        paddingBottom: '120px'
-      }}
+      className="relative py-32 md:py-40 bg-[url('/images/orange-texture-1.png')] bg-cover bg-center"
     >
-      {/* Полупрозрачный overlay для лучшей читаемости */}
-      <div className="absolute inset-0 bg-black/20" />
+      {/* Мягкий overlay */}
+      <div className="absolute inset-0 bg-black/15" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -95,160 +89,145 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-6xl mx-auto"
+          className="relative max-w-3xl mx-auto"
         >
-          {/* Строгая прямоугольная форма с оранжевой рамкой */}
+          {/* Премиальный журнальный блок с толстой оранжевой рамкой */}
           <div 
-            className="relative bg-white p-8 md:p-16 shadow-lg" 
+            className="relative bg-white p-12 md:p-16 shadow-xl" 
             style={{ 
-              border: '40px solid transparent',
+              border: '60px solid transparent',
               backgroundImage: 'url(/images/orange-texture-1.png), linear-gradient(white, white)',
               backgroundOrigin: 'border-box, padding-box',
-              backgroundClip: 'border-box, padding-box',
-              minHeight: '400px'
+              backgroundClip: 'border-box, padding-box'
             }}
           >
-            {/* Заголовок */}
+            {/* Журнальный заголовок */}
             <motion.h3
               variants={itemVariants}
-              className="text-ink uppercase text-center mb-12"
+              className="text-ink uppercase text-center mb-4"
               style={{ 
                 fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(24px, 6vw, 32px)',
-                fontWeight: 800,
-                letterSpacing: '2px'
+                fontSize: 'clamp(28px, 6vw, 40px)',
+                fontWeight: 900,
+                letterSpacing: '0.05em'
               }}
             >
               СОТРУДНИЧЕСТВО
             </motion.h3>
 
+            {/* Подзаголовок */}
+            <motion.p
+              variants={itemVariants}
+              className="text-neutral-600 text-center mb-16"
+              style={{ 
+                fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                fontSize: 'clamp(16px, 3vw, 20px)',
+                fontWeight: 400
+              }}
+            >
+              Я выбираю проекты, с которыми работаю
+            </motion.p>
+
             <motion.form
               variants={itemVariants}
               onSubmit={handleSubmit}
-              className="space-y-8"
+              className="space-y-12"
             >
-              {/* Первая строка: Имя | Ниша/Бизнес | Основной запрос */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
-                    Имя
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                    placeholder="Ваше имя"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="business" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
-                    Ниша / Бизнес
-                  </label>
-                  <input
-                    type="text"
-                    id="business"
-                    name="business"
-                    value={formData.business}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                    placeholder="Опишите ваш бизнес"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="request" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
-                    Основной запрос
-                  </label>
-                  <select
-                    id="request"
-                    name="request"
-                    value={formData.request}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                  >
-                    <option value="">Выберите запрос</option>
-                    <option value="sales">Продажи</option>
-                    <option value="funnel">Воронка</option>
-                    <option value="scaling">Масштабирование</option>
-                    <option value="launch">Запуск с нуля</option>
-                    <option value="optimization">Оптимизация процессов</option>
-                  </select>
-                </div>
+              {/* Поле: Имя */}
+              <div>
+                <label htmlFor="name" className="block text-xs font-medium mb-4 uppercase tracking-wider" style={{ color: '#555' }}>
+                  ИМЯ
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                  style={{ 
+                    fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                    borderRadius: '0px'
+                  }}
+                  placeholder="Ваше имя"
+                />
               </div>
 
-              {/* Вторая строка: Бюджет | Контакты */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <div>
-                  <label htmlFor="budget" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
-                    Бюджет
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                  >
-                    <option value="">Выберите бюджет</option>
-                    <option value="50k-200k">50-200 тыс. руб.</option>
-                    <option value="200k-500k">200-500 тыс. руб.</option>
-                    <option value="500k-1m">500 тыс. - 1 млн руб.</option>
-                    <option value="1m+">От 1 млн руб.</option>
-                    <option value="discuss">Обсудим индивидуально</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="contacts" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
-                    Контакты (<span className="u-lime-underline">email</span> / <span className="u-lime-underline">telegram</span>)
-                  </label>
-                  <input
-                    type="text"
-                    id="contacts"
-                    name="contacts"
-                    value={formData.contacts}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                    placeholder="Email или Telegram"
-                  />
-                </div>
+              {/* Поле: Ниша / Бизнес */}
+              <div>
+                <label htmlFor="business" className="block text-xs font-medium mb-4 uppercase tracking-wider" style={{ color: '#555' }}>
+                  НИША / БИЗНЕС
+                </label>
+                <input
+                  type="text"
+                  id="business"
+                  name="business"
+                  value={formData.business}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                  style={{ 
+                    fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                    borderRadius: '0px'
+                  }}
+                  placeholder="Опишите ваш бизнес"
+                />
               </div>
 
-              {/* Кнопка по центру внизу на всю ширину */}
+              {/* Поле: Основной запрос */}
+              <div>
+                <label htmlFor="request" className="block text-xs font-medium mb-4 uppercase tracking-wider" style={{ color: '#555' }}>
+                  ОСНОВНОЙ ЗАПРОС
+                </label>
+                <select
+                  id="request"
+                  name="request"
+                  value={formData.request}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                  style={{ 
+                    fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                    borderRadius: '0px'
+                  }}
+                >
+                  <option value="" style={{ color: '#999' }}>Выберите запрос</option>
+                  <option value="sales">Продажи</option>
+                  <option value="funnel">Воронка</option>
+                  <option value="scaling">Масштабирование</option>
+                  <option value="launch">Запуск с нуля</option>
+                  <option value="optimization">Оптимизация процессов</option>
+                </select>
+              </div>
+
+              {/* Поле: Контакты */}
+              <div>
+                <label htmlFor="contacts" className="block text-xs font-medium mb-4 uppercase tracking-wider" style={{ color: '#555' }}>
+                  КОНТАКТЫ (EMAIL / TELEGRAM)
+                </label>
+                <input
+                  type="text"
+                  id="contacts"
+                  name="contacts"
+                  value={formData.contacts}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                  style={{ 
+                    fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                    borderRadius: '0px'
+                  }}
+                  placeholder="Email или Telegram"
+                />
+              </div>
+
+              {/* Премиальная кнопка */}
               <div className="pt-8">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-8 font-medium uppercase tracking-wider transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+                  className="w-[90%] mx-auto block bg-white text-ink border border-ink hover:bg-lime hover:text-ink py-5 px-8 font-bold uppercase tracking-wider transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ 
                     fontFamily: 'Helvetica Neue, Arial, sans-serif',
                     fontSize: 'clamp(14px, 2.5vw, 18px)',
@@ -261,7 +240,7 @@ const ApplicationForm = () => {
                 
                 {/* Статусник отправки */}
                 {submitStatus && (
-                  <div className="mt-4 text-center">
+                  <div className="mt-6 text-center">
                     <p className={`text-sm ${submitStatus === 'success' ? 'text-lime' : 'text-red-500'}`}>
                       {submitStatus === 'success' ? 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.' : 'Ошибка отправки. Попробуйте ещё раз.'}
                     </p>
