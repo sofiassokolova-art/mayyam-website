@@ -66,8 +66,8 @@ const SimpleManifest = () => {
             <h2 
               className="text-ink font-bold uppercase mb-12"
               style={{ 
-                fontFamily: 'var(--font-raleway), sans-serif', 
-                fontWeight: 900,
+                fontFamily: 'var(--font-raleway), Helvetica Neue, Helvetica, Arial, sans-serif', 
+                fontWeight: 600,
                 fontSize: 'clamp(20px, 4vw, 28px)'
               }}
             >

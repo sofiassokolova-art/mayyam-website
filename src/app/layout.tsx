@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Raleway } from "next/font/google";
+import { Inter, Raleway, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,9 +9,16 @@ const inter = Inter({
 });
 
 const raleway = Raleway({
-  weight: ["900"], // Heavy
+  weight: ["400", "500", "600"], // Regular для подзаголовков
   subsets: ["latin", "cyrillic"],
   variable: "--font-raleway",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  weight: ["900"], // Black для МАРЬЯМ
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -28,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} ${raleway.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${raleway.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

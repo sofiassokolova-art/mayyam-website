@@ -64,10 +64,11 @@ const Hero = () => {
               <motion.h2
                 variants={itemVariants}
                 className="text-white text-xl md:text-2xl font-normal mb-6"
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, var(--font-raleway), sans-serif' }}
               >
                 продюсер{" "}
                 <span className="font-serif italic text-lg md:text-xl underline decoration-lime decoration-2 underline-offset-4">роста</span>{" "}
-                <span className="font-normal">продаж</span>
+                продаж
               </motion.h2>
 
               {/* Subline */}

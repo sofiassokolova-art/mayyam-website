@@ -75,7 +75,7 @@ body {
 }
 
 .font-brand {
-  font-family: var(--font-raleway), sans-serif;
+  font-family: var(--font-playfair), serif;
   font-weight: 900;
   letter-spacing: 0.05em; /* чуть увеличенный трекинг для премиум-стиля */
 }
