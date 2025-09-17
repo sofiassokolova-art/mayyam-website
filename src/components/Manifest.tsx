@@ -108,7 +108,7 @@ const Manifest = () => {
                         {principle.title}
                       </h3>
                       <p className="text-white/70 text-xl">
-                        вместо <span className="font-script text-neutral-400">{principle.subtitle}</span>
+                        вместо <span className="font-serif italic text-neutral-400">{principle.subtitle}</span>
                       </p>
                     </div>
                     

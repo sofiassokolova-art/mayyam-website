@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Great_Vibes } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,11 +15,6 @@ const playfair = Playfair_Display({
   style: ["italic", "normal"],
 });
 
-const vibes = Great_Vibes({
-  subsets: ["latin"],
-  variable: "--font-vibes",
-  weight: ["400"],
-});
 
 export const metadata: Metadata = {
   title: "МАРЬЯМ - Продюсер роста продаж",
@@ -32,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={vibes.variable}>
-      <body className={`${inter.variable} ${playfair.variable} ${vibes.variable} font-sans antialiased`}>
+    <html lang="ru">
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

@@ -8,38 +8,9 @@ const Editorial = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const editorialItems = [
-    {
-      number: "1",
-      title: "Стартапы и новые продукты",
-      description: "запуск с нуля, MVP, первые продажи и масштабирование"
-    },
-    {
-      number: "2", 
-      title: "Готовый бизнес",
-      description: "оптимизация воронок, увеличение конверсии, рост выручки"
-    },
-    {
-      number: "3",
-      title: "E-commerce и инфопродукты",
-      description: "комплексные стратегии продаж и маркетинга"
-    },
-    {
-      number: "4",
-      title: "B2B и корпоративные клиенты",
-      description: "сложные воронки, длинные циклы продаж"
-    },
-    {
-      number: "5",
-      title: "Услуги и консалтинг",
-      description: "позиционирование, упаковка экспертности, премиум-сегмент"
-    },
-    {
-      number: "6",
-      title: "Франшизы и сети",
-      description: "системность процессов, масштабируемые решения"
-    }
-  ];
+  const editorialText = `1 / Стартапы и новые продукты — запуск с нуля, MVP, первые продажи и масштабирование. 2 / Бренды и e-commerce — рост выручки через воронки и CRM. 3 / EdTech и услуги — разработка решений и оптимизация LTV. 4 / B2B и корпоративные клиенты — сложные воронки, длинные циклы продаж. 5 / Франшизы и сети — системность процессов, масштабируемые решения.`;
+
+  const keywords = ["Стартапы", "Бренды", "EdTech", "B2B", "Франшизы"];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -64,6 +35,21 @@ const Editorial = () => {
     },
   };
 
+  const renderEditorialText = () => {
+    let result = editorialText;
+    
+    // Подсветка нумерации
+    result = result.replace(/(\d+)\s*\/\s*/g, '<span class="font-bold text-xl">$1 /</span> ');
+    
+    // Подсветка ключевых слов
+    keywords.forEach(keyword => {
+      const regex = new RegExp(`(${keyword})`, 'g');
+      result = result.replace(regex, '<span class="font-serif italic underline decoration-lime decoration-2 underline-offset-4">$1</span>');
+    });
+    
+    return result;
+  };
+
   return (
     <section className="bg-paper py-20 md:py-32">
       <div className="container-custom">
@@ -74,37 +60,15 @@ const Editorial = () => {
           animate={isInView ? "visible" : "hidden"}
           className="max-w-4xl mx-auto"
         >
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
-            {editorialItems.map((item, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="group"
-              >
-                <div className="flex items-start gap-6">
-                  {/* Number */}
-                  <div className="flex-shrink-0">
-                    <span className="text-4xl md:text-5xl font-extrabold text-ink leading-none">
-                      {item.number}
-                    </span>
-                    <span className="text-4xl md:text-5xl font-extrabold text-ink leading-none ml-1">
-                      /
-                    </span>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="pt-1">
-                    <h3 className="font-serif italic text-xl md:text-2xl text-ink mb-3 leading-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted text-lg leading-[150%] font-normal">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            variants={itemVariants}
+            className="prose prose-xl max-w-none"
+          >
+            <p 
+              className="text-ink text-xl md:text-2xl leading-[150%] font-normal"
+              dangerouslySetInnerHTML={{ __html: renderEditorialText() }}
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -90,18 +90,6 @@ const Cases = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="text-center mb-16"
-          >
-            <h2 className="text-white text-4xl md:text-5xl font-extrabold uppercase mb-6">
-              Кейсы и результаты
-            </h2>
-            <p className="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto">
-              Реальные проекты, измеримые результаты
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
             className="cases-swiper"
           >
             <Swiper

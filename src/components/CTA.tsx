@@ -64,14 +64,14 @@ const CTA = () => {
             variants={itemVariants}
             className="text-white text-4xl md:text-6xl font-extrabold uppercase mb-8"
           >
-            <span className="font-script">связаться</span>
+            связаться
           </motion.h3>
 
           <motion.button
             variants={itemVariants}
-            className="btn-capsule bg-white text-ink h-14 md:h-16 px-10 hover:bg-neutral-200 mb-8"
+            className="btn-capsule bg-ink text-white border-2 border-white h-14 md:h-16 px-10 hover:bg-neutral-800 hover:border-neutral-300 font-bold uppercase mb-8"
           >
-            Записаться
+            Связаться
           </motion.button>
 
           <motion.div

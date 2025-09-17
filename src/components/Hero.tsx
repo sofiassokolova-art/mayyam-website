@@ -63,11 +63,11 @@ const Hero = () => {
               {/* Role */}
               <motion.h2
                 variants={itemVariants}
-                className="text-white text-2xl md:text-3xl font-bold mb-6"
+                className="text-white text-2xl md:text-3xl font-semibold mb-6"
               >
                 продюсер{" "}
-                <span className="font-serif italic">роста</span>{" "}
-                <span className="font-script text-neutral-300">продаж</span>
+                <span className="font-serif italic underline decoration-lime decoration-2 underline-offset-4">роста</span>{" "}
+                <span className="font-bold">продаж</span>
               </motion.h2>
 
               {/* Subline */}
