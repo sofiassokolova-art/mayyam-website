@@ -15,21 +15,21 @@ const Cases = () => {
       title: "Beauty D2C",
       tag: "Beauty",
       metrics: "+182% ВЫРУЧКИ",
-      image: "/images/case-1.jpg"
+      image: "/images/5b9fdec4-2b86-46ce-b899-303f396b8440.png"
     },
     {
       id: 2,
       title: "EdTech Проект", 
       tag: "EdTech",
       metrics: "+500K ВЫРУЧКА",
-      image: "/images/case-3.jpg"
+      image: "/images/hero-phones.png"
     },
     {
       id: 3,
       title: "SaaS Платформа",
       tag: "SaaS",
       metrics: "+60% LTV",
-      image: "/images/case-5.jpg"
+      image: "/images/portrait-overlay.png"
     }
   ];
 
@@ -57,7 +57,7 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative section-spacing overflow-hidden bg-[url('/images/orange-texture-1.jpg')] bg-cover bg-center">
+    <section className="relative section-spacing overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70" />
       

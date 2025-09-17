@@ -87,7 +87,7 @@ const SimpleManifest = () => {
             className="order-1 md:order-2 relative h-[400px] md:h-[600px]"
           >
             <Image
-              src="/images/hero-main.jpg"
+              src="/images/hero-main.png"
               alt="Maryam portrait"
               fill
               className="object-cover object-center filter grayscale"

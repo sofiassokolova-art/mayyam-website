@@ -44,7 +44,7 @@ const CTA = () => {
       {/* Background portrait */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/portrait-overlay.jpg"
+          src="/images/portrait-overlay.png"
           alt="фон CTA"
           fill
           className="object-cover object-center object-top filter grayscale"

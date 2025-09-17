@@ -32,7 +32,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-main.jpg"
+          src="/images/hero-main.png"
           alt="Maryam"
           fill
           className="object-cover object-center object-top filter grayscale"
