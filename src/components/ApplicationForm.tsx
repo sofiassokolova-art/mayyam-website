@@ -55,11 +55,10 @@ const ApplicationForm = () => {
   return (
     <section 
       id="application" 
-      className="py-20 md:py-32"
+      className="bg-white py-24 md:py-32"
       style={{ 
-        marginBottom: '120px',
-        paddingTop: '100px',
-        paddingBottom: '100px'
+        paddingTop: '120px',
+        paddingBottom: '120px'
       }}
     >
       <div className="container-custom">
@@ -68,155 +67,188 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-6xl mx-auto"
+          className="relative max-w-4xl mx-auto"
         >
-          {/* Оранжевая рамка увеличенная до 80-100px */}
+          {/* Fashion-журнальная толстая рамка-контейнер */}
           <div 
-            className="absolute inset-0"
+            className="relative"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              padding: '80px'
+              padding: '60px 60px 80px 60px', // больше снизу для fashion-эффекта
+              minHeight: '600px'
             }}
           >
-            <div className="w-full h-full bg-white"></div>
-          </div>
-          
-          {/* Содержимое формы */}
-          <div className="relative bg-white p-8 md:p-12 m-[80px]">
-            <motion.h3
-              variants={itemVariants}
-              className="text-ink text-2xl md:text-[32px] font-bold mb-4 text-center"
-              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
-            >
-              Заполните анкету
-            </motion.h3>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-muted text-lg mb-12 text-center"
-              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
-            >
-              Я выбираю проекты, с которыми работаю
-            </motion.p>
-
-            <motion.form
-              variants={itemVariants}
-              onSubmit={handleSubmit}
-              className="space-y-6"
-            >
-              {/* Все поля вертикально друг под другом */}
+            {/* Белый внутренний контейнер */}
+            <div className="bg-white h-full p-12 md:p-16" style={{ minHeight: '480px' }}>
+              {/* Fashion-журнальный заголовок */}
+              <motion.h3
+                variants={itemVariants}
+                className="text-ink uppercase text-center mb-3"
+                style={{ 
+                  fontFamily: 'var(--font-playfair), serif',
+                  fontSize: 'clamp(32px, 5vw, 56px)',
+                  fontWeight: 900,
+                  letterSpacing: '3px',
+                  lineHeight: '1.1'
+                }}
+              >
+                АНКЕТА
+              </motion.h3>
               
-              {/* Поле: Имя */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
-                  Имя
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
-                  placeholder="Ваше имя"
-                />
-              </div>
+              {/* Подзаголовок как в fashion-журналах */}
+              <motion.p
+                variants={itemVariants}
+                className="text-neutral-600 text-center mb-16 italic"
+                style={{ 
+                  fontFamily: 'Georgia, serif',
+                  fontSize: 'clamp(14px, 2.5vw, 18px)',
+                  letterSpacing: '1px'
+                }}
+              >
+                Кастинг на сотрудничество
+              </motion.p>
 
-              {/* Поле: Ниша / Бизнес */}
-              <div>
-                <label htmlFor="business" className="block text-sm font-medium text-ink mb-2">
-                  Ниша / Бизнес
-                </label>
-                <input
-                  type="text"
-                  id="business"
-                  name="business"
-                  value={formData.business}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
-                  placeholder="Опишите ваш бизнес"
-                />
-              </div>
+              <motion.form
+                variants={itemVariants}
+                onSubmit={handleSubmit}
+                className="space-y-8"
+              >
+                {/* Fashion-модульная сетка */}
+                
+                {/* Поле: Имя */}
+                <div>
+                  <label htmlFor="name" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
+                    Имя
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    style={{ 
+                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                      borderRadius: '0px' // строго прямоугольно
+                    }}
+                    placeholder="Ваше имя"
+                  />
+                </div>
 
-              {/* Поле: Основной запрос */}
-              <div>
-                <label htmlFor="request" className="block text-sm font-medium text-ink mb-2">
-                  Основной запрос
-                </label>
-                <select
-                  id="request"
-                  name="request"
-                  value={formData.request}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
-                >
-                  <option value="">Выберите запрос</option>
-                  <option value="sales">Продажи</option>
-                  <option value="funnel">Воронка</option>
-                  <option value="scaling">Масштабирование</option>
-                  <option value="launch">Запуск с нуля</option>
-                  <option value="optimization">Оптимизация процессов</option>
-                </select>
-              </div>
+                {/* Поле: Ниша / Бизнес */}
+                <div>
+                  <label htmlFor="business" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
+                    Ниша / Бизнес
+                  </label>
+                  <input
+                    type="text"
+                    id="business"
+                    name="business"
+                    value={formData.business}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    style={{ 
+                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                      borderRadius: '0px'
+                    }}
+                    placeholder="Опишите ваш бизнес"
+                  />
+                </div>
 
-              {/* Поле: Бюджет / готовность к инвестициям */}
-              <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-ink mb-2">
-                  Бюджет / готовность к инвестициям
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
-                >
-                  <option value="">Выберите бюджет</option>
-                  <option value="50k-200k">50-200 тыс. руб.</option>
-                  <option value="200k-500k">200-500 тыс. руб.</option>
-                  <option value="500k-1m">500 тыс. - 1 млн руб.</option>
-                  <option value="1m+">От 1 млн руб.</option>
-                  <option value="discuss">Обсудим индивидуально</option>
-                </select>
-              </div>
+                {/* Поле: Основной запрос */}
+                <div>
+                  <label htmlFor="request" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
+                    Основной запрос
+                  </label>
+                  <select
+                    id="request"
+                    name="request"
+                    value={formData.request}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    style={{ 
+                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                      borderRadius: '0px'
+                    }}
+                  >
+                    <option value="">Выберите запрос</option>
+                    <option value="sales">Продажи</option>
+                    <option value="funnel">Воронка</option>
+                    <option value="scaling">Масштабирование</option>
+                    <option value="launch">Запуск с нуля</option>
+                    <option value="optimization">Оптимизация процессов</option>
+                  </select>
+                </div>
 
-              {/* Поле: Контакты */}
-              <div>
-                <label htmlFor="contacts" className="block text-sm font-medium text-ink mb-2">
-                  Контакты (<span className="u-lime-underline">email</span> / <span className="u-lime-underline">telegram</span>)
-                </label>
-                <input
-                  type="text"
-                  id="contacts"
-                  name="contacts"
-                  value={formData.contacts}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lime focus:border-lime transition-all duration-200"
-                  placeholder="Email или Telegram"
-                />
-              </div>
+                {/* Поле: Бюджет / готовность к инвестициям */}
+                <div>
+                  <label htmlFor="budget" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
+                    Бюджет / Инвестиции
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    style={{ 
+                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                      borderRadius: '0px'
+                    }}
+                  >
+                    <option value="">Выберите бюджет</option>
+                    <option value="50k-200k">50-200 тыс. руб.</option>
+                    <option value="200k-500k">200-500 тыс. руб.</option>
+                    <option value="500k-1m">500 тыс. - 1 млн руб.</option>
+                    <option value="1m+">От 1 млн руб.</option>
+                    <option value="discuss">Обсудим индивидуально</option>
+                  </select>
+                </div>
 
-              {/* Кнопка CTA */}
-              <div className="pt-6">
-                <button
-                  type="submit"
-                  className="w-full bg-white text-ink border-2 border-ink hover:bg-orange-500 hover:text-white hover:border-orange-500 py-4 px-8 font-medium transition-all duration-300"
-                  style={{ 
-                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                    backgroundImage: 'none'
-                  }}
-                >
-                  Давайте работать вместе
-                </button>
-              </div>
-            </motion.form>
+                {/* Поле: Контакты */}
+                <div>
+                  <label htmlFor="contacts" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
+                    Контакты (<span className="u-lime-underline">email</span> / <span className="u-lime-underline">telegram</span>)
+                  </label>
+                  <input
+                    type="text"
+                    id="contacts"
+                    name="contacts"
+                    value={formData.contacts}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
+                    style={{ 
+                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                      borderRadius: '0px'
+                    }}
+                    placeholder="Email или Telegram"
+                  />
+                </div>
+
+                {/* Fashion-кнопка CTA */}
+                <div className="pt-12">
+                  <button
+                    type="submit"
+                    className="w-full bg-ink text-white hover:bg-neutral-800 py-6 px-8 font-bold uppercase tracking-wider transition-all duration-300 border-0"
+                    style={{ 
+                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                      fontSize: 'clamp(14px, 2.5vw, 18px)',
+                      borderRadius: '0px', // строго прямоугольно
+                      letterSpacing: '2px'
+                    }}
+                  >
+                    ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ
+                  </button>
+                </div>
+              </motion.form>
+            </div>
           </div>
         </motion.div>
       </div>

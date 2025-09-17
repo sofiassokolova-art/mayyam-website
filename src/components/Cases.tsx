@@ -84,23 +84,35 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
-      {/* Dark overlay for text readability - усиленный */}
-      <div className="absolute inset-0 bg-black/35" />
+    <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center" style={{ paddingTop: '80px', paddingBottom: '100px' }}>
+      {/* Fashion-журнальный overlay - усиленный для контраста */}
+      <div className="absolute inset-0 bg-black/45" />
       
       <div className="container-custom relative z-10">
-        {/* Подпись к блоку - увеличенная и жирная */}
-        <div className="text-center mb-16">
+        {/* Fashion-журнальный заголовок */}
+        <div className="text-center mb-20">
           <h2 
-            className="text-white font-bold"
+            className="text-white font-bold uppercase"
             style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(24px, 5vw, 40px)',
-              fontWeight: 800
+              fontFamily: 'var(--font-playfair), serif',
+              fontSize: 'clamp(28px, 6vw, 48px)',
+              fontWeight: 900,
+              letterSpacing: '4px', // журнальный межбуквенный интервал
+              lineHeight: '1.2'
+            }}
+          >
+            ПОРТФОЛИО
+          </h2>
+          <p 
+            className="text-white/80 mt-4 italic"
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: 'clamp(14px, 2.5vw, 18px)',
+              letterSpacing: '1px'
             }}
           >
             Более 50 готовых успешных кейсов
-          </h2>
+          </p>
         </div>
         <motion.div
           ref={ref}
@@ -137,45 +149,46 @@ const Cases = () => {
           >
             {cases.map((caseItem) => (
               <SwiperSlide key={caseItem.id}>
-                {/* Плиточная карточка с прозрачным чёрным фоном */}
-                <div className="text-center space-y-6 p-8 mx-2 backdrop-blur-sm" 
+                {/* Fashion-журнальная карточка-обложка */}
+                <div className="relative h-80 md:h-96 mx-2" 
                      style={{
-                       backgroundColor: 'rgba(0, 0, 0, 0.4)',
-                       borderRadius: '16px',
-                       border: '1px solid rgba(255, 255, 255, 0.1)'
+                       background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)',
+                       backdropFilter: 'blur(10px)'
                      }}>
                   
-                  {/* Logo с подложкой */}
-                  <div className="flex justify-center">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                      <Image
-                        src={caseItem.logo}
-                        alt={`${caseItem.keyword} logo`}
-                        width={80}
-                        height={48}
-                        className="md:w-[100px] md:h-[60px] object-contain filter brightness-0 invert"
-                      />
+                  {/* Минималистичный контент */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                    
+                    {/* Метрика - главный журнальный акцент */}
+                    <div className="text-left">
+                      <h3 className="text-white font-extrabold uppercase leading-none mb-2"
+                          style={{
+                            fontSize: 'clamp(28px, 7vw, 56px)',
+                            fontWeight: 900,
+                            fontFamily: 'var(--font-playfair), serif',
+                            letterSpacing: '1px'
+                          }}>
+                        {caseItem.metrics}
+                      </h3>
+                    </div>
+                    
+                    {/* Ниша и логотип внизу */}
+                    <div className="text-left">
+                      <p className="text-white/70 font-serif italic mb-3"
+                         style={{
+                           fontSize: 'clamp(12px, 2.5vw, 16px)',
+                           letterSpacing: '0.5px'
+                         }}>
+                        <span className="text-lime">{caseItem.keyword}</span>
+                        <span className="text-white/60">{caseItem.niche.replace(caseItem.keyword, '')}</span>
+                      </p>
+                      
+                      {/* Минимальный логотип внизу слева */}
+                      <div className="w-12 h-12 bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                        <div className="w-6 h-6 bg-white/60 rounded-full"></div>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Metrics - максимально крупные, белые, жирные */}
-                  <h3 className="text-white font-extrabold uppercase leading-tight"
-                      style={{
-                        fontSize: 'clamp(24px, 6vw, 48px)',
-                        fontWeight: 900,
-                        textShadow: '0 2px 4px rgba(0,0,0,0.5)'
-                      }}>
-                    {caseItem.metrics}
-                  </h3>
-                  
-                  {/* Niche - курсив, мелкий кегль, лаймовые акценты */}
-                  <p className="text-neutral-200 font-serif italic"
-                     style={{
-                       fontSize: 'clamp(12px, 2.5vw, 16px)'
-                     }}>
-                    <span className="u-lime-underline text-lime">{caseItem.keyword}</span>
-                    <span className="text-neutral-300">{caseItem.niche.replace(caseItem.keyword, '')}</span>
-                  </p>
                 </div>
               </SwiperSlide>
             ))}
