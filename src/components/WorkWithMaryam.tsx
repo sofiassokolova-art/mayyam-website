@@ -72,8 +72,8 @@ const WorkWithMaryam = () => {
             variants={itemVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-ink text-4xl md:text-5xl font-extrabold mb-6">
-              С чем работает <span className="font-script text-lime">Марьям</span>
+            <h2 className="text-ink text-4xl md:text-5xl font-extrabold uppercase mb-6">
+              С чем работает Марьям
             </h2>
             <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto">
               Помогаю бизнесу любого масштаба — от стартапов до корпораций
@@ -88,9 +88,9 @@ const WorkWithMaryam = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="p-8 rounded-2xl border border-neutral-200 hover:border-lime/30 hover:shadow-soft transition-all duration-300 group"
+                className="p-8 rounded-2xl border border-neutral-200 hover:border-neutral-400 hover:shadow-soft transition-all duration-300 group"
               >
-                <h3 className="text-ink text-xl font-bold mb-4 group-hover:text-lime transition-colors duration-300">
+                <h3 className="text-ink text-xl font-bold mb-4 transition-colors duration-300">
                   {service.title}
                 </h3>
                 <p className="text-muted leading-relaxed">

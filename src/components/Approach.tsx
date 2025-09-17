@@ -75,8 +75,8 @@ const Approach = () => {
             variants={itemVariants}
             className="text-center mb-20"
           >
-            <h2 className="text-ink text-4xl md:text-5xl font-extrabold mb-6">
-              Мой <span className="font-script text-lime">подход</span>
+            <h2 className="text-ink text-4xl md:text-5xl font-extrabold uppercase mb-6">
+              Мой подход
             </h2>
             <p className="text-muted text-lg md:text-xl max-w-2xl mx-auto">
               Системный подход к росту продаж в три этапа
@@ -92,21 +92,21 @@ const Approach = () => {
               >
                 {/* Connecting line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-full w-12 h-0.5 bg-gradient-to-r from-lime/50 to-transparent transform translate-x-0 z-0" />
+                  <div className="hidden lg:block absolute top-16 left-full w-12 h-0.5 bg-gradient-to-r from-neutral-300 to-transparent transform translate-x-0 z-0" />
                 )}
                 
                 <div className="relative z-10 text-center">
                   {/* Number */}
                   <motion.div
                     variants={numberVariants}
-                    className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-lime text-ink font-extrabold text-2xl mb-8 group-hover:shadow-glow transition-all duration-300"
+                    className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-ink text-white font-extrabold text-2xl mb-8 group-hover:bg-neutral-800 transition-all duration-300"
                   >
                     {step.number}
                   </motion.div>
                   
                   {/* Content */}
                   <div>
-                    <h3 className="text-ink text-2xl font-bold mb-6 group-hover:text-lime transition-colors duration-300">
+                    <h3 className="text-ink text-2xl font-bold mb-6 transition-colors duration-300">
                       {step.title}
                     </h3>
                     <p className="text-muted leading-relaxed text-lg">

@@ -61,14 +61,14 @@ const CTA = () => {
         >
           <motion.h3
             variants={itemVariants}
-            className="text-white text-4xl md:text-6xl font-extrabold mb-8"
+            className="text-white text-4xl md:text-6xl font-extrabold uppercase mb-8"
           >
-            связаться
+            <span className="font-script">связаться</span>
           </motion.h3>
 
           <motion.button
             variants={itemVariants}
-            className="btn-capsule bg-lime text-ink h-14 md:h-16 px-10 hover:shadow-glow mb-8"
+            className="btn-capsule bg-white text-ink h-14 md:h-16 px-10 hover:bg-neutral-200 mb-8"
           >
             Записаться
           </motion.button>
@@ -81,7 +81,7 @@ const CTA = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-lime transition-colors duration-200 text-lg"
+                className="text-white hover:text-neutral-300 transition-colors duration-200 text-lg"
               >
                 {link.name}
               </a>

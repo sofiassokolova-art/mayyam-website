@@ -12,22 +12,22 @@ const Manifest = () => {
   const principles = [
     {
       title: "СТРАТЕГИЯ",
-      subtitle: "вместо хаоса",
+      subtitle: "хаоса",
       description: "Каждое действие основано на данных и четком понимании целей"
     },
     {
       title: "РЕЗУЛЬТАТ",
-      subtitle: "вместо активности",
+      subtitle: "активности",
       description: "Измеряем эффективность каждого шага и фокусируемся на ROI"
     },
     {
       title: "СИСТЕМНОСТЬ",
-      subtitle: "вместо случайности",
+      subtitle: "случайности",
       description: "Строим процессы, которые работают без постоянного контроля"
     },
     {
       title: "РОСТ",
-      subtitle: "вместо стагнации",
+      subtitle: "стагнации",
       description: "Постоянное масштабирование и поиск новых точек роста"
     }
   ];
@@ -91,8 +91,8 @@ const Manifest = () => {
             variants={titleVariants}
             className="text-center mb-20"
           >
-            <h2 className="text-white text-4xl md:text-6xl font-extrabold mb-6">
-              Манифест <span className="font-script text-lime">роста</span>
+            <h2 className="text-white text-4xl md:text-6xl font-extrabold uppercase mb-6">
+              Манифест <span className="font-serif italic">роста</span>
             </h2>
             <p className="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto">
               Принципы, которые определяют мой подход к бизнесу
@@ -108,15 +108,15 @@ const Manifest = () => {
               >
                 <div className="relative">
                   {/* Accent line */}
-                  <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-lime via-lime/50 to-transparent group-hover:w-2 transition-all duration-300" />
+                  <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-white via-white/50 to-transparent group-hover:w-2 transition-all duration-300" />
                   
                   <div className="pl-8">
                     <div className="mb-6">
-                      <h3 className="text-lime text-3xl md:text-4xl font-extrabold uppercase tracking-tight leading-none mb-2 group-hover:text-white transition-colors duration-300">
+                      <h3 className="text-white text-3xl md:text-5xl font-extrabold uppercase tracking-tight leading-none mb-4">
                         {principle.title}
                       </h3>
-                      <p className="text-white/70 text-xl font-script group-hover:text-white transition-colors duration-300">
-                        {principle.subtitle}
+                      <p className="text-white/70 text-xl">
+                        вместо <span className="font-script text-neutral-400">{principle.subtitle}</span>
                       </p>
                     </div>
                     
@@ -137,7 +137,7 @@ const Manifest = () => {
             <p className="text-neutral-400 text-lg mb-8">
               Готовы применить эти принципы к вашему бизнесу?
             </p>
-            <button className="btn-capsule bg-lime text-ink hover:shadow-glow px-12">
+            <button className="btn-capsule bg-white text-ink hover:bg-neutral-200 px-12">
               Начать работу
             </button>
           </motion.div>

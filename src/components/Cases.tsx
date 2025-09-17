@@ -77,8 +77,19 @@ const Cases = () => {
   };
 
   return (
-    <section className="bg-ink section-spacing overflow-hidden">
-      <div className="container-custom">
+    <section className="relative section-spacing overflow-hidden">
+      {/* Orange texture background */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/orange-texture-1.jpg"
+          alt="texture background"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+      
+      <div className="container-custom relative z-10">
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -89,8 +100,8 @@ const Cases = () => {
             variants={itemVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-white text-4xl md:text-5xl font-extrabold mb-6">
-              Кейсы и <span className="font-script text-lime">результаты</span>
+            <h2 className="text-white text-4xl md:text-5xl font-extrabold uppercase mb-6">
+              Кейсы и результаты
             </h2>
             <p className="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto">
               Реальные проекты, измеримые результаты
@@ -134,7 +145,7 @@ const Cases = () => {
                       
                       {/* Content */}
                       <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <div className="text-lime text-sm font-bold mb-2 uppercase tracking-wider">
+                        <div className="text-white text-sm font-bold mb-2 uppercase tracking-wider">
                           {caseItem.metrics}
                         </div>
                         <h3 className="text-white text-xl font-bold mb-3">
