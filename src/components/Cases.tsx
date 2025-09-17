@@ -89,7 +89,7 @@ const Cases = () => {
       <div className="py-20 md:py-32">
         <div className="container-custom">
           {/* Расширенный контейнер для стрелок */}
-          <div className="relative px-12 md:px-16">
+          <div className="relative px-20 md:px-24">
             <motion.div
               ref={ref}
               variants={itemVariants}

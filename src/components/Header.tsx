@@ -35,7 +35,7 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <nav className="flex items-center justify-center py-4">
+        <nav className="flex items-center justify-end py-4">
           {/* Navigation */}
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
