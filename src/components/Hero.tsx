@@ -56,7 +56,7 @@ const Hero = () => {
               {/* Main title */}
               <motion.h1
                 variants={itemVariants}
-                className="text-white leading-[0.9] mb-4 md:mb-6"
+                className="text-white leading-[0.9] mb-1 md:mb-2"
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontWeight: 800,
@@ -69,7 +69,7 @@ const Hero = () => {
               {/* Subtitle with role */}
               <motion.h2
                 variants={itemVariants}
-                className="text-white leading-[1.2] mb-4 md:mb-6 ml-4"
+                className="text-white leading-[1.2] mb-1 md:mb-2 ml-4"
                 style={{ 
                   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
                   fontSize: 'clamp(16px, 3vw, 40px)',
@@ -84,7 +84,7 @@ const Hero = () => {
               {/* Last name */}
               <motion.h1
                 variants={itemVariants}
-                className="text-white leading-[0.9] mb-6"
+                className="text-white leading-[0.9] mb-4"
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontWeight: 800,
