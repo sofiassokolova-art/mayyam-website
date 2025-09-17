@@ -41,17 +41,35 @@ const WhoIHelp = () => {
 
   return (
     <section className="bg-paper py-20 md:py-32">
-      <div className="mx-auto max-w-[900px] w-[95%] md:w-full px-4">
+      <div className="container-custom">
         <motion.div
           ref={ref}
           variants={itemVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
+          className="max-w-4xl mx-auto"
         >
-          <p 
-            className="text-ink text-base md:text-[18px] leading-[160%] md:leading-[150%] text-left md:text-justify font-normal"
-            dangerouslySetInnerHTML={{ __html: renderStyledText() }}
-          />
+          {/* Заголовок */}
+          <h2 
+            className="text-ink uppercase mb-16 text-center"
+            style={{
+              fontFamily: 'var(--font-raleway), sans-serif',
+              fontWeight: 800,
+              fontSize: 'clamp(32px, 6vw, 48px)',
+              letterSpacing: '0.5px'
+            }}
+          >
+            С кем работает Марьям
+          </h2>
+          
+          {/* Журнальный текст */}
+          <div className="mx-auto max-w-[900px]">
+            <p 
+              className="text-ink text-base md:text-[18px] leading-[1.8] text-left md:text-justify font-normal"
+              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+              dangerouslySetInnerHTML={{ __html: renderStyledText() }}
+            />
+          </div>
         </motion.div>
       </div>
     </section>

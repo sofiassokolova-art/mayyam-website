@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import WhoIHelp from "@/components/WhoIHelp";
 import SimpleManifest from "@/components/SimpleManifest";
 import Metrics from "@/components/Metrics";
+import Divider from "@/components/Divider";
 import Cases from "@/components/Cases";
 import MyApproach from "@/components/MyApproach";
 import Philosophy from "@/components/Philosophy";
@@ -17,6 +18,7 @@ export default function Home() {
       <WhoIHelp />
       <SimpleManifest />
       <Metrics />
+      <Divider />
       <Cases />
       <MyApproach />
       <Philosophy />

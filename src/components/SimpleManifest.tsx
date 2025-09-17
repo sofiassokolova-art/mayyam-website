@@ -49,26 +49,37 @@ const SimpleManifest = () => {
   };
 
   return (
-    <section className="bg-paper" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+    <section className="relative bg-neutral-50" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+      {/* Цветная полоса сбоку */}
+      <div className="absolute left-0 top-0 w-1 h-full bg-lime"></div>
+      
       <div className="mx-auto max-w-[1200px] px-5 md:px-20">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 gap-12 md:gap-16 items-center"
+          className="grid md:grid-cols-2 gap-16 items-center"
         >
           {/* Left column - Text */}
           <motion.div
             variants={itemVariants}
-            className="order-2 md:order-1"
+            className="order-2 md:order-1 max-w-[500px]"
           >
-            <h2 className="font-brand text-ink uppercase mb-12 text-[clamp(80px, 16vw, 240px)]">
+            <h2 
+              className="text-ink uppercase mb-10"
+              style={{
+                fontFamily: 'var(--font-raleway), sans-serif',
+                fontWeight: 800,
+                fontSize: 'clamp(32px, 6vw, 48px)',
+                letterSpacing: '0.5px'
+              }}
+            >
               Манифест
             </h2>
             
             <div 
-              className="text-ink text-base md:text-[20px] leading-[160%] text-left"
+              className="text-ink text-base md:text-[20px] leading-[1.8] text-left max-w-[500px]"
               style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
               dangerouslySetInnerHTML={{ __html: renderStyledText() }}
             />
@@ -77,7 +88,8 @@ const SimpleManifest = () => {
           {/* Right column - Image */}
           <motion.div
             variants={itemVariants}
-            className="order-1 md:order-2 relative h-[400px] md:h-[600px]"
+            className="order-1 md:order-2 relative h-[400px] md:h-[600px] max-w-[500px] ml-auto"
+            style={{ marginLeft: '60px' }}
           >
             <Image
               src="/images/phones.png"
