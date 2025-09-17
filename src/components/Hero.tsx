@@ -53,27 +53,25 @@ const Hero = () => {
               animate="visible"
               className="max-w-2xl"
             >
-              {/* New smaller title */}
+              {/* Combined title */}
               <motion.h1
                 variants={itemVariants}
                 className="font-brand text-[clamp(40px,8vw,120px)] text-white leading-[0.9] mb-6"
               >
-                Марьям / Биктимирова
+                Марьям /{" "}
+                <span 
+                  className="font-normal"
+                  style={{ 
+                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                    fontSize: 'clamp(10px, 2vw, 30px)'
+                  }}
+                >
+                  продюсер{" "}
+                  <span className="font-serif italic u-lime-underline">роста</span>{" "}
+                  продаж
+                </span>
+                {" "} / Биктимирова
               </motion.h1>
-
-              {/* Role - уменьшенный в 2 раза */}
-              <motion.h2
-                variants={itemVariants}
-                className="text-white font-normal mb-4"
-                style={{ 
-                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                  fontSize: 'clamp(10px, 2vw, 30px)'
-                }}
-              >
-                продюсер{" "}
-                <span className="font-serif italic u-lime-underline">роста</span>{" "}
-                продаж
-              </motion.h2>
 
               {/* Subline - мелкий журнальный комментарий */}
               <motion.p
