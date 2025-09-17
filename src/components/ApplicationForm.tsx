@@ -95,10 +95,10 @@ const ApplicationForm = () => {
               backgroundPosition: 'center',
               borderRadius: '0px',
               filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.2))',
-              top: '-24px',
+              top: '-48px',
               left: '-24px',
               right: '-24px',
-              bottom: '-24px'
+              bottom: '-48px'
             }}
           />
           
