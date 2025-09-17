@@ -88,13 +88,14 @@ const ApplicationForm = () => {
         >
           {/* Оранжевая рамка-подложка за белым блоком */}
           <div 
-            className="absolute inset-0 transform scale-110"
+            className="absolute inset-0"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               borderRadius: '0px',
-              filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.2))'
+              filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.2))',
+              transform: 'scaleX(1.05) scaleY(1.15)'
             }}
           />
           

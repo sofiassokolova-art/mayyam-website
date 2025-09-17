@@ -115,41 +115,41 @@ body {
   }
 }
 
-/* Стили для Swiper навигационных стрелок - белые, большие, заметные */
+/* Стили для Swiper навигационных стрелок - белые, большие, без кружочков */
 .cases-swiper .swiper-button-next,
 .cases-swiper .swiper-button-prev {
   color: white !important;
   font-weight: 900 !important;
-  font-size: 28px !important;
-  width: 60px !important;
-  height: 60px !important;
-  margin-top: -30px !important;
+  font-size: 32px !important;
+  width: 50px !important;
+  height: 50px !important;
+  margin-top: -25px !important;
   transition: all 0.3s ease !important;
-  background: rgba(0, 0, 0, 0.3) !important; /* полупрозрачный фон для заметности */
-  border: 2px solid white !important;
-  border-radius: 50% !important;
-  backdrop-filter: blur(10px) !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
 }
 
 .cases-swiper .swiper-button-next {
-  right: -30px !important;
+  right: -50px !important;
 }
 
 .cases-swiper .swiper-button-prev {
-  left: -30px !important;
+  left: -50px !important;
 }
 
 .cases-swiper .swiper-button-next:hover,
 .cases-swiper .swiper-button-prev:hover {
   color: #C6FF00 !important;
-  background: rgba(0, 0, 0, 0.6) !important;
-  border-color: #C6FF00 !important;
-  transform: scale(1.1);
+  transform: scale(1.2) !important;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9) !important;
 }
 
 .cases-swiper .swiper-button-next::after,
 .cases-swiper .swiper-button-prev::after {
-  font-size: 28px !important;
+  font-size: 32px !important;
   font-weight: 900 !important;
 }
 
