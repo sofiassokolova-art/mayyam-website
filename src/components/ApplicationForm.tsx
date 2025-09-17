@@ -11,8 +11,6 @@ const ApplicationForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     business: "",
-    request: "",
-    budget: "",
     contacts: "",
   });
 
@@ -35,8 +33,6 @@ const ApplicationForm = () => {
       setFormData({
         name: "",
         business: "",
-        request: "",
-        budget: "",
         contacts: "",
       });
     } catch (error) {
@@ -88,27 +84,28 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative w-[95%] md:w-[60%] max-w-3xl mx-auto"
+          className="relative max-w-5xl mx-auto"
         >
-          {/* Белый блок с толстой оранжевой рамкой */}
+          {/* Горизонтальная карточка с оранжевой рамкой */}
           <div 
-            className="relative bg-white shadow-xl" 
+            className="relative bg-white shadow-2xl" 
             style={{ 
-              border: '80px solid transparent',
+              border: '60px solid transparent',
               backgroundImage: 'url(/images/orange-texture-1.png), linear-gradient(white, white)',
               backgroundOrigin: 'border-box, padding-box',
               backgroundClip: 'border-box, padding-box',
-              borderRadius: '0px' // строго прямоугольный
+              borderRadius: '0px', // строго прямоугольная
+              aspectRatio: '16/9' // горизонтальная ориентация
             }}
           >
-            <div className="p-12 md:p-16">
-              {/* Главный заголовок */}
+            <div className="p-12 md:p-16 h-full flex flex-col justify-center">
+              {/* Заголовок */}
               <motion.h3
                 variants={itemVariants}
                 className="text-ink uppercase text-center mb-3"
                 style={{ 
                   fontFamily: 'var(--font-raleway), sans-serif',
-                  fontSize: 'clamp(32px, 6vw, 48px)',
+                  fontSize: 'clamp(28px, 5vw, 40px)',
                   fontWeight: 900,
                   letterSpacing: '0.05em'
                 }}
@@ -116,15 +113,15 @@ const ApplicationForm = () => {
                 СОТРУДНИЧЕСТВО
               </motion.h3>
 
-              {/* Подзаголовок серый */}
+              {/* Подзаголовок */}
               <motion.p
                 variants={itemVariants}
-                className="text-center mb-16"
+                className="text-center mb-12 italic"
                 style={{ 
-                  fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                  fontFamily: 'Georgia, serif',
                   fontSize: 'clamp(16px, 3vw, 20px)',
                   color: '#666',
-                  fontWeight: 400
+                  fontWeight: 300
                 }}
               >
                 Я выбираю проекты, с которыми работаю
@@ -133,9 +130,9 @@ const ApplicationForm = () => {
               <motion.form
                 variants={itemVariants}
                 onSubmit={handleSubmit}
-                className="space-y-8"
+                className="space-y-8 max-w-2xl mx-auto w-full"
               >
-                {/* Все поля вертикально друг под другом */}
+                {/* Все поля вертикально */}
                 
                 {/* Поле: Имя */}
                 <div>
@@ -179,58 +176,6 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Поле: Основной запрос */}
-                <div>
-                  <label htmlFor="request" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
-                    ОСНОВНОЙ ЗАПРОС
-                  </label>
-                  <select
-                    id="request"
-                    name="request"
-                    value={formData.request}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                  >
-                    <option value="" style={{ color: '#9A9A9A' }}>Выберите запрос</option>
-                    <option value="sales">Продажи</option>
-                    <option value="funnel">Воронка</option>
-                    <option value="scaling">Масштабирование</option>
-                    <option value="launch">Запуск с нуля</option>
-                    <option value="optimization">Оптимизация процессов</option>
-                  </select>
-                </div>
-
-                {/* Поле: Бюджет */}
-                <div>
-                  <label htmlFor="budget" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
-                    БЮДЖЕТ / ГОТОВНОСТЬ К ИНВЕСТИЦИЯМ
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border border-neutral-300 px-6 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-lg"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                  >
-                    <option value="" style={{ color: '#9A9A9A' }}>Выберите бюджет</option>
-                    <option value="50k-200k">50-200 тыс. руб.</option>
-                    <option value="200k-500k">200-500 тыс. руб.</option>
-                    <option value="500k-1m">500 тыс. - 1 млн руб.</option>
-                    <option value="1m+">От 1 млн руб.</option>
-                    <option value="discuss">Обсудим индивидуально</option>
-                  </select>
-                </div>
-
                 {/* Поле: Контакты */}
                 <div>
                   <label htmlFor="contacts" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
@@ -252,12 +197,12 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Кнопка на всю ширину формы */}
-                <div className="pt-8">
+                {/* Кнопка */}
+                <div className="pt-6">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-5 px-8 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
+                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-8 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(16px, 3vw, 20px)',
@@ -270,7 +215,7 @@ const ApplicationForm = () => {
                   
                   {/* Статусник отправки */}
                   {submitStatus && (
-                    <div className="mt-6 text-center">
+                    <div className="mt-4 text-center">
                       <p className={`text-sm ${submitStatus === 'success' ? 'text-lime' : 'text-red-500'}`}>
                         {submitStatus === 'success' ? 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.' : 'Ошибка отправки. Попробуйте ещё раз.'}
                       </p>
