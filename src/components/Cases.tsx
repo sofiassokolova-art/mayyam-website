@@ -84,149 +84,145 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
-      {/* Усиленный overlay для читаемости */}
-      <div className="absolute inset-0 bg-black/60" />
+    <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
+      {/* Оранжевый фон с заголовками */}
+      <div className="py-16 md:py-24">
+        <div className="container-custom">
+          {/* Заголовки на оранжевом фоне */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="text-center mb-16"
+          >
+            <motion.h2
+              variants={itemVariants}
+              className="text-white uppercase mb-4"
+              style={{
+                fontFamily: 'var(--font-raleway), sans-serif',
+                fontSize: 'clamp(32px, 7vw, 56px)',
+                fontWeight: 900,
+                letterSpacing: '0.05em',
+                textShadow: '0 2px 8px rgba(0,0,0,0.3)'
+              }}
+            >
+              БОЛЕЕ 50 УСПЕШНЫХ КЕЙСОВ
+            </motion.h2>
+            
+            <motion.p
+              variants={itemVariants}
+              className="text-white/90 italic"
+              style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: 'clamp(16px, 3vw, 24px)',
+                fontWeight: 300
+              }}
+            >
+              Результаты, которые говорят сами за себя
+            </motion.p>
+          </motion.div>
+        </div>
+      </div>
 
-      <div className="container-custom relative z-10">
-        {/* Заголовки блока */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="text-center mb-16"
-        >
-          <motion.h2
+      {/* Белые карточки на оранжевом фоне */}
+      <div className="pb-20 md:pb-32">
+        <div className="container-custom">
+          <motion.div
+            ref={ref}
             variants={itemVariants}
-            className="text-white uppercase mb-4"
-            style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(32px, 7vw, 56px)',
-              fontWeight: 900,
-              letterSpacing: '0.05em'
-            }}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="cases-swiper"
           >
-            БОЛЕЕ 50 УСПЕШНЫХ КЕЙСОВ
-          </motion.h2>
-          
-          <motion.p
-            variants={itemVariants}
-            className="text-white/80 italic"
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(16px, 3vw, 24px)',
-              fontWeight: 300
-            }}
-          >
-            Результаты, которые говорят сами за себя
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          ref={ref}
-          variants={itemVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="cases-swiper"
-        >
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            spaceBetween={40}
-            slidesPerView={1}
-            navigation={true}
-            loop={true}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 32,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              1280: {
-                slidesPerView: 4,
-                spaceBetween: 48,
-              },
-            }}
-            className="pb-16"
-          >
-            {cases.map((caseItem) => (
-              <SwiperSlide key={caseItem.id}>
-                {/* Карточка с тёмным полупрозрачным градиентом и hover-эффектами */}
-                <div 
-                  className="relative p-8 mx-2 transition-all duration-300 hover:scale-105 group cursor-pointer"
-                  style={{
-                    minHeight: '320px',
-                    background: 'linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '16px',
-                    border: '1px solid rgba(255, 255, 255, 0.1)'
-                  }}
-                >
-                  {/* Лёгкая подсветка при hover */}
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              spaceBetween={24}
+              slidesPerView={1}
+              navigation={true}
+              loop={true}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 24,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 32,
+                },
+                1280: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
+              }}
+              className="pb-16"
+            >
+              {cases.map((caseItem) => (
+                <SwiperSlide key={caseItem.id}>
+                  {/* Белая журнальная карточка */}
                   <div 
-                    className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"
-                  />
-                  
-                  <div className="relative z-10 text-center h-full flex flex-col justify-between">
-                    
-                    {/* Логотип сверху по центру */}
-                    <div className="flex justify-center mb-6">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    className="bg-white p-8 mx-2 transition-all duration-300 hover:scale-105 hover:shadow-xl group cursor-pointer"
+                    style={{
+                      minHeight: '280px',
+                      borderRadius: '0px', // строго прямоугольная
+                      boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+                    }}
+                  >
+                    <div className="text-center h-full flex flex-col justify-between">
+                      
+                      {/* Логотип сверху по центру */}
+                      <div className="flex justify-center mb-6">
                         <Image
                           src={caseItem.logo}
                           alt={`${caseItem.keyword} logo`}
-                          width={40}
-                          height={40}
-                          className="object-contain filter brightness-0 invert opacity-80"
+                          width={60}
+                          height={60}
+                          className="object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                         />
                       </div>
-                    </div>
-                    
-                    {/* Крупная метрика - главный акцент */}
-                    <div className="flex-grow flex items-center justify-center">
-                      <h3 
-                        className="text-white font-extrabold uppercase leading-tight"
-                        style={{
-                          fontSize: 'clamp(24px, 5vw, 40px)',
-                          fontWeight: 900,
-                          fontFamily: 'var(--font-raleway), sans-serif',
-                          letterSpacing: '1px',
-                          textShadow: '0 2px 8px rgba(0,0,0,0.7)'
-                        }}
-                      >
-                        {caseItem.metrics}
-                      </h3>
-                    </div>
-                    
-                    {/* Подпись курсивом с лаймовым акцентом */}
-                    <div className="mt-6">
-                      <p 
-                        className="text-white/80 font-serif italic"
-                        style={{
-                          fontSize: 'clamp(14px, 3vw, 18px)',
-                          letterSpacing: '0.5px'
-                        }}
-                      >
-                        <span className="u-lime-underline group-hover:text-lime transition-colors duration-300">
-                          {caseItem.keyword}
-                        </span>
-                        <span className="text-white/60">
-                          {caseItem.niche.replace(caseItem.keyword, '')}
-                        </span>
-                      </p>
+                      
+                      {/* Крупная метрика - главный акцент */}
+                      <div className="flex-grow flex items-center justify-center">
+                        <h3 
+                          className="text-ink font-extrabold uppercase leading-tight"
+                          style={{
+                            fontSize: 'clamp(20px, 4vw, 32px)',
+                            fontWeight: 900,
+                            fontFamily: 'var(--font-raleway), sans-serif',
+                            letterSpacing: '0.5px'
+                          }}
+                        >
+                          {caseItem.metrics}
+                        </h3>
+                      </div>
+                      
+                      {/* Подпись курсивом с лаймовым акцентом */}
+                      <div className="mt-6">
+                        <p 
+                          className="text-neutral-600 font-serif italic"
+                          style={{
+                            fontSize: 'clamp(14px, 2.5vw, 16px)',
+                            letterSpacing: '0.3px'
+                          }}
+                        >
+                          <span className="u-lime-underline text-neutral-800">
+                            {caseItem.keyword}
+                          </span>
+                          <span className="text-neutral-500">
+                            {caseItem.niche.replace(caseItem.keyword, '')}
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
