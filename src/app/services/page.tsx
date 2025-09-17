@@ -134,7 +134,7 @@ const services: Service[] = [
   }
 ];
 
-export default function ServicesPage() {
+export default function Page() {
   const [expandedServices, setExpandedServices] = useState<Set<string>>(new Set());
 
   const toggleService = (serviceId: string) => {
