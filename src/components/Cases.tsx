@@ -92,27 +92,27 @@ const Cases = () => {
         {/* Fashion-журнальный заголовок */}
         <div className="text-center mb-20">
           <h2 
-            className="text-white font-bold uppercase"
+            className="text-white uppercase"
             style={{
-              fontFamily: 'var(--font-playfair), serif',
-              fontSize: 'clamp(28px, 6vw, 48px)',
-              fontWeight: 900,
-              letterSpacing: '4px', // журнальный межбуквенный интервал
-              lineHeight: '1.2'
+              fontFamily: 'var(--font-raleway), sans-serif',
+              fontWeight: 800,
+              fontSize: 'clamp(32px, 6vw, 48px)',
+              letterSpacing: '0.5px'
             }}
           >
-            ПОРТФОЛИО
+            КЕЙСЫ
           </h2>
-          <p 
-            className="text-white/80 mt-4 italic"
-            style={{
-              fontFamily: 'Georgia, serif',
-              fontSize: 'clamp(14px, 2.5vw, 18px)',
-              letterSpacing: '1px'
-            }}
-          >
-            Более 50 готовых успешных кейсов
-          </p>
+          <div className="mt-4 inline-block bg-white px-4 py-2 rounded-sm">
+            <p 
+              className="text-ink font-medium"
+              style={{
+                fontFamily: 'Helvetica Neue, Arial, sans-serif',
+                fontSize: 'clamp(14px, 2.5vw, 18px)'
+              }}
+            >
+              Более 50 успешных кейсов
+            </p>
+          </div>
         </div>
         <motion.div
           ref={ref}
@@ -159,27 +159,27 @@ const Cases = () => {
                   {/* Минималистичный контент */}
                   <div className="absolute inset-0 p-8 flex flex-col justify-between">
                     
-                    {/* Метрика - главный журнальный акцент */}
+                    {/* Метрика - шрифт как у нумерации в WhoIHelp */}
                     <div className="text-left">
                       <h3 className="text-white font-extrabold uppercase leading-none mb-2"
                           style={{
-                            fontSize: 'clamp(28px, 7vw, 56px)',
+                            fontSize: 'clamp(20px, 5vw, 32px)', // уменьшенный размер для вписывания в блок
                             fontWeight: 900,
-                            fontFamily: 'var(--font-playfair), serif',
+                            fontFamily: 'var(--font-raleway), sans-serif', // шрифт как у нумерации
                             letterSpacing: '1px'
                           }}>
                         {caseItem.metrics}
                       </h3>
                     </div>
                     
-                    {/* Ниша и логотип внизу */}
+                    {/* Ниша с лаймовым подчёркиванием и логотип внизу */}
                     <div className="text-left">
                       <p className="text-white/70 font-serif italic mb-3"
                          style={{
                            fontSize: 'clamp(12px, 2.5vw, 16px)',
                            letterSpacing: '0.5px'
                          }}>
-                        <span className="text-lime">{caseItem.keyword}</span>
+                        <span className="u-lime-underline text-lime">{caseItem.keyword}</span>
                         <span className="text-white/60">{caseItem.niche.replace(caseItem.keyword, '')}</span>
                       </p>
                       

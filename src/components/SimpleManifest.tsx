@@ -67,12 +67,12 @@ const SimpleManifest = () => {
             className="order-2 md:order-1 max-w-[500px]"
           >
             <h2 
-              className="text-ink uppercase mb-10"
+              className="text-ink font-bold uppercase mb-10"
               style={{
-                fontFamily: 'var(--font-raleway), sans-serif',
-                fontWeight: 800,
-                fontSize: 'clamp(32px, 6vw, 48px)',
-                letterSpacing: '0.5px'
+                fontFamily: 'var(--font-playfair), serif',
+                fontWeight: 900,
+                fontSize: 'clamp(36px, 6vw, 64px)',
+                letterSpacing: '0.02em'
               }}
             >
               Манифест
