@@ -63,14 +63,7 @@ const SimpleManifest = () => {
             variants={itemVariants}
             className="order-2 md:order-1"
           >
-            <h2 
-              className="text-ink font-bold uppercase mb-12"
-              style={{ 
-                fontFamily: 'var(--font-raleway), Helvetica Neue, Helvetica, Arial, sans-serif', 
-                fontWeight: 600,
-                fontSize: 'clamp(20px, 4vw, 28px)'
-              }}
-            >
+            <h2 className="font-brand text-ink uppercase mb-12 text-[clamp(32px, 6vw, 80px)]">
               Манифест
             </h2>
             
@@ -87,8 +80,8 @@ const SimpleManifest = () => {
             className="order-1 md:order-2 relative h-[400px] md:h-[600px]"
           >
             <Image
-              src="/images/hero-main.png"
-              alt="Maryam portrait"
+              src="/images/hero-phones.png"
+              alt="Maryam with phones"
               fill
               className="object-cover object-center filter grayscale"
               priority

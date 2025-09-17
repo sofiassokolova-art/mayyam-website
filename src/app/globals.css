@@ -100,7 +100,7 @@ body {
 .font-brand {
   font-family: var(--font-playfair), serif;
   font-weight: 900;
-  letter-spacing: 0.05em; /* чуть увеличенный трекинг для премиум-стиля */
+  letter-spacing: -0.02em; /* уменьшенный трекинг для плотности */
 }
 
 /* Линии подчёркивания/бордеры — в лайме, тонкие h-[2px] */

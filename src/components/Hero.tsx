@@ -52,42 +52,55 @@ const Hero = () => {
               animate="visible"
               className="max-w-2xl"
             >
-              {/* Brand Name */}
+              {/* Brand Name - занимает 40-50% высоты экрана */}
               <motion.h1
                 variants={itemVariants}
-                className="font-brand text-[clamp(60px,15vw,180px)] text-white leading-[1] uppercase mb-8"
+                className="font-brand text-[clamp(120px,25vw,400px)] text-white leading-[0.9] uppercase mb-6"
               >
                 МАРЬЯМ
               </motion.h1>
 
-              {/* Role */}
+              {/* Role - 1/6 от высоты МАРЬЯМ */}
               <motion.h2
                 variants={itemVariants}
-                className="text-white text-xl md:text-2xl font-normal mb-6"
-                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, var(--font-raleway), sans-serif' }}
+                className="text-white font-normal mb-4"
+                style={{ 
+                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontSize: 'clamp(20px, 4vw, 60px)'
+                }}
               >
                 продюсер{" "}
-                <span className="font-serif italic text-lg md:text-xl u-lime-underline">роста</span>{" "}
+                <span className="font-serif italic u-lime-underline">роста</span>{" "}
                 продаж
               </motion.h2>
 
-              {/* Subline */}
+              {/* Subline - мелкий журнальный комментарий */}
               <motion.p
                 variants={itemVariants}
-                className="text-neutral-400 text-sm md:text-base max-w-xl mb-8 leading-relaxed"
+                className="text-neutral-300 mb-8 leading-relaxed max-w-lg"
+                style={{ 
+                  fontSize: 'clamp(14px, 2.5vw, 18px)',
+                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif'
+                }}
               >
                 запуски, воронки, маркетинг и рост выручки под ключ
               </motion.p>
 
-              {/* CTA Buttons */}
+              {/* CTA Buttons - минималистичные */}
               <motion.div
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-3 md:gap-4"
               >
-                <button className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white">
+                <button 
+                  className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white font-medium"
+                  style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+                >
                   НА СВЯЗЬ
                 </button>
-                <button className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent">
+                <button 
+                  className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent font-medium"
+                  style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+                >
                   МОЙ ПОДХОД
                 </button>
               </motion.div>
