@@ -109,7 +109,7 @@ const ApplicationForm = () => {
             <div 
               className="relative bg-white rounded-lg p-6 md:p-12 md:m-8 mobile-form-card" 
               style={{ 
-                minHeight: '500px'
+                minHeight: '450px' // уменьшенная высота
               }}
             >
               {/* Заголовок шрифтом как у Манифеста */}
@@ -224,11 +224,11 @@ const ApplicationForm = () => {
                 </div>
 
                 {/* Кнопка CTA с чёрным контуром и функциональностью */}
-                <div className="pt-6">
+                <div className="pt-6 pb-6"> {/* равные отступы сверху и снизу */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-neutral-50 text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(12px, 2vw, 16px)',
