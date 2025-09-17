@@ -67,29 +67,29 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-2xl mx-auto"
+          className="relative max-w-5xl mx-auto"
         >
-          {/* Перевёрнутый прямоугольник - высокий и узкий */}
+          {/* Горизонтальный прямоугольник - широкий и низкий */}
           <div 
             className="relative"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              padding: '40px', // уменьшенные отступы
-              minHeight: '700px', // выше для перевёрнутого прямоугольника
-              aspectRatio: '3/4' // портретная ориентация
+              padding: '40px',
+              minHeight: '500px', // уменьшенная высота для горизонтальной ориентации
+              aspectRatio: '4/3' // альбомная ориентация
             }}
           >
             {/* Белый внутренний контейнер */}
-            <div className="bg-white h-full p-8 md:p-10" style={{ minHeight: '620px' }}>
+            <div className="bg-white h-full p-8 md:p-12" style={{ minHeight: '420px' }}>
               {/* Заголовок шрифтом как у Манифеста */}
               <motion.h3
                 variants={itemVariants}
-                className="text-ink uppercase text-center mb-12"
+                className="text-ink uppercase text-center mb-8"
                 style={{ 
                   fontFamily: 'var(--font-raleway), sans-serif',
-                  fontSize: 'clamp(28px, 8vw, 48px)',
+                  fontSize: 'clamp(24px, 6vw, 40px)',
                   fontWeight: 800,
                   letterSpacing: '2px'
                 }}
@@ -100,7 +100,7 @@ const ApplicationForm = () => {
               <motion.form
                 variants={itemVariants}
                 onSubmit={handleSubmit}
-                className="space-y-8"
+                className="space-y-6"
               >
                 {/* Fashion-модульная сетка */}
                 
@@ -220,7 +220,7 @@ const ApplicationForm = () => {
                 </div>
 
                 {/* Кнопка CTA с закруглёнными краями */}
-                <div className="pt-12">
+                <div className="pt-8">
                   <button
                     type="submit"
                     className="w-full bg-ink text-white hover:bg-neutral-800 py-4 px-8 font-medium uppercase tracking-wider transition-all duration-300 rounded-full"
