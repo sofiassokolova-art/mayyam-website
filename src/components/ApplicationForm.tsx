@@ -95,7 +95,7 @@ const ApplicationForm = () => {
               backgroundPosition: 'center',
               borderRadius: '0px',
               filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.2))',
-              transform: 'scaleX(1.05) scaleY(1.15)'
+              transform: 'scale(1.1)'
             }}
           />
           
