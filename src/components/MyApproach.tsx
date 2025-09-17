@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const MyApproach = () => {
   const ref = useRef(null);
@@ -32,48 +33,74 @@ const MyApproach = () => {
   };
 
   return (
-    <section className="bg-paper py-20 md:py-32">
+    <section className="bg-paper" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
       <div className="container-custom">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="max-w-4xl mx-auto"
-        >
-          <motion.h2
-            variants={itemVariants}
-            className="text-ink text-2xl md:text-[36px] font-bold uppercase mb-16 text-center"
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          {/* Left column - Text */}
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="max-w-2xl"
           >
-            Мой подход
-          </motion.h2>
-
-          <div className="space-y-8 md:space-y-12">
-            <motion.p
+            <motion.h2
               variants={itemVariants}
-              className="text-ink text-base md:text-[18px] leading-[1.6] font-normal"
+              className="text-ink font-bold uppercase mb-12 text-left"
+              style={{
+                fontFamily: 'var(--font-playfair), serif',
+                fontWeight: 900,
+                fontSize: 'clamp(36px, 6vw, 64px)',
+                letterSpacing: '0.02em'
+              }}
             >
-              Начинаю с глубокого анализа вашего бизнеса. Изучаю текущие процессы, выявляю узкие места и точки роста. 
-              Не работаю по шаблонам — каждое решение строится под конкретные задачи и особенности ниши.
-            </motion.p>
+              Мой подход
+            </motion.h2>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-ink text-base md:text-[18px] leading-[1.6] font-normal"
-            >
-              Внедряю изменения поэтапно. Сначала запускаем минимальные изменения и тестируем результат. 
-              Затем масштабируем успешные решения и корректируем неработающие. Каждый шаг измеряем метриками.
-            </motion.p>
+            <div className="space-y-8 md:space-y-12">
+              <motion.p
+                variants={itemVariants}
+                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+              >
+                Начинаю с глубокого <span className="font-serif italic u-lime-underline">анализа</span> вашего бизнеса. Изучаю текущие процессы, выявляю узкие места и точки роста. 
+                Не работаю по шаблонам — каждое решение строится под конкретные задачи и особенности ниши.
+              </motion.p>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-ink text-base md:text-[18px] leading-[1.6] font-normal"
-            >
-              Строю системы, которые работают без вашего постоянного участия. Автоматизирую процессы, 
-              выстраиваю воронки, внедряю инструменты аналитики. Результат — предсказуемый рост выручки месяц за месяцем.
-            </motion.p>
-          </div>
-        </motion.div>
+              <motion.p
+                variants={itemVariants}
+                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+              >
+                Внедряю изменения поэтапно. Сначала запускаем минимальные изменения и тестируем результат. 
+                Затем масштабируем успешные решения и корректируем неработающие. Каждый шаг измеряем <span className="font-serif italic u-lime-underline">метриками</span>.
+              </motion.p>
+
+              <motion.p
+                variants={itemVariants}
+                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+              >
+                Строю системы, которые работают без вашего постоянного участия. Автоматизирую процессы, 
+                выстраиваю воронки, внедряю инструменты аналитики. Результат — предсказуемый <span className="font-serif italic u-lime-underline">рост выручки</span> месяц за месяцем.
+              </motion.p>
+            </div>
+          </motion.div>
+
+          {/* Right column - Image */}
+          <motion.div
+            variants={itemVariants}
+            className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-soft"
+          >
+            <Image
+              src="/images/portrait-overlay.png"
+              alt="Maryam portrait"
+              fill
+              className="object-cover object-center"
+              style={{ filter: 'grayscale(0.3) sepia(0.1)' }}
+            />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

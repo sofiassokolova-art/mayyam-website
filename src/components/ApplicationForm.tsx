@@ -12,7 +12,6 @@ const ApplicationForm = () => {
     name: "",
     business: "",
     request: "",
-    budget: "",
     contacts: "",
   });
 
@@ -138,21 +137,6 @@ const ApplicationForm = () => {
               </select>
             </div>
 
-            <div>
-              <label htmlFor="budget" className="block text-sm font-medium text-white mb-2">
-                Бюджет / готовность к инвестициям
-              </label>
-              <input
-                type="text"
-                id="budget"
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                required
-                className="w-full bg-white text-ink rounded-lg px-4 py-3 mb-6 focus:outline-none focus:ring-2 focus:ring-lime"
-                placeholder="Укажите бюджет"
-              />
-            </div>
 
             <div>
               <label htmlFor="contacts" className="block text-sm font-medium text-white mb-2">

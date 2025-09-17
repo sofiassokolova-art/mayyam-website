@@ -64,11 +64,23 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 px-6 md:px-12 overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
+    <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/20" />
       
       <div className="container-custom relative z-10">
+        {/* Подпись к блоку */}
+        <div className="text-center mb-16">
+          <h2 
+            className="text-white font-semibold"
+            style={{
+              fontFamily: 'var(--font-raleway), sans-serif',
+              fontSize: 'clamp(20px, 4vw, 32px)'
+            }}
+          >
+            Более 50 готовых успешных кейсов
+          </h2>
+        </div>
         <motion.div
           ref={ref}
           variants={containerVariants}

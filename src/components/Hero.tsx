@@ -77,17 +77,9 @@ const Hero = () => {
                 >
                   / продюсер{" "}
                   <span className="font-serif italic u-lime-underline">роста</span>{" "}
-                  продаж
+                  продаж /
                 </span>
                 <br />
-                <span 
-                  style={{ 
-                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                    fontSize: 'clamp(10px, 2vw, 30px)'
-                  }}
-                >
-                  /
-                </span>{" "}
                 <span 
                   style={{
                     fontFamily: 'var(--font-raleway), sans-serif',
