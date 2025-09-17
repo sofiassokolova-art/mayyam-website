@@ -90,30 +90,37 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-2xl md:max-w-6xl mx-auto"
+          className="relative w-[90%] max-w-sm md:max-w-6xl mx-auto"
         >
-          {/* Адаптивный прямоугольник: вертикальный на мобиле, горизонтальный на десктопе */}
-          <div 
-            className="relative md:aspect-[4/3] aspect-[3/4]"
-            style={{
-              background: 'url(/images/orange-texture-1.png)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              padding: '30px', // уменьшенные отступы на мобиле
-              minHeight: '600px' // выше для мобильной версии
-            }}
-          >
-            {/* Белый внутренний контейнер */}
-            <div className="bg-white h-full p-6 md:p-12 pb-6" style={{ minHeight: '540px' }}>
+          {/* Мобильная вертикальная карточка с мягкой подложкой */}
+          <div className="relative">
+            {/* Мягкая оранжевая подложка для мобиле, обычная для десктопа */}
+            <div 
+              className="absolute inset-0 md:relative md:aspect-[4/3] md:p-8 mobile-form-bg" 
+              style={{
+                background: 'url(/images/orange-texture-1.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                borderRadius: '12px'
+              }}
+            />
+            
+            {/* Белая карточка */}
+            <div 
+              className="relative bg-white rounded-lg p-6 md:p-12 md:m-8 mobile-form-card" 
+              style={{ 
+                minHeight: '500px'
+              }}
+            >
               {/* Заголовок шрифтом как у Манифеста */}
               <motion.h3
                 variants={itemVariants}
-                className="text-ink uppercase text-center mb-6"
+                className="text-ink uppercase text-center mb-8 pt-4"
                 style={{ 
                   fontFamily: 'var(--font-raleway), sans-serif',
-                  fontSize: 'clamp(20px, 5vw, 32px)', // уменьшенный размер
-                  fontWeight: 800,
-                  letterSpacing: '2px'
+                  fontSize: 'clamp(24px, 6vw, 32px)', // крупный жирный для мобиле
+                  fontWeight: 900,
+                  letterSpacing: '1px'
                 }}
               >
                 СОТРУДНИЧЕСТВО
@@ -128,7 +135,7 @@ const ApplicationForm = () => {
                 
                 {/* Поле: Имя */}
                 <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
+                  <label htmlFor="name" className="block text-xs font-medium text-neutral-400 mb-2 uppercase tracking-wider">
                     Имя
                   </label>
                   <input
@@ -138,7 +145,7 @@ const ApplicationForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px' // строго прямоугольно
@@ -159,7 +166,7 @@ const ApplicationForm = () => {
                     value={formData.business}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -179,7 +186,7 @@ const ApplicationForm = () => {
                     value={formData.request}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -207,7 +214,7 @@ const ApplicationForm = () => {
                     value={formData.contacts}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
+                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-4 focus:outline-none focus:border-lime transition-all duration-300 text-base"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
@@ -221,7 +228,7 @@ const ApplicationForm = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-3 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(12px, 2vw, 16px)',

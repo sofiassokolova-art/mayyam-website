@@ -45,8 +45,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 h-full">
-        <div className="container-custom h-full">
-          <div className="flex items-end justify-start h-full pb-20">
+        <div className="container-custom h-full px-6 md:px-4">
+          <div className="flex items-end justify-start h-full pb-16 md:pb-20">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -56,11 +56,11 @@ const Hero = () => {
               {/* Main title */}
               <motion.h1
                 variants={itemVariants}
-                className="text-white leading-[0.9] mb-1 md:mb-2"
+                className="text-white leading-[0.9] mb-4 md:mb-2" // увеличенный отступ на мобиле
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontWeight: 800,
-                  fontSize: 'clamp(48px,12vw,120px)' // увеличенный текст на мобиле
+                  fontSize: 'clamp(48px,12vw,120px)'
                 }}
               >
                 Марьям
@@ -106,19 +106,19 @@ const Hero = () => {
                 запуски, воронки, маркетинг и рост выручки под ключ
               </motion.p>
 
-              {/* CTA Buttons - минималистичные */}
+              {/* CTA Buttons - улучшенные для мобиле */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-3 md:gap-4"
+                className="flex flex-col sm:flex-row gap-4 md:gap-4 w-full sm:w-auto"
               >
-                <button 
-                  className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white font-medium"
+                <button
+                  className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white font-semibold py-4 px-8 text-base md:text-sm min-h-[52px]"
                   style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
                 >
                   НА СВЯЗЬ
                 </button>
-                <button 
-                  className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent font-medium"
+                <button
+                  className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent font-semibold py-4 px-8 text-base md:text-sm min-h-[52px]"
                   style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
                 >
                   МОЙ ПОДХОД

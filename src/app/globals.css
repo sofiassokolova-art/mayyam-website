@@ -103,6 +103,18 @@ body {
   letter-spacing: -0.02em; /* уменьшенный трекинг для плотности */
 }
 
+/* Мобильные стили для анкеты */
+@media (max-width: 767px) {
+  .mobile-form-bg {
+    opacity: 0.1 !important;
+    transform: scale(1.05) !important;
+  }
+  
+  .mobile-form-card {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important;
+  }
+}
+
 /* Стили для Swiper навигационных стрелок - без кружочков, отодвинутые от блоков */
 .cases-swiper .swiper-button-next,
 .cases-swiper .swiper-button-prev {

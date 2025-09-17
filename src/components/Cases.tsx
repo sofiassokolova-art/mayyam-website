@@ -84,9 +84,9 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center" style={{ paddingTop: '80px', paddingBottom: '100px' }}>
-      {/* Fashion-журнальный overlay - усиленный для контраста */}
-      <div className="absolute inset-0 bg-black/45" />
+    <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
+      {/* Мягкий overlay для мобиле, усиленный для десктопа */}
+      <div className="absolute inset-0 bg-black/20 md:bg-black/45" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -124,44 +124,44 @@ const Cases = () => {
           >
             {cases.map((caseItem) => (
               <SwiperSlide key={caseItem.id}>
-                {/* Квадратная карточка-обложка */}
-                <div className="relative w-80 h-80 mx-2" 
+                {/* Чистая карточка без прозрачности для мобиле */}
+                <div className="relative bg-white/95 backdrop-blur-sm rounded-lg mx-2 h-48 md:h-80 md:w-80" 
                      style={{
-                       background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%)',
-                       backdropFilter: 'blur(10px)',
-                       aspectRatio: '1/1' // квадратная форма
+                       boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
                      }}>
                   
                   {/* Минималистичный контент */}
-                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                  <div className="p-6 h-full flex flex-col justify-between text-center">
                     
-                    {/* Метрика - шрифт как у нумерации в WhoIHelp */}
-                    <div className="text-left">
-                      <h3 className="text-white font-extrabold uppercase leading-none mb-2"
+                    {/* Метрика */}
+                    <div>
+                      <h3 className="text-ink font-extrabold uppercase leading-tight mb-4"
                           style={{
-                            fontSize: 'clamp(20px, 5vw, 32px)', // уменьшенный размер для вписывания в блок
+                            fontSize: 'clamp(18px, 4vw, 28px)',
                             fontWeight: 900,
-                            fontFamily: 'var(--font-raleway), sans-serif', // шрифт как у нумерации
-                            letterSpacing: '1px'
+                            fontFamily: 'var(--font-raleway), sans-serif',
+                            letterSpacing: '0.5px'
                           }}>
                         {caseItem.metrics}
                       </h3>
                     </div>
                     
-                    {/* Ниша с мини-иконкой */}
-                    <div className="text-left flex items-center gap-3">
-                      {/* Мини-иконка логотипа */}
-                      <div className="w-6 h-6 bg-white/20 rounded-sm flex items-center justify-center flex-shrink-0">
-                        <div className="w-3 h-3 bg-white/60 rounded-sm"></div>
-                      </div>
-                      <p className="text-white/70 font-serif italic"
+                    {/* Ниша с иконкой под названием */}
+                    <div>
+                      <p className="text-neutral-600 font-serif italic mb-3 text-sm"
                          style={{
-                           fontSize: 'clamp(12px, 2.5vw, 16px)',
-                           letterSpacing: '0.5px'
+                           letterSpacing: '0.3px'
                          }}>
                         <span className="u-lime-underline text-lime">{caseItem.keyword}</span>
-                        <span className="text-white/60">{caseItem.niche.replace(caseItem.keyword, '')}</span>
+                        <span className="text-neutral-500">{caseItem.niche.replace(caseItem.keyword, '')}</span>
                       </p>
+                      
+                      {/* Мини-иконка логотипа под названием */}
+                      <div className="flex justify-center">
+                        <div className="w-6 h-6 bg-neutral-200 rounded-sm flex items-center justify-center">
+                          <div className="w-3 h-3 bg-neutral-400 rounded-sm"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
