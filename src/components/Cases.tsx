@@ -12,24 +12,31 @@ const Cases = () => {
   const cases = [
     {
       id: 1,
-      title: "Beauty D2C",
-      tag: "Beauty",
+      logo: "/logos/logo-placeholder.svg",
       metrics: "+182% ВЫРУЧКИ",
-      image: "/images/5b9fdec4-2b86-46ce-b899-303f396b8440.png"
+      niche: "Beauty D2C",
+      keyword: "Beauty"
     },
     {
       id: 2,
-      title: "EdTech Проект", 
-      tag: "EdTech",
-      metrics: "+500K ВЫРУЧКА",
-      image: "/images/phones.png"
+      logo: "/logos/logo-placeholder.svg",
+      metrics: "×3 ROI",
+      niche: "EdTech проект",
+      keyword: "EdTech"
     },
     {
       id: 3,
-      title: "SaaS Платформа",
-      tag: "SaaS",
-      metrics: "+60% LTV",
-      image: "/images/portrait-overlay.png"
+      logo: "/logos/logo-placeholder.svg",
+      metrics: "-45% CPL",
+      niche: "B2B-продажи",
+      keyword: "B2B"
+    },
+    {
+      id: 4,
+      logo: "/logos/logo-placeholder.svg",
+      metrics: "+500K ВЫРУЧКА",
+      niche: "SaaS платформа",
+      keyword: "SaaS"
     }
   ];
 
@@ -57,9 +64,9 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative section-spacing overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+    <section className="relative py-16 md:py-24 px-6 md:px-12 overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/20" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -67,41 +74,37 @@ const Cases = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12"
         >
-          <div className="space-y-0">
-            {cases.map((caseItem, index) => (
-              <motion.div
-                key={caseItem.id}
-                variants={itemVariants}
-                className="relative w-full aspect-[16/9] md:h-[80vh] group cursor-pointer overflow-hidden"
-              >
+          {cases.map((caseItem) => (
+            <motion.div
+              key={caseItem.id}
+              variants={itemVariants}
+              className="text-center space-y-6"
+            >
+              {/* Logo */}
+              <div className="flex justify-center">
                 <Image
-                  src={caseItem.image}
-                  alt={caseItem.title}
-                  fill
-                  className="object-cover object-center filter grayscale group-hover:filter-none transition-all duration-700"
+                  src={caseItem.logo}
+                  alt={`${caseItem.keyword} logo`}
+                  width={80}
+                  height={48}
+                  className="md:w-[100px] md:h-[60px] object-contain"
                 />
-                <div className="absolute inset-0 bg-black/40" />
-                
-                {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-between p-8 md:p-16">
-                  {/* Top - Metrics */}
-                  <div className="flex justify-start">
-                    <h2 className="text-white text-4xl md:text-6xl lg:text-8xl font-extrabold uppercase tracking-tight leading-none">
-                      {caseItem.metrics}
-                    </h2>
-                  </div>
-                  
-                  {/* Bottom - Title */}
-                  <div className="flex justify-end">
-                    <p className="text-sm text-neutral-300">
-                      <span className="u-lime-underline">{caseItem.tag}</span> {caseItem.title.replace(caseItem.tag, '').trim()}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+              
+              {/* Metrics */}
+              <h3 className="text-white text-xl md:text-[28px] lg:text-[32px] font-extrabold uppercase leading-tight">
+                {caseItem.metrics}
+              </h3>
+              
+              {/* Niche with keyword highlight */}
+              <p className="text-white text-sm md:text-base lg:text-[18px] font-serif italic">
+                <span className="u-lime-underline">{caseItem.keyword}</span>
+                {caseItem.niche.replace(caseItem.keyword, '')}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
