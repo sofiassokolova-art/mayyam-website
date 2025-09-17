@@ -67,22 +67,21 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-5xl mx-auto"
+          className="relative max-w-2xl md:max-w-5xl mx-auto"
         >
-          {/* Горизонтальный прямоугольник - широкий и низкий */}
+          {/* Адаптивный прямоугольник: вертикальный на мобиле, горизонтальный на десктопе */}
           <div 
-            className="relative"
+            className="relative md:aspect-[4/3] aspect-[3/4]"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              padding: '40px',
-              minHeight: '500px', // уменьшенная высота для горизонтальной ориентации
-              aspectRatio: '4/3' // альбомная ориентация
+              padding: '30px', // уменьшенные отступы на мобиле
+              minHeight: '600px' // выше для мобильной версии
             }}
           >
             {/* Белый внутренний контейнер */}
-            <div className="bg-white h-full p-8 md:p-12" style={{ minHeight: '420px' }}>
+            <div className="bg-white h-full p-6 md:p-12" style={{ minHeight: '540px' }}>
               {/* Заголовок шрифтом как у Манифеста */}
               <motion.h3
                 variants={itemVariants}
@@ -219,11 +218,11 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Кнопка CTA с закруглёнными краями */}
-                <div className="pt-8">
+                {/* Кнопка CTA внутри анкеты с лаймовым hover */}
+                <div className="pt-6">
                   <button
                     type="submit"
-                    className="w-full bg-ink text-white hover:bg-neutral-800 py-4 px-8 font-medium uppercase tracking-wider transition-all duration-300 rounded-full"
+                    className="w-full bg-ink text-white hover:bg-lime hover:text-ink py-4 px-8 font-medium uppercase tracking-wider transition-all duration-300 rounded-full"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(14px, 2.5vw, 18px)',

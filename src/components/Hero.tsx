@@ -36,7 +36,7 @@ const Hero = () => {
           alt="Maryam"
           fill
           className="object-cover filter grayscale"
-          style={{ objectPosition: '30% center' }}
+          style={{ objectPosition: '40% center' }} // сдвиг правее для мобильной версии
           priority
         />
         {/* Dark gradient overlay */}
@@ -60,7 +60,7 @@ const Hero = () => {
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontWeight: 800,
-                  fontSize: 'clamp(40px,8vw,120px)'
+                  fontSize: 'clamp(48px,12vw,120px)' // увеличенный текст на мобиле
                 }}
               >
                 Марьям
@@ -72,7 +72,7 @@ const Hero = () => {
                 className="text-white leading-[1.2] mb-1 md:mb-2 ml-4"
                 style={{ 
                   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                  fontSize: 'clamp(16px, 3vw, 40px)',
+                  fontSize: 'clamp(18px, 4vw, 40px)', // увеличенный текст на мобиле
                   fontWeight: 300
                 }}
               >
@@ -88,7 +88,7 @@ const Hero = () => {
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontWeight: 800,
-                  fontSize: 'clamp(40px,8vw,120px)'
+                  fontSize: 'clamp(48px,12vw,120px)' // увеличенный текст на мобиле
                 }}
               >
                 Биктимирова
@@ -99,7 +99,7 @@ const Hero = () => {
                 variants={itemVariants}
                 className="text-neutral-300 mb-8 leading-relaxed max-w-lg"
                 style={{ 
-                  fontSize: 'clamp(14px, 2.5vw, 18px)',
+                  fontSize: 'clamp(16px, 3vw, 18px)', // увеличенный текст на мобиле
                   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif'
                 }}
               >
