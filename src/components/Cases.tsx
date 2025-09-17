@@ -88,13 +88,15 @@ const Cases = () => {
       {/* Белые карточки на оранжевом фоне */}
       <div className="py-20 md:py-32">
         <div className="container-custom">
-          <motion.div
-            ref={ref}
-            variants={itemVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="cases-swiper"
-          >
+          {/* Расширенный контейнер для стрелок */}
+          <div className="relative px-12 md:px-16">
+            <motion.div
+              ref={ref}
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              className="cases-swiper"
+            >
             <Swiper
               modules={[Navigation, Autoplay]}
               spaceBetween={24}
@@ -182,7 +184,8 @@ const Cases = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
