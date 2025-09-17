@@ -63,7 +63,7 @@ const SimpleManifest = () => {
             variants={itemVariants}
             className="order-2 md:order-1"
           >
-            <h2 className="font-brand text-ink uppercase mb-12 text-[clamp(40px, 8vw, 120px)]">
+            <h2 className="font-brand text-ink uppercase mb-12 text-[clamp(80px, 16vw, 240px)]">
               Манифест
             </h2>
             
