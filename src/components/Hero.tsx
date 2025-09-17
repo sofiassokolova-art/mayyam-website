@@ -67,7 +67,7 @@ const Hero = () => {
                 style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, var(--font-raleway), sans-serif' }}
               >
                 продюсер{" "}
-                <span className="font-serif italic text-lg md:text-xl underline decoration-lime decoration-2 underline-offset-4">роста</span>{" "}
+                <span className="font-serif italic text-lg md:text-xl u-lime-underline">роста</span>{" "}
                 продаж
               </motion.h2>
 

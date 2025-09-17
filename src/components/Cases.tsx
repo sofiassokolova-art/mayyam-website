@@ -13,18 +13,21 @@ const Cases = () => {
     {
       id: 1,
       title: "Beauty D2C",
+      tag: "Beauty",
       metrics: "+182% ВЫРУЧКИ",
       image: "/images/case-1.jpg"
     },
     {
       id: 2,
-      title: "EdTech Проект",
+      title: "EdTech Проект", 
+      tag: "EdTech",
       metrics: "+500K ВЫРУЧКА",
       image: "/images/case-3.jpg"
     },
     {
       id: 3,
       title: "SaaS Платформа",
+      tag: "SaaS",
       metrics: "+60% LTV",
       image: "/images/case-5.jpg"
     }
@@ -91,9 +94,9 @@ const Cases = () => {
                   
                   {/* Bottom - Title */}
                   <div className="flex justify-end">
-                    <h3 className="text-neutral-400 text-xl md:text-2xl font-normal">
-                      {caseItem.title}
-                    </h3>
+                    <p className="text-sm text-neutral-300">
+                      <span className="u-lime-underline">{caseItem.tag}</span> {caseItem.title.replace(caseItem.tag, '').trim()}
+                    </p>
                   </div>
                 </div>
               </motion.div>

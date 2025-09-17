@@ -30,10 +30,10 @@ const WhoIHelp = () => {
     // Стилизация нумерации с Raleway Heavy
     result = result.replace(/(\d+)\s*\/\s*/g, '<span style="font-family: var(--font-raleway), sans-serif; font-weight: 900;">$1 /</span> ');
     
-    // Стилизация ключевых слов Georgia italic с подчёркиванием
+    // Стилизация ключевых слов Georgia italic с лайм подчёркиванием
     keywords.forEach(keyword => {
       const regex = new RegExp(`(${keyword})`, 'g');
-      result = result.replace(regex, '<span class="font-serif italic underline decoration-lime decoration-2 underline-offset-4">$1</span>');
+      result = result.replace(regex, '<span class="font-serif italic u-lime-underline">$1</span>');
     });
     
     return result;
