@@ -89,14 +89,13 @@ const CTA = () => {
           {/* Right column - Image */}
           <motion.div
             variants={itemVariants}
-            className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-soft"
+            className="relative h-[400px] md:h-[500px] overflow-hidden shadow-soft"
           >
             <Image
               src="/images/portrait-overlay.png"
               alt="Maryam portrait"
               fill
-              className="object-cover object-center"
-              style={{ filter: 'grayscale(0.3) sepia(0.1)' }}
+              className="object-cover object-center filter grayscale"
             />
           </motion.div>
         </div>

@@ -53,42 +53,45 @@ const Hero = () => {
               animate="visible"
               className="max-w-2xl"
             >
-              {/* Combined title */}
+              {/* Main title */}
+              <motion.h1
+                variants={itemVariants}
+                className="text-white leading-[0.9] mb-8"
+                style={{
+                  fontFamily: 'var(--font-raleway), sans-serif',
+                  fontWeight: 800,
+                  fontSize: 'clamp(40px,8vw,120px)'
+                }}
+              >
+                Марьям
+              </motion.h1>
+
+              {/* Subtitle with role */}
+              <motion.h2
+                variants={itemVariants}
+                className="text-white leading-[1.2] mb-8 ml-4"
+                style={{ 
+                  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontSize: 'clamp(16px, 3vw, 40px)',
+                  fontWeight: 300
+                }}
+              >
+                / продюсер{" "}
+                <span className="font-serif italic u-lime-underline">роста</span>{" "}
+                продаж /
+              </motion.h2>
+
+              {/* Last name */}
               <motion.h1
                 variants={itemVariants}
                 className="text-white leading-[0.9] mb-6"
+                style={{
+                  fontFamily: 'var(--font-raleway), sans-serif',
+                  fontWeight: 800,
+                  fontSize: 'clamp(40px,8vw,120px)'
+                }}
               >
-                <span 
-                  style={{
-                    fontFamily: 'var(--font-raleway), sans-serif',
-                    fontWeight: 800,
-                    fontSize: 'clamp(40px,8vw,120px)'
-                  }}
-                >
-                  Марьям
-                </span>
-                <br />
-                <span 
-                  className="font-normal"
-                  style={{ 
-                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                    fontSize: 'clamp(10px, 2vw, 30px)'
-                  }}
-                >
-                  / продюсер{" "}
-                  <span className="font-serif italic u-lime-underline">роста</span>{" "}
-                  продаж /
-                </span>
-                <br />
-                <span 
-                  style={{
-                    fontFamily: 'var(--font-raleway), sans-serif',
-                    fontWeight: 800,
-                    fontSize: 'clamp(40px,8vw,120px)'
-                  }}
-                >
-                  Биктимирова
-                </span>
+                Биктимирова
               </motion.h1>
 
               {/* Subline - мелкий журнальный комментарий */}

@@ -54,32 +54,49 @@ const ApplicationForm = () => {
   return (
     <section 
       id="application" 
-      className="relative min-h-screen flex justify-center items-center bg-[url('/images/orange-texture-1.png')] bg-cover bg-center"
+      className="py-20 md:py-32"
+      style={{ 
+        marginBottom: '120px',
+        paddingTop: '100px',
+        paddingBottom: '100px'
+      }}
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/30" />
-      
-      <div className="relative z-10 w-full max-w-lg mx-auto px-4">
+      <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="bg-black/70 rounded-2xl px-8 py-10"
+          className="relative max-w-4xl mx-auto"
         >
-          <motion.h3
-            variants={itemVariants}
-            className="text-white text-2xl md:text-[32px] lg:text-[40px] font-bold mb-4 text-center"
+          {/* Оранжевая рамка */}
+          <div 
+            className="absolute inset-0 rounded-2xl"
+            style={{
+              background: 'url(/images/orange-texture-1.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              padding: '30px'
+            }}
           >
-            Заполните анкету
-          </motion.h3>
+            <div className="w-full h-full bg-white rounded-xl"></div>
+          </div>
+          
+          {/* Содержимое формы */}
+          <div className="relative bg-white rounded-xl p-8 md:p-12 m-[30px]">
+            <motion.h3
+              variants={itemVariants}
+              className="text-ink text-2xl md:text-[32px] font-bold mb-4 text-center"
+            >
+              Заполните анкету
+            </motion.h3>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-white text-lg mb-8 text-center"
-          >
-            Я выбираю проекты, с которыми работаю
-          </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="text-muted text-lg mb-8 text-center"
+            >
+              Я выбираю проекты, с которыми работаю
+            </motion.p>
 
           <motion.form
             variants={itemVariants}
@@ -87,7 +104,7 @@ const ApplicationForm = () => {
             className="space-y-6"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
                 Имя
               </label>
               <input
@@ -103,7 +120,7 @@ const ApplicationForm = () => {
             </div>
 
             <div>
-              <label htmlFor="business" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="business" className="block text-sm font-medium text-ink mb-2">
                 Ниша / Бизнес
               </label>
               <input
@@ -119,7 +136,7 @@ const ApplicationForm = () => {
             </div>
 
             <div>
-              <label htmlFor="request" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="request" className="block text-sm font-medium text-ink mb-2">
                 Основной запрос
               </label>
               <select
@@ -139,7 +156,7 @@ const ApplicationForm = () => {
 
 
             <div>
-              <label htmlFor="contacts" className="block text-sm font-medium text-white mb-2">
+              <label htmlFor="contacts" className="block text-sm font-medium text-ink mb-2">
                 Контакты (<span className="u-lime-underline">email</span> / <span className="u-lime-underline">telegram</span>)
               </label>
               <input
@@ -160,7 +177,8 @@ const ApplicationForm = () => {
             >
               Давайте работать вместе
             </button>
-          </motion.form>
+            </motion.form>
+          </div>
         </motion.div>
       </div>
     </section>
