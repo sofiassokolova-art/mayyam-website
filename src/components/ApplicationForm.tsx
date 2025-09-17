@@ -228,7 +228,7 @@ const ApplicationForm = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-neutral-50 text-ink border-2 border-ink hover:bg-ink hover:text-white py-4 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white hover:border-ink py-4 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-md disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(12px, 2vw, 16px)',
