@@ -88,7 +88,7 @@ const ApplicationForm = () => {
         >
           {/* Оранжевая рамка-подложка за белым блоком */}
           <div 
-            className="absolute inset-0 transform scale-105"
+            className="absolute inset-0"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
@@ -98,12 +98,11 @@ const ApplicationForm = () => {
             }}
           />
           
-          {/* Белая анкета поверх оранжевой рамки */}
+          {/* Уменьшенная белая анкета с отступами от оранжевой рамки */}
           <div 
-            className="relative bg-white p-12 md:p-16"
+            className="relative bg-white m-8 md:m-12 p-8 md:p-12"
             style={{ 
               borderRadius: '0px',
-              aspectRatio: '16/10',
               boxShadow: '0 12px 40px rgba(0,0,0,0.15)'
             }}
           >
