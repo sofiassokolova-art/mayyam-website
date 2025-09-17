@@ -34,7 +34,7 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-lime text-ink hover:bg-lime/80 p-4 transition-all duration-300 shadow-lg hidden md:flex items-center justify-center"
+          className="fixed bottom-8 right-8 z-50 bg-lime text-ink hover:bg-lime/90 p-4 transition-all duration-300 shadow-lg hidden md:flex items-center justify-center"
           style={{
             borderRadius: '50%',
             width: '56px',

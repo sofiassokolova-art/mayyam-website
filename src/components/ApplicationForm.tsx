@@ -86,24 +86,25 @@ const ApplicationForm = () => {
           animate={isInView ? "visible" : "hidden"}
           className="relative max-w-4xl mx-auto"
         >
-          {/* Слой 1: Оранжевая картинка с такими же пропорциями */}
+          {/* Оранжевая рамка-подложка за белым блоком */}
           <div 
-            className="absolute inset-0"
+            className="absolute inset-0 transform scale-105"
             style={{
               background: 'url(/images/orange-texture-1.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               borderRadius: '0px',
-              aspectRatio: '16/10' // такие же пропорции как у белой анкеты
+              filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.2))'
             }}
           />
           
-          {/* Слой 2: Белая анкета поверх оранжевой картинки */}
+          {/* Белая анкета поверх оранжевой рамки */}
           <div 
-            className="relative bg-white shadow-2xl p-12 md:p-16"
+            className="relative bg-white p-12 md:p-16"
             style={{ 
-              borderRadius: '0px', // строго прямоугольная
-              aspectRatio: '16/10' // горизонтальная ориентация
+              borderRadius: '0px',
+              aspectRatio: '16/10',
+              boxShadow: '0 12px 40px rgba(0,0,0,0.15)'
             }}
           >
             <div className="h-full flex flex-col justify-center">
@@ -195,7 +196,7 @@ const ApplicationForm = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-3 px-6 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md rounded-full"
+                    className="w-full bg-neutral-50 text-ink border-2 border-ink hover:bg-ink hover:text-white hover:border-ink py-3 px-6 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md rounded-full"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       fontSize: 'clamp(14px, 2.5vw, 18px)', // уменьшенный шрифт
