@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Cases = () => {
   const ref = useRef(null);
@@ -37,6 +43,20 @@ const Cases = () => {
       metrics: "+500K ВЫРУЧКА",
       niche: "SaaS платформа",
       keyword: "SaaS"
+    },
+    {
+      id: 5,
+      logo: "/logos/logo-placeholder.svg",
+      metrics: "+250% КОНВЕРСИЯ",
+      niche: "Финтех стартап",
+      keyword: "Финтех"
+    },
+    {
+      id: 6,
+      logo: "/logos/logo-placeholder.svg",
+      metrics: "×5 РОСТ",
+      niche: "Ретейл сеть",
+      keyword: "Ретейл"
     }
   ];
 
@@ -83,40 +103,65 @@ const Cases = () => {
         </div>
         <motion.div
           ref={ref}
-          variants={containerVariants}
+          variants={itemVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12"
+          className="cases-swiper"
         >
-          {cases.map((caseItem) => (
-            <motion.div
-              key={caseItem.id}
-              variants={itemVariants}
-              className="text-center space-y-6"
-            >
-              {/* Logo */}
-              <div className="flex justify-center">
-                <Image
-                  src={caseItem.logo}
-                  alt={`${caseItem.keyword} logo`}
-                  width={80}
-                  height={48}
-                  className="md:w-[100px] md:h-[60px] object-contain"
-                />
-              </div>
-              
-              {/* Metrics */}
-              <h3 className="text-white text-xl md:text-[28px] lg:text-[32px] font-extrabold uppercase leading-tight">
-                {caseItem.metrics}
-              </h3>
-              
-              {/* Niche with keyword highlight */}
-              <p className="text-white text-sm md:text-base lg:text-[18px] font-serif italic">
-                <span className="u-lime-underline">{caseItem.keyword}</span>
-                {caseItem.niche.replace(caseItem.keyword, '')}
-              </p>
-            </motion.div>
-          ))}
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={32}
+            slidesPerView={1}
+            navigation={true}
+            loop={true}
+            autoplay={{
+              delay: 4500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+            }}
+            className="pb-16"
+          >
+            {cases.map((caseItem) => (
+              <SwiperSlide key={caseItem.id}>
+                <div className="text-center space-y-6 p-6">
+                  {/* Logo */}
+                  <div className="flex justify-center">
+                    <Image
+                      src={caseItem.logo}
+                      alt={`${caseItem.keyword} logo`}
+                      width={80}
+                      height={48}
+                      className="md:w-[100px] md:h-[60px] object-contain"
+                    />
+                  </div>
+                  
+                  {/* Metrics */}
+                  <h3 className="text-white text-xl md:text-[28px] lg:text-[32px] font-extrabold uppercase leading-tight">
+                    {caseItem.metrics}
+                  </h3>
+                  
+                  {/* Niche with keyword highlight */}
+                  <p className="text-white text-sm md:text-base lg:text-[18px] font-serif italic">
+                    <span className="u-lime-underline">{caseItem.keyword}</span>
+                    {caseItem.niche.replace(caseItem.keyword, '')}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </motion.div>
       </div>
     </section>
