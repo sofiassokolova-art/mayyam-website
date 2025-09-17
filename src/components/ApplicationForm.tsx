@@ -12,14 +12,37 @@ const ApplicationForm = () => {
     name: "",
     business: "",
     request: "",
-    budget: "",
     contacts: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus('');
+    
+    try {
+      // Имитация отправки формы
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      console.log("Form submitted:", formData);
+      setSubmitStatus('success');
+      
+      // Очистить форму
+      setFormData({
+        name: "",
+        business: "",
+        request: "",
+        contacts: "",
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -81,7 +104,7 @@ const ApplicationForm = () => {
             }}
           >
             {/* Белый внутренний контейнер */}
-            <div className="bg-white h-full p-6 md:p-12" style={{ minHeight: '540px' }}>
+            <div className="bg-white h-full p-6 md:p-12 pb-6" style={{ minHeight: '540px' }}>
               {/* Заголовок шрифтом как у Манифеста */}
               <motion.h3
                 variants={itemVariants}
@@ -171,31 +194,6 @@ const ApplicationForm = () => {
                   </select>
                 </div>
 
-                {/* Поле: Бюджет / готовность к инвестициям */}
-                <div>
-                  <label htmlFor="budget" className="block text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wider">
-                    Бюджет / Инвестиции
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white text-ink border-0 border-b-2 border-neutral-200 px-0 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
-                    style={{ 
-                      fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      borderRadius: '0px'
-                    }}
-                  >
-                    <option value="">Выберите бюджет</option>
-                    <option value="50k-200k">50-200 тыс. руб.</option>
-                    <option value="200k-500k">200-500 тыс. руб.</option>
-                    <option value="500k-1m">500 тыс. - 1 млн руб.</option>
-                    <option value="1m+">От 1 млн руб.</option>
-                    <option value="discuss">Обсудим индивидуально</option>
-                  </select>
-                </div>
 
                 {/* Поле: Контакты */}
                 <div>
@@ -218,19 +216,29 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Кнопка CTA в контейнере с лаймовым hover */}
-                <div className="pt-4">
+                {/* Кнопка CTA с чёрным контуром и функциональностью */}
+                <div className="pt-6">
                   <button
                     type="submit"
-                    className="w-full bg-ink text-white hover:bg-lime hover:text-ink py-3 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-full"
+                    disabled={isSubmitting}
+                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-3 px-6 font-medium uppercase tracking-wider transition-all duration-300 rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      fontSize: 'clamp(12px, 2vw, 16px)', // уменьшенный шрифт
+                      fontSize: 'clamp(12px, 2vw, 16px)',
                       letterSpacing: '1px'
                     }}
                   >
-                    ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ
+                    {isSubmitting ? 'ОТПРАВЛЯЕМ...' : 'ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ'}
                   </button>
+                  
+                  {/* Статусник отправки */}
+                  {submitStatus && (
+                    <div className="mt-4 text-center">
+                      <p className={`text-sm ${submitStatus === 'success' ? 'text-lime' : 'text-red-500'}`}>
+                        {submitStatus === 'success' ? 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.' : 'Ошибка отправки. Попробуйте ещё раз.'}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </motion.form>
             </div>

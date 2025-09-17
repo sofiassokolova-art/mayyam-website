@@ -60,7 +60,7 @@ const MyApproach = () => {
               className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
               style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
-              Начинаю с глубокого <span className="font-serif italic u-lime-underline">анализа</span> вашего бизнеса. Изучаю текущие процессы, выявляю узкие места и точки роста. 
+              Начинаю с глубокого <span className="font-serif italic px-2 py-1 rounded" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>анализа</span> вашего бизнеса. Изучаю текущие процессы, выявляю узкие места и точки роста. 
               Не работаю по шаблонам — каждое решение строится под конкретные задачи и особенности ниши.
             </motion.p>
 
@@ -70,7 +70,7 @@ const MyApproach = () => {
               style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
               Внедряю изменения поэтапно. Сначала запускаем минимальные изменения и тестируем результат. 
-              Затем масштабируем успешные решения и корректируем неработающие. Каждый шаг измеряем <span className="font-serif italic u-lime-underline">метриками</span>.
+              Затем масштабируем успешные решения и корректируем неработающие. Каждый шаг измеряем <span className="font-serif italic px-2 py-1 rounded" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>метриками</span>.
             </motion.p>
 
             <motion.p
@@ -79,7 +79,7 @@ const MyApproach = () => {
               style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
               Строю системы, которые работают без вашего постоянного участия. Автоматизирую процессы, 
-              выстраиваю воронки, внедряю инструменты аналитики. Результат — предсказуемый <span className="font-serif italic u-lime-underline">рост выручки</span> месяц за месяцем.
+              выстраиваю воронки, внедряю инструменты аналитики. Результат — предсказуемый <span className="font-serif italic px-2 py-1 rounded" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>рост выручки</span> месяц за месяцем.
             </motion.p>
           </div>
         </motion.div>
