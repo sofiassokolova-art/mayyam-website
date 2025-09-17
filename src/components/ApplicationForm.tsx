@@ -88,21 +88,21 @@ const ApplicationForm = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="relative max-w-2xl mx-auto"
+          className="relative w-[95%] md:w-[60%] max-w-3xl mx-auto"
         >
-          {/* Журнальный блок с толстой оранжевой рамкой */}
+          {/* Белый блок с толстой оранжевой рамкой */}
           <div 
-            className="relative bg-white shadow-2xl" 
+            className="relative bg-white shadow-xl" 
             style={{ 
               border: '80px solid transparent',
               backgroundImage: 'url(/images/orange-texture-1.png), linear-gradient(white, white)',
               backgroundOrigin: 'border-box, padding-box',
               backgroundClip: 'border-box, padding-box',
-              borderRadius: '0px'
+              borderRadius: '0px' // строго прямоугольный
             }}
           >
             <div className="p-12 md:p-16">
-              {/* Премиальный заголовок */}
+              {/* Главный заголовок */}
               <motion.h3
                 variants={itemVariants}
                 className="text-ink uppercase text-center mb-3"
@@ -116,14 +116,15 @@ const ApplicationForm = () => {
                 СОТРУДНИЧЕСТВО
               </motion.h3>
 
-              {/* Подзаголовок курсивом */}
+              {/* Подзаголовок серый */}
               <motion.p
                 variants={itemVariants}
-                className="text-neutral-600 text-center mb-16 italic"
+                className="text-center mb-16"
                 style={{ 
-                  fontFamily: 'Georgia, serif',
+                  fontFamily: 'Helvetica Neue, Arial, sans-serif',
                   fontSize: 'clamp(16px, 3vw, 20px)',
-                  color: '#666'
+                  color: '#666',
+                  fontWeight: 400
                 }}
               >
                 Я выбираю проекты, с которыми работаю
@@ -132,11 +133,13 @@ const ApplicationForm = () => {
               <motion.form
                 variants={itemVariants}
                 onSubmit={handleSubmit}
-                className="space-y-10"
+                className="space-y-8"
               >
+                {/* Все поля вертикально друг под другом */}
+                
                 {/* Поле: Имя */}
                 <div>
-                  <label htmlFor="name" className="block text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: '#000' }}>
+                  <label htmlFor="name" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
                     ИМЯ
                   </label>
                   <input
@@ -157,7 +160,7 @@ const ApplicationForm = () => {
 
                 {/* Поле: Ниша / Бизнес */}
                 <div>
-                  <label htmlFor="business" className="block text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: '#000' }}>
+                  <label htmlFor="business" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
                     НИША / БИЗНЕС
                   </label>
                   <input
@@ -178,7 +181,7 @@ const ApplicationForm = () => {
 
                 {/* Поле: Основной запрос */}
                 <div>
-                  <label htmlFor="request" className="block text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: '#000' }}>
+                  <label htmlFor="request" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
                     ОСНОВНОЙ ЗАПРОС
                   </label>
                   <select
@@ -204,7 +207,7 @@ const ApplicationForm = () => {
 
                 {/* Поле: Бюджет */}
                 <div>
-                  <label htmlFor="budget" className="block text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: '#000' }}>
+                  <label htmlFor="budget" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
                     БЮДЖЕТ / ГОТОВНОСТЬ К ИНВЕСТИЦИЯМ
                   </label>
                   <select
@@ -230,7 +233,7 @@ const ApplicationForm = () => {
 
                 {/* Поле: Контакты */}
                 <div>
-                  <label htmlFor="contacts" className="block text-xs font-bold mb-3 uppercase tracking-wider" style={{ color: '#000' }}>
+                  <label htmlFor="contacts" className="block text-xs font-bold mb-3 uppercase tracking-wider text-ink">
                     КОНТАКТЫ (EMAIL / TELEGRAM)
                   </label>
                   <input
@@ -249,17 +252,17 @@ const ApplicationForm = () => {
                   />
                 </div>
 
-                {/* Премиальная кнопка на всю ширину */}
+                {/* Кнопка на всю ширину формы */}
                 <div className="pt-8">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-5 px-8 font-bold uppercase tracking-wider transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-white text-ink border-2 border-ink hover:bg-ink hover:text-white py-5 px-8 font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
-                      fontSize: 'clamp(14px, 2.5vw, 18px)',
-                      letterSpacing: '1px',
-                      borderRadius: '0px'
+                      fontSize: 'clamp(16px, 3vw, 20px)',
+                      letterSpacing: '0.5px',
+                      borderRadius: '0px' // строго прямоугольная
                     }}
                   >
                     {isSubmitting ? 'ОТПРАВЛЯЕМ...' : 'ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ'}
