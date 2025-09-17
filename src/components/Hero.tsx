@@ -56,9 +56,18 @@ const Hero = () => {
               {/* Combined title */}
               <motion.h1
                 variants={itemVariants}
-                className="font-brand text-[clamp(40px,8vw,120px)] text-white leading-[0.9] mb-6"
+                className="text-white leading-[0.9] mb-6"
               >
-                Марьям /{" "}
+                <span 
+                  style={{
+                    fontFamily: 'var(--font-raleway), sans-serif',
+                    fontWeight: 800,
+                    fontSize: 'clamp(40px,8vw,120px)'
+                  }}
+                >
+                  Марьям
+                </span>
+                <br />
                 <span 
                   className="font-normal"
                   style={{ 
@@ -66,11 +75,28 @@ const Hero = () => {
                     fontSize: 'clamp(10px, 2vw, 30px)'
                   }}
                 >
-                  продюсер{" "}
+                  / продюсер{" "}
                   <span className="font-serif italic u-lime-underline">роста</span>{" "}
                   продаж
                 </span>
-                {" "} / Биктимирова
+                <br />
+                <span 
+                  style={{ 
+                    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+                    fontSize: 'clamp(10px, 2vw, 30px)'
+                  }}
+                >
+                  /
+                </span>{" "}
+                <span 
+                  style={{
+                    fontFamily: 'var(--font-raleway), sans-serif',
+                    fontWeight: 800,
+                    fontSize: 'clamp(40px,8vw,120px)'
+                  }}
+                >
+                  Биктимирова
+                </span>
               </motion.h1>
 
               {/* Subline - мелкий журнальный комментарий */}
