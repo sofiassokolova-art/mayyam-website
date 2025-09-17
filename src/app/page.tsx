@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Editorial from "@/components/Editorial";
 import Metrics from "@/components/Metrics";
 import WorkWithMaryam from "@/components/WorkWithMaryam";
 import Cases from "@/components/Cases";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <Editorial />
       <Metrics />
       <WorkWithMaryam />
       <Cases />

@@ -33,9 +33,9 @@ const Hero = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-phones.jpg"
-          alt="Марьям"
+          alt="Maryam"
           fill
-          className="object-cover filter grayscale"
+          className="object-cover object-center filter grayscale"
           priority
         />
         {/* Dark gradient overlay */}
@@ -45,17 +45,17 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 h-full">
         <div className="container-custom h-full">
-          <div className="grid lg:grid-cols-12 items-center h-full">
+          <div className="flex items-center justify-start h-full">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="lg:col-span-7"
+              className="max-w-2xl"
             >
               {/* Brand Name */}
               <motion.h1
                 variants={itemVariants}
-                className="text-[clamp(72px,10vw,160px)] text-white font-extrabold leading-none uppercase tracking-[-0.02em] mb-6"
+                className="text-[clamp(80px,12vw,200px)] text-white font-extrabold leading-none uppercase tracking-[-0.02em] mb-8"
               >
                 МАРЬЯМ
               </motion.h1>
@@ -67,15 +67,15 @@ const Hero = () => {
               >
                 продюсер{" "}
                 <span className="font-serif italic">роста</span>{" "}
-                <span className="font-script">продаж</span>
+                <span className="font-script text-neutral-300">продаж</span>
               </motion.h2>
 
               {/* Subline */}
               <motion.p
                 variants={itemVariants}
-                className="text-muted text-base md:text-lg max-w-xl mb-8"
+                className="text-neutral-400 text-sm md:text-base max-w-xl mb-8 leading-relaxed"
               >
-                Запуски, воронки, маркетинг и рост выручки под ключ
+                запуски, воронки, маркетинг и рост выручки под ключ
               </motion.p>
 
               {/* CTA Buttons */}
@@ -83,10 +83,10 @@ const Hero = () => {
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-3 md:gap-4"
               >
-                <button className="btn-capsule bg-ink text-white hover:bg-neutral-800 border-2 border-ink">
+                <button className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white">
                   НА СВЯЗЬ
                 </button>
-                <button className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink">
+                <button className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent">
                   МОЙ ПОДХОД
                 </button>
               </motion.div>

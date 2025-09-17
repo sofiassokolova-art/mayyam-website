@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
 
 const Manifest = () => {
   const ref = useRef(null);
@@ -70,14 +69,7 @@ const Manifest = () => {
   return (
     <section className="relative bg-ink section-spacing overflow-hidden">
       {/* Background texture */}
-      <div className="absolute inset-0 opacity-10">
-        <Image
-          src="/images/orange-texture-1.jpg"
-          alt="texture"
-          fill
-          className="object-cover mix-blend-overlay"
-        />
-      </div>
+      <div className="absolute inset-0 opacity-10 bg-[url('/images/orange-texture-1.jpg')] bg-cover bg-center mix-blend-overlay" />
       
       <div className="container-custom relative z-10">
         <motion.div

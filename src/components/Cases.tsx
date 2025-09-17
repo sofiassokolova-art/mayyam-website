@@ -77,17 +77,9 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative section-spacing overflow-hidden">
-      {/* Orange texture background */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/orange-texture-1.jpg"
-          alt="texture background"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/70" />
-      </div>
+    <section className="relative section-spacing overflow-hidden bg-[url('/images/orange-texture-1.jpg')] bg-cover bg-center">
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/70" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -134,12 +126,12 @@ const Cases = () => {
               {cases.map((caseItem) => (
                 <SwiperSlide key={caseItem.id}>
                   <div className="relative group cursor-pointer">
-                    <div className="relative h-80 rounded-2xl overflow-hidden">
+                    <div className="relative h-[250px] md:h-[500px] rounded-2xl overflow-hidden">
                       <Image
                         src={caseItem.image}
                         alt={caseItem.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       
