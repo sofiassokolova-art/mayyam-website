@@ -35,8 +35,8 @@ const Hero = () => {
           src="/images/hero-main.png"
           alt="Maryam"
           fill
-          className="object-cover object-right-top filter grayscale"
-          style={{ transform: 'scale(0.85)' }}
+          className="object-cover filter grayscale"
+          style={{ objectPosition: '30% center' }}
           priority
         />
         {/* Dark gradient overlay */}
@@ -61,13 +61,13 @@ const Hero = () => {
                 Марьям / Биктимирова
               </motion.h1>
 
-              {/* Role - 1/6 от высоты МАРЬЯМ */}
+              {/* Role - уменьшенный в 2 раза */}
               <motion.h2
                 variants={itemVariants}
                 className="text-white font-normal mb-4"
                 style={{ 
                   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                  fontSize: 'clamp(20px, 4vw, 60px)'
+                  fontSize: 'clamp(10px, 2vw, 30px)'
                 }}
               >
                 продюсер{" "}

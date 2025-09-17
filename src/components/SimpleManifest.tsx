@@ -39,10 +39,10 @@ const SimpleManifest = () => {
   const renderStyledText = () => {
     let result = manifestText;
     
-    // Стилизация акцентных слов Georgia italic с лаймовыми точками
+    // Стилизация акцентных слов Georgia italic с прозрачным лаймовым выделением
     accents.forEach(accent => {
       const regex = new RegExp(`(${accent})`, 'g');
-      result = result.replace(regex, '<span class="font-serif italic relative"><span class="absolute -left-4 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-lime rounded-full"></span>$1<span class="absolute -right-4 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-lime rounded-full"></span></span>');
+      result = result.replace(regex, '<span class="font-serif italic px-2 py-1 rounded" style="background-color: rgba(198, 255, 0, 0.15);">$1</span>');
     });
     
     return result;
