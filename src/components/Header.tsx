@@ -36,24 +36,7 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <nav className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <div>
-            <Link
-              href="/"
-              className={`text-lg font-bold transition-colors duration-200 ${
-                isScrolled ? "text-ink" : "text-white"
-              }`}
-              style={{
-                fontFamily: 'var(--font-raleway), sans-serif',
-                fontWeight: 800,
-                letterSpacing: '0.1em'
-              }}
-            >
-              МАРЬЯМ
-            </Link>
-          </div>
-          
+        <nav className="flex items-center justify-end py-4">
           {/* Navigation */}
           <ul className="flex items-center gap-8">
                         {navItems.map((item) => (
