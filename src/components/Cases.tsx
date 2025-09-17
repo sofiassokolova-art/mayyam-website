@@ -85,47 +85,8 @@ const Cases = () => {
 
   return (
     <section className="relative overflow-hidden bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
-      {/* Оранжевый фон с заголовками */}
-      <div className="py-16 md:py-24">
-        <div className="container-custom">
-          {/* Заголовки на оранжевом фоне */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="text-center mb-16"
-          >
-            <motion.h2
-              variants={itemVariants}
-              className="text-white uppercase mb-4"
-              style={{
-                fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(32px, 7vw, 56px)',
-                fontWeight: 900,
-                letterSpacing: '0.05em',
-                textShadow: '0 2px 8px rgba(0,0,0,0.3)'
-              }}
-            >
-              БОЛЕЕ 50 УСПЕШНЫХ КЕЙСОВ
-            </motion.h2>
-            
-            <motion.p
-              variants={itemVariants}
-              className="text-white/90 italic"
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(16px, 3vw, 24px)',
-                fontWeight: 300
-              }}
-            >
-              Результаты, которые говорят сами за себя
-            </motion.p>
-          </motion.div>
-        </div>
-      </div>
-
       {/* Белые карточки на оранжевом фоне */}
-      <div className="pb-20 md:pb-32">
+      <div className="py-20 md:py-32">
         <div className="container-custom">
           <motion.div
             ref={ref}
