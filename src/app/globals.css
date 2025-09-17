@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/*
+Ensure these classes are not purged by Tailwind:
+font-script text-accent underline-lime btn-capsule section-padding section-spacing container-custom
+*/
+
 html {
   scroll-behavior: smooth;
 }
