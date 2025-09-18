@@ -70,7 +70,7 @@ export default function Page() {
         {/* Верхняя часть - Горизонтальная картинка */}
         <div className="h-2/3 relative overflow-hidden">
           <Image
-            src="/images/telegram-cloud-photo-size-2-5359839347270090841-w.jpg"
+            src="/images/about-me"
             alt="Марьям Биктимирова"
             fill
             className="object-contain grayscale"
