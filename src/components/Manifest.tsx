@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const Manifest = () => {
   const ref = useRef(null);
@@ -13,14 +14,14 @@ const Manifest = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -32,60 +33,70 @@ const Manifest = () => {
   };
 
   return (
-    <section className="relative bg-ink py-20 md:py-32 overflow-hidden">
-      {/* Оранжевая текстура фона */}
-      <div className="absolute inset-0 -z-10">
-        <div 
-          className="w-full h-full opacity-20"
-          style={{
-            background: 'url(/images/telegram-cloud-photo-size-2-5350554559984040323-y.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-orange-800/20" />
-      </div>
-      
+    <section className="relative bg-paper py-20 md:py-32 overflow-hidden">
       <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="space-y-12 md:space-y-16 text-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-white font-black leading-tight"
-            style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(32px, 6vw, 64px)',
-            }}
-          >
-            Я строю систему роста под ключ.
-          </motion.h2>
+          {/* Левая колонка - Текст */}
+          <motion.div variants={itemVariants} className="space-y-8">
+            {/* Заголовок МАНИФЕСТ */}
+            <h2
+              className="text-ink font-black leading-tight"
+              style={{
+                fontFamily: 'var(--font-raleway), sans-serif',
+                fontSize: 'clamp(48px, 8vw, 96px)',
+                letterSpacing: '0.02em',
+              }}
+            >
+              МАНИФЕСТ
+            </h2>
 
-          <motion.h2
-            variants={itemVariants}
-            className="text-lime font-black leading-tight"
-            style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(28px, 5vw, 56px)',
-            }}
-          >
-            Стратегия вместо хаотичного маркетинга.
-          </motion.h2>
+            {/* Основной текст */}
+            <div className="space-y-6">
+              <p
+                className="text-ink leading-relaxed"
+                style={{
+                  fontFamily: 'Georgia, serif',
+                  fontSize: 'clamp(18px, 2.5vw, 24px)',
+                  lineHeight: 1.6,
+                }}
+              >
+                Я создаю <span className="u-lime-highlight italic">системы роста</span>, которые работают
+                вместо хаоса. Для меня важна только <span className="u-lime-highlight italic">выручка</span>,
+                измеримая в цифрах. Каждый запуск — это
+              </p>
+              
+              <p
+                className="text-ink leading-relaxed"
+                style={{
+                  fontFamily: 'Georgia, serif',
+                  fontSize: 'clamp(18px, 2.5vw, 24px)',
+                  lineHeight: 1.6,
+                }}
+              >
+                <span className="u-lime-highlight italic">стратегия</span>, а не случайность. Я работаю с теми,
+                кто готов масштабироваться.
+              </p>
+            </div>
+          </motion.div>
 
-          <motion.h2
-            variants={itemVariants}
-            className="text-white font-black leading-tight"
-            style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(24px, 4.5vw, 48px)',
-            }}
-          >
-            Выручка — мой главный KPI.
-          </motion.h2>
+          {/* Правая колонка - Изображение */}
+          <motion.div variants={itemVariants} className="relative">
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/images/phones.png"
+                alt="Марьям с телефонами"
+                fill
+                className="object-cover grayscale"
+                priority
+              />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

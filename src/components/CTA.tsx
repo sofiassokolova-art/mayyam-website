@@ -28,75 +28,83 @@ const CTA = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.8,
         ease: "easeOut" as const,
       },
     },
   };
 
   return (
-    <section id="contact" className="relative bg-ink py-20 md:py-32 overflow-hidden">
-      {/* Фото-декор справа */}
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-96 h-[600px] opacity-15 -z-10">
-        <Image
-          src="/images/photo_2025-09-15 18.13.22.jpeg"
-          alt="фон CTA"
-          fill
-          className="object-cover object-center"
-        />
-      </div>
-
-      <div className="container-custom relative z-10">
+    <section id="contact" className="relative bg-paper py-20 md:py-32 overflow-hidden">
+      <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="max-w-2xl"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
         >
-          <motion.h3
-            variants={itemVariants}
-            className="text-white text-4xl md:text-6xl font-extrabold mb-8"
-            style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-            }}
-          >
-            связаться
-          </motion.h3>
-
-          <motion.button
-            variants={itemVariants}
-            className="btn-capsule bg-lime text-ink h-14 md:h-16 px-10 hover:shadow-glow mb-8"
-          >
-            Записаться
-          </motion.button>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-6 mb-8"
-          >
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-white hover:text-lime transition-colors duration-200 text-lg"
-              >
-                {link.name}
-              </a>
-            ))}
+          {/* Левая колонка - Изображение */}
+          <motion.div variants={itemVariants} className="relative order-2 lg:order-1">
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/images/photo_2025-09-15 18.13.22.jpeg"
+                alt="Марьям"
+                fill
+                className="object-cover grayscale"
+                priority
+              />
+            </div>
           </motion.div>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-neutral-400 text-sm"
-          >
-            © ИП Биктимирова, 2025
-          </motion.p>
+          {/* Правая колонка - Контент */}
+          <motion.div variants={itemVariants} className="space-y-8 order-1 lg:order-2">
+            {/* Заголовок СВЯЗАТЬСЯ */}
+            <h3
+              className="text-ink font-black leading-tight"
+              style={{
+                fontFamily: 'var(--font-raleway), sans-serif',
+                fontSize: 'clamp(48px, 8vw, 96px)',
+                letterSpacing: '0.02em',
+              }}
+            >
+              СВЯЗАТЬСЯ
+            </h3>
+
+            {/* Социальные ссылки */}
+            <div className="space-y-4">
+              {socialLinks.map((link) => (
+                <div key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-ink hover:text-ink transition-colors duration-200 underline-lime"
+                    style={{
+                      fontFamily: 'Georgia, serif',
+                      fontSize: 'clamp(18px, 2.5vw, 24px)',
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            {/* Копирайт */}
+            <p
+              className="text-muted"
+              style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: 'clamp(14px, 2vw, 16px)',
+              }}
+            >
+              © ИП Биктимирова, 2025
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
