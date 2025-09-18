@@ -83,10 +83,17 @@ const CTA = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-ink border-b-2 border-lime hover:border-ink transition-colors duration-200"
+                  className="text-ink transition-colors duration-200 group"
                   style={{
                     fontFamily: 'Georgia, serif',
                     fontSize: 'clamp(16px, 2.5vw, 20px)',
+                    borderBottom: '2px solid #C6FF00',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderBottomColor = '#000000';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderBottomColor = '#C6FF00';
                   }}
                 >
                   {link.name}
