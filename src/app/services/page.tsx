@@ -87,7 +87,7 @@ export default function Page() {
               className="text-ink"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(48px, 6vw, 72px)',
+                fontSize: 'clamp(32px, 5vw, 48px)',
                 fontWeight: 800,
                 letterSpacing: '0.02em',
                 textTransform: 'uppercase'
@@ -117,7 +117,7 @@ export default function Page() {
                       className="text-ink group-hover:translate-x-2 transition-transform duration-200"
                       style={{
                         fontFamily: 'var(--font-raleway), sans-serif',
-                        fontSize: 'clamp(20px, 3vw, 28px)',
+                        fontSize: 'clamp(16px, 2.5vw, 22px)',
                         fontWeight: 800,
                         letterSpacing: '0.02em',
                       }}
@@ -156,7 +156,7 @@ export default function Page() {
                             className="text-neutral-600 leading-relaxed max-w-3xl"
                             style={{
                               fontFamily: 'Georgia, serif',
-                              fontSize: 'clamp(16px, 2.5vw, 18px)',
+                              fontSize: 'clamp(14px, 2vw, 16px)',
                               fontStyle: 'italic',
                               lineHeight: 1.7
                             }}

@@ -130,7 +130,9 @@ body {
   border-radius: 0 !important;
   backdrop-filter: none !important;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-  z-index: 10 !important;
+  z-index: 50 !important;
+  opacity: 1 !important;
+  display: flex !important;
 }
 
 .cases-swiper .swiper-button-next {
