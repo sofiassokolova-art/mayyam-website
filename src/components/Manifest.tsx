@@ -46,11 +46,11 @@ const Manifest = () => {
           <motion.div variants={itemVariants} className="space-y-8">
             {/* Заголовок Манифест */}
             <h2
-              className="text-ink font-black leading-tight"
+              className="text-ink font-bold leading-tight"
               style={{
-                fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(32px, 6vw, 64px)',
-                letterSpacing: '0.02em',
+                fontFamily: 'Georgia, serif',
+                fontSize: 'clamp(24px, 4vw, 32px)',
+                fontWeight: 700,
               }}
             >
               Манифест
@@ -66,8 +66,8 @@ const Manifest = () => {
                   lineHeight: 1.6,
                 }}
               >
-                Я создаю <span className="u-lime-underline italic">системы роста</span>, которые работают
-                вместо хаоса. Для меня важна только <span className="u-lime-underline italic">выручка</span>,
+                Я создаю <span className="u-lime-highlight italic">системы роста</span>, которые работают
+                вместо хаоса. Для меня важна только <span className="u-lime-highlight italic">выручка</span>,
                 измеримая в цифрах. Каждый запуск — это
               </p>
               
@@ -79,7 +79,7 @@ const Manifest = () => {
                   lineHeight: 1.6,
                 }}
               >
-                <span className="u-lime-underline italic">стратегия</span>, а не случайность. Я работаю с теми,
+                <span className="u-lime-highlight italic">стратегия</span>, а не случайность. Я работаю с теми,
                 кто готов масштабироваться.
               </p>
             </div>
@@ -87,12 +87,12 @@ const Manifest = () => {
 
           {/* Правая колонка - Изображение */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="aspect-[4/5] relative overflow-hidden">
+            <div className="aspect-[3/4] relative overflow-hidden max-w-sm mx-auto lg:mx-0">
               <Image
                 src="/images/phones.png"
                 alt="Maryam with phones"
                 fill
-                className="object-cover"
+                className="object-cover grayscale"
                 priority
               />
             </div>

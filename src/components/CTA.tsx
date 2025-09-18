@@ -50,27 +50,28 @@ const CTA = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
         >
           {/* Левая колонка - Изображение */}
-          <motion.div variants={itemVariants} className="relative order-2 lg:order-1">
+          <motion.div variants={itemVariants} className="relative order-1 lg:order-1">
             <div className="aspect-[4/5] relative overflow-hidden">
               <Image
-                src="/images/photo_2025-09-15 18.13.22.jpeg"
+                src="/images/portrait-overlay.png"
                 alt="Maryam portrait"
                 fill
-                className="object-cover"
+                className="object-cover grayscale"
                 priority
               />
             </div>
           </motion.div>
 
           {/* Правая колонка - Контент */}
-          <motion.div variants={itemVariants} className="space-y-8 order-1 lg:order-2">
+          <motion.div variants={itemVariants} className="space-y-8 order-2 lg:order-2">
             {/* Заголовок Связаться */}
             <h3
-              className="text-ink font-black leading-tight"
+              className="text-ink font-bold leading-tight uppercase"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(32px, 6vw, 64px)',
-                letterSpacing: '0.02em',
+                fontSize: 'clamp(24px, 4vw, 32px)',
+                fontWeight: 800,
+                letterSpacing: '0.05em',
               }}
             >
               Связаться
