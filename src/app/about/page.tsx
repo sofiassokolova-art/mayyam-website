@@ -97,7 +97,7 @@ export default function Page() {
                 }}
               >
                 Привет,<br />
-                <span style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 600 }}>я — </span>
+                <span style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 'normal' }}>я — </span>
                 <span className="font-serif italic border-b-2" style={{ borderBottomColor: '#C6FF00', fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 600 }}>Марьям</span>
               </motion.h1>
             </div>
