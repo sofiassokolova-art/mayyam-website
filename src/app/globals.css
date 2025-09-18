@@ -156,3 +156,10 @@ body {
   color: #ffffff !important;
   border-color: #000000 !important;
 }
+
+/* Кнопка на странице "Обо мне" - черная при hover */
+.about-page-button:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}

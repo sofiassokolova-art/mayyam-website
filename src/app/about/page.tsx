@@ -70,7 +70,7 @@ export default function Page() {
         {/* Левая половина - Картинка about-me */}
         <div className="w-1/2 relative overflow-hidden">
           <Image
-            src="/images/about-me"
+            src="/images/about-me.jpg"
             alt="Марьям Биктимирова"
             fill
             className="object-cover grayscale"
@@ -241,7 +241,7 @@ export default function Page() {
           >
             <Link
               href="/#application"
-              className="inline-flex items-center justify-center bg-white text-ink border-2 border-ink px-12 py-4 font-bold uppercase tracking-wider hover:bg-ink hover:text-white hover:border-ink transition-all duration-200 rounded-full"
+              className="inline-flex items-center justify-center bg-white text-ink border-2 border-ink px-12 py-4 font-bold uppercase tracking-wider transition-all duration-200 rounded-full about-page-button"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
                 fontSize: '16px',
