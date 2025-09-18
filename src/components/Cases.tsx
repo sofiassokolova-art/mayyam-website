@@ -89,7 +89,7 @@ const Cases = () => {
       <div className="py-20 md:py-32">
         <div className="container-custom overflow-visible">
                       {/* Контейнер для свайпера с местом для стрелок */}
-                      <div className="relative px-16 md:px-20 overflow-visible">
+                      <div className="relative px-20 md:px-28 overflow-visible">
             <motion.div
               ref={ref}
               variants={itemVariants}
