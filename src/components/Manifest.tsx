@@ -33,23 +33,25 @@ const Manifest = () => {
   };
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#FAFAFA' }}>
+    <section className="relative overflow-hidden" style={{ backgroundColor: '#FAFAFA', paddingTop: '120px', paddingBottom: '120px' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          className="flex flex-col lg:flex-row items-start"
         >
           {/* Левая колонка - Текст */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="flex-1" style={{ marginRight: '60px' }}>
             {/* Заголовок МАНИФЕСТ */}
             <h2
-              className="text-ink font-black leading-tight"
+              className="text-ink font-black leading-tight uppercase"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(48px, 8vw, 96px)',
+                fontSize: '48px',
+                fontWeight: 900,
+                marginBottom: '40px',
                 letterSpacing: '0.02em',
               }}
             >
@@ -57,37 +59,37 @@ const Manifest = () => {
             </h2>
 
             {/* Основной текст */}
-            <div className="space-y-6">
-              <p
-                className="text-ink leading-relaxed"
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: 'clamp(18px, 2.5vw, 24px)',
-                  lineHeight: 1.6,
-                }}
-              >
-                Я создаю <span className="u-lime-highlight italic">системы роста</span>, которые работают
-                вместо хаоса. Для меня важна только <span className="u-lime-highlight italic">выручка</span>,
+            <div 
+              className="text-ink"
+              style={{
+                maxWidth: '500px',
+                fontFamily: 'Georgia, serif',
+                fontSize: '18px',
+                lineHeight: 1.8,
+              }}
+            >
+              <p className="mb-6">
+                Я создаю <span className="italic underline-lime">системы роста</span>, которые работают
+                вместо хаоса. Для меня важна только <span className="italic underline-lime">выручка</span>,
                 измеримая в цифрах. Каждый запуск — это
               </p>
               
-              <p
-                className="text-ink leading-relaxed"
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: 'clamp(18px, 2.5vw, 24px)',
-                  lineHeight: 1.6,
-                }}
-              >
-                <span className="u-lime-highlight italic">стратегия</span>, а не случайность. Я работаю с теми,
+              <p>
+                <span className="italic underline-lime">стратегия</span>, а не случайность. Я работаю с теми,
                 кто готов масштабироваться.
               </p>
             </div>
           </motion.div>
 
           {/* Правая колонка - Изображение */}
-          <motion.div variants={itemVariants} className="relative">
-            <div className="aspect-[4/5] relative overflow-hidden">
+          <motion.div variants={itemVariants} className="relative lg:flex-shrink-0 mt-8 lg:mt-0">
+            <div 
+              className="relative overflow-hidden"
+              style={{
+                maxWidth: '500px',
+                aspectRatio: '4/5',
+              }}
+            >
               <Image
                 src="/images/phones.png"
                 alt="Марьям с телефонами"
