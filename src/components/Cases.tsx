@@ -84,12 +84,12 @@ const Cases = () => {
   };
 
   return (
-    <section className="relative bg-[url('/images/orange-texture-1.png')] bg-cover bg-center">
+    <section className="relative bg-[url('/images/orange-texture-1.png')] bg-cover bg-center overflow-visible">
       {/* Белые карточки на оранжевом фоне */}
       <div className="py-20 md:py-32">
         <div className="container-custom">
                       {/* Расширенный контейнер для стрелок */}
-                      <div className="relative px-20 md:px-24">
+                      <div className="relative px-32 md:px-40">
             <motion.div
               ref={ref}
               variants={itemVariants}

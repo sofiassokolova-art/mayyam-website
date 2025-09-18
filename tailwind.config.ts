@@ -16,16 +16,11 @@ const config: Config = {
       } 
     },
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", "Helvetica Neue", "Helvetica", "Arial", "system-ui", "sans-serif"],
-        serif: ["Georgia", "serif"],
-      },
       colors: {
         ink: "#000000",
         paper: "#FFFFFF",
-        muted: "#666666",
-        "muted-light": "#AAAAAA",
-        lime: "#C6FF00",       // минимальные акценты - максимум 5% интерфейса
+        muted: "#AAAAAA",
+        lime: "#C6FF00",       // акценты: цифры, кнопки, линии
         // Оранжевый не в UI! Только в изображениях/бэкграунд-текстурах кейсов.
       },
       borderRadius: { 
