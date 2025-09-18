@@ -123,8 +123,11 @@ export default function Page() {
               style={{ borderLeftColor: '#C6FF00' }}
             >
               <span 
-                className="font-serif italic px-2 py-1 rounded text-ink" 
-                style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}
+                className="font-serif italic text-ink"
+                style={{
+                  fontSize: '28px',
+                  fontWeight: 600,
+                }}
               >
                 «Моя метрика — выручка»
               </span>
@@ -238,11 +241,10 @@ export default function Page() {
           >
             <Link
               href="/#application"
-              className="inline-flex items-center justify-center bg-ink text-white px-12 py-4 font-bold uppercase tracking-wider hover:bg-neutral-800 transition-all duration-200"
+              className="inline-flex items-center justify-center bg-white text-ink border-2 border-ink px-12 py-4 font-bold uppercase tracking-wider hover:bg-ink hover:text-white hover:border-ink transition-all duration-200 rounded-full"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
                 fontSize: '16px',
-                borderRadius: '0px',
               }}
             >
               Заполнить анкету
