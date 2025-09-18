@@ -66,33 +66,33 @@ export default function Page() {
       </div>
 
       {/* Блок 1 - Заголовок + фото */}
-      <section className="min-h-screen flex">
-        {/* Левая половина - Фото */}
-        <div className="w-1/2 relative overflow-hidden">
+      <section className="min-h-screen bg-white flex flex-col">
+        {/* Верхняя часть - Горизонтальная картинка */}
+        <div className="h-2/3 relative overflow-hidden">
           <Image
-            src="/images/portrait-overlay.png"
+            src="/images/telegram-cloud-photo-size-2-5359839347270090841-w.jpg"
             alt="Марьям Биктимирова"
             fill
-            className="object-cover grayscale"
+            className="object-contain grayscale"
             priority
           />
         </div>
 
-        {/* Правая половина - Заголовок */}
-        <div className="w-1/2 flex items-center justify-center bg-white">
+        {/* Нижняя часть - Заголовок смещенный */}
+        <div className="h-1/3 flex items-center bg-white px-16">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-ink font-thin uppercase"
+            className="text-ink font-thin ml-16"
             style={{
               fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(48px, 8vw, 120px)',
-              letterSpacing: '0.1em',
-              lineHeight: 1.1,
+              fontSize: 'clamp(32px, 6vw, 72px)',
+              letterSpacing: '0.05em',
+              lineHeight: 1.2,
             }}
           >
-            ОБО<br />МНЕ
+            Привет, я <span className="italic underline-lime">Марьям</span>
           </motion.h1>
         </div>
       </section>
@@ -109,39 +109,31 @@ export default function Page() {
           >
             <motion.p
               variants={itemVariants}
-              className="text-ink leading-relaxed text-justify"
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: '18px',
-                lineHeight: 1.8,
-              }}
+              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
+              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
-              Я Марьям Биктимирова — продюсер роста продаж. Работаю с бизнесом, который готов 
+              Работаю с бизнесом, который готов 
               масштабироваться и измерять результат в цифрах. За 8 лет помогла запустить более 
               50 проектов в разных нишах — от стартапов до корпоративных клиентов.
             </motion.p>
 
             <motion.blockquote
               variants={itemVariants}
-              className="text-center py-8 border-l-4 border-lime pl-8"
-              style={{
-                fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: '24px',
-                fontWeight: 600,
-                fontStyle: 'italic',
-              }}
+              className="text-center py-8 border-l-4 pl-8"
+              style={{ borderLeftColor: '#C6FF00' }}
             >
-              «Моя метрика — выручка»
+              <span 
+                className="font-serif italic px-2 py-1 rounded text-ink" 
+                style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}
+              >
+                «Моя метрика — выручка»
+              </span>
             </motion.blockquote>
 
             <motion.p
               variants={itemVariants}
-              className="text-ink leading-relaxed text-justify"
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: '18px',
-                lineHeight: 1.8,
-              }}
+              className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
+              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
               Не верю в хаотичный маркетинг и случайные запуски. Строю систему роста под ключ: 
               от анализа ниши до автоматизации процессов. Каждое решение основано на данных, 
@@ -228,7 +220,7 @@ export default function Page() {
                   {item.caption}
                 </p>
                 {/* Тонкая оранжевая черта под каждой картинкой */}
-                <div className="w-16 h-0.5 bg-orange-500 mx-auto"></div>
+                <div className="w-16 h-0.5 mx-auto" style={{ backgroundColor: '#C6FF00' }}></div>
               </motion.div>
             ))}
           </motion.div>
@@ -245,7 +237,7 @@ export default function Page() {
             transition={{ duration: 0.8 }}
           >
             <Link
-              href="/services"
+              href="/#application"
               className="inline-flex items-center justify-center bg-ink text-white px-12 py-4 font-bold uppercase tracking-wider hover:bg-neutral-800 transition-all duration-200"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
@@ -253,7 +245,7 @@ export default function Page() {
                 borderRadius: '0px',
               }}
             >
-              Смотреть услуги
+              Заполнить анкету
             </Link>
           </motion.div>
         </div>
