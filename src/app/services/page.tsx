@@ -130,7 +130,9 @@ export default function Page() {
                       className="flex items-center justify-center w-8 h-8"
                     >
                       <span
-                        className="text-lime text-2xl font-light leading-none"
+                        className={`text-2xl font-light leading-none transition-colors duration-300 ${
+                          expandedService === service.id ? 'text-lime' : 'text-ink'
+                        }`}
                         style={{
                           fontFamily: 'var(--font-raleway), sans-serif',
                         }}
