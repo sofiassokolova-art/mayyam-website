@@ -175,7 +175,7 @@ export default function Page() {
             <div className="mt-16 text-center">
               <Link
                 href="/#application"
-                className="inline-flex items-center justify-center bg-white text-ink border-2 border-ink px-12 py-4 font-bold uppercase tracking-wider hover:bg-ink hover:text-white hover:border-ink transition-all duration-200 rounded-full"
+                className="inline-flex items-center justify-center bg-white text-ink border-2 border-ink px-12 py-4 font-bold uppercase tracking-wider hover:bg-lime hover:text-ink hover:border-lime transition-all duration-200 rounded-full"
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontSize: '16px',
