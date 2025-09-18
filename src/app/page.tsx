@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhoIHelp from "@/components/WhoIHelp";
-import SimpleManifest from "@/components/SimpleManifest";
 import Cases from "@/components/Cases";
 import MyApproach from "@/components/MyApproach";
 import ApplicationForm from "@/components/ApplicationForm";
@@ -14,7 +13,6 @@ export default function Home() {
       <Header />
       <Hero />
       <WhoIHelp />
-      <SimpleManifest />
       <Cases />
       <MyApproach />
       <ApplicationForm />
