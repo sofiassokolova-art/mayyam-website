@@ -163,3 +163,16 @@ body {
   color: #ffffff !important;
   border-color: #000000 !important;
 }
+
+/* Кнопка на странице "Услуги" - лаймовая при hover */
+.services-cta-button {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+.services-cta-button:hover {
+  background-color: #C6FF00 !important;
+  color: #000000 !important;
+  border-color: #C6FF00 !important;
+}

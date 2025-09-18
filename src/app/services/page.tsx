@@ -175,23 +175,10 @@ export default function Page() {
             <div className="mt-16 text-center">
               <Link
                 href="/#application"
-                className="inline-flex items-center justify-center px-12 py-4 font-bold uppercase tracking-wider transition-all duration-200 rounded-full"
+                className="inline-flex items-center justify-center px-12 py-4 font-bold uppercase tracking-wider transition-all duration-200 rounded-full services-cta-button"
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontSize: '16px',
-                  backgroundColor: '#ffffff',
-                  color: '#000000',
-                  border: '2px solid #000000',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#C6FF00';
-                  e.currentTarget.style.color = '#000000';
-                  e.currentTarget.style.borderColor = '#C6FF00';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ffffff';
-                  e.currentTarget.style.color = '#000000';
-                  e.currentTarget.style.borderColor = '#000000';
                 }}
               >
                 Работать вместе
