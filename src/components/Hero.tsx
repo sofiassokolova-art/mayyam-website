@@ -111,18 +111,20 @@ const Hero = () => {
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-4 md:gap-4 w-full sm:w-auto"
               >
-                <button
-                  className="btn-capsule bg-white text-ink hover:bg-neutral-100 border-2 border-white"
+                <a
+                  href="#application"
+                  className="btn-capsule bg-white text-ink hover:bg-lime hover:text-ink border-2 border-white transition-all duration-300"
                   style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
                 >
                   НА СВЯЗЬ
-                </button>
-                <button
-                  className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent"
+                </a>
+                <a
+                  href="#approach"
+                  className="btn-capsule border-2 border-white text-white hover:bg-white hover:text-ink bg-transparent transition-all duration-300"
                   style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
                 >
                   МОЙ ПОДХОД
-                </button>
+                </a>
               </motion.div>
             </motion.div>
           </div>

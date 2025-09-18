@@ -52,10 +52,9 @@ export default function Page() {
       <div className="fixed top-8 left-8 z-50">
         <Link
           href="/"
-          className="inline-flex items-center justify-center w-32 h-10 bg-white border-2 border-ink text-ink font-bold text-sm uppercase tracking-wider hover:bg-ink hover:text-white transition-all duration-200"
+          className="inline-flex items-center justify-center w-32 h-10 bg-white border-2 border-ink text-ink font-bold text-sm uppercase tracking-wider hover:bg-ink hover:text-white transition-all duration-200 rounded-full"
           style={{
             fontFamily: 'var(--font-raleway), sans-serif',
-            borderRadius: '0px'
           }}
         >
           На главную
@@ -70,7 +69,7 @@ export default function Page() {
               src="/uslugi.JPG"
               alt="Марьям Биктимирова"
               fill
-              className="object-cover grayscale"
+              className="object-cover hover:grayscale transition-all duration-300"
               priority
             />
           </div>
@@ -117,7 +116,7 @@ export default function Page() {
                       className="text-ink group-hover:translate-x-2 transition-transform duration-200"
                       style={{
                         fontFamily: 'var(--font-raleway), sans-serif',
-                        fontSize: 'clamp(16px, 2.5vw, 22px)',
+                        fontSize: 'clamp(14px, 2vw, 18px)',
                         fontWeight: 800,
                         letterSpacing: '0.02em',
                       }}
@@ -131,7 +130,7 @@ export default function Page() {
                       className="flex items-center justify-center w-8 h-8"
                     >
                       <span
-                        className="text-ink text-2xl font-light leading-none"
+                        className="text-lime text-2xl font-light leading-none"
                         style={{
                           fontFamily: 'var(--font-raleway), sans-serif',
                         }}
@@ -156,7 +155,7 @@ export default function Page() {
                             className="text-neutral-600 leading-relaxed max-w-3xl"
                             style={{
                               fontFamily: 'Georgia, serif',
-                              fontSize: 'clamp(14px, 2vw, 16px)',
+                              fontSize: 'clamp(12px, 1.5vw, 14px)',
                               fontStyle: 'italic',
                               lineHeight: 1.7
                             }}

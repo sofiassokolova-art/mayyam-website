@@ -32,7 +32,7 @@ const MyApproach = () => {
   };
 
   return (
-    <section className="bg-paper" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
+    <section id="approach" className="bg-paper" style={{ paddingTop: '100px', paddingBottom: '120px' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
