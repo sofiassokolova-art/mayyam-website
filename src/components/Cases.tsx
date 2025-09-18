@@ -87,15 +87,15 @@ const Cases = () => {
     <section className="relative bg-[url('/images/orange-texture-1.png')] bg-cover bg-center overflow-visible">
       {/* Белые карточки на оранжевом фоне */}
       <div className="py-20 md:py-32">
-        <div className="container-custom">
-                      {/* Расширенный контейнер для стрелок */}
-                      <div className="relative px-32 md:px-40">
+        <div className="container-custom overflow-visible">
+                      {/* Контейнер для свайпера с местом для стрелок */}
+                      <div className="relative px-16 md:px-20 overflow-visible">
             <motion.div
               ref={ref}
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="cases-swiper"
+              className="cases-swiper overflow-visible"
             >
             <Swiper
               modules={[Navigation, Autoplay]}
