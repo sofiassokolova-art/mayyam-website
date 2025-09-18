@@ -19,7 +19,7 @@ const Header = () => {
   const navItems = [
     { href: "/about", label: "обо мне" },
     { href: "/services", label: "услуги" },
-    { href: "#cases", label: "кейсы" },
+    { href: "#contact", label: "контакты" },
   ];
 
   return (
