@@ -32,7 +32,7 @@ const Manifest = () => {
   };
 
   return (
-    <section className="relative bg-ink section-padding overflow-hidden">
+    <section className="relative bg-ink py-20 md:py-32 overflow-hidden">
       {/* Оранжевая текстура фона */}
       <div className="absolute inset-0 -z-10">
         <div 
@@ -58,6 +58,7 @@ const Manifest = () => {
             variants={itemVariants}
             className="text-white font-black leading-tight"
             style={{
+              fontFamily: 'var(--font-raleway), sans-serif',
               fontSize: 'clamp(32px, 6vw, 64px)',
             }}
           >
@@ -68,6 +69,7 @@ const Manifest = () => {
             variants={itemVariants}
             className="text-lime font-black leading-tight"
             style={{
+              fontFamily: 'var(--font-raleway), sans-serif',
               fontSize: 'clamp(28px, 5vw, 56px)',
             }}
           >
@@ -78,6 +80,7 @@ const Manifest = () => {
             variants={itemVariants}
             className="text-white font-black leading-tight"
             style={{
+              fontFamily: 'var(--font-raleway), sans-serif',
               fontSize: 'clamp(24px, 4.5vw, 48px)',
             }}
           >

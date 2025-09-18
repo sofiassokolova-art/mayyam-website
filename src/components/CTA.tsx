@@ -40,11 +40,11 @@ const CTA = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-ink section-padding overflow-hidden">
+    <section id="contact" className="relative bg-ink py-20 md:py-32 overflow-hidden">
       {/* Background portrait */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/portrait-overlay.jpg"
+          src="/images/photo_2025-09-15 18.13.22.jpeg"
           alt="фон CTA"
           fill
           className="object-cover opacity-15 mix-blend-luminosity"
@@ -62,6 +62,9 @@ const CTA = () => {
           <motion.h3
             variants={itemVariants}
             className="text-white text-4xl md:text-6xl font-extrabold mb-8"
+            style={{
+              fontFamily: 'var(--font-raleway), sans-serif',
+            }}
           >
             связаться
           </motion.h3>
