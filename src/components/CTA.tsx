@@ -41,13 +41,13 @@ const CTA = () => {
 
   return (
     <section id="contact" className="relative bg-ink py-20 md:py-32 overflow-hidden">
-      {/* Background portrait */}
-      <div className="absolute inset-0 -z-10">
+      {/* Фото-декор справа */}
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-96 h-[600px] opacity-15 -z-10">
         <Image
           src="/images/photo_2025-09-15 18.13.22.jpeg"
           alt="фон CTA"
           fill
-          className="object-cover opacity-15 mix-blend-luminosity"
+          className="object-cover object-center"
         />
       </div>
 
