@@ -115,46 +115,7 @@ body {
   }
 }
 
-/* Стили для Swiper навигационных стрелок - белые, большие, без кружочков */
-.cases-swiper .swiper-button-next,
-.cases-swiper .swiper-button-prev {
-  color: white !important;
-  font-weight: 900 !important;
-  font-size: 32px !important;
-  width: 50px !important;
-  height: 50px !important;
-  margin-top: -25px !important;
-  transition: all 0.3s ease !important;
-  background: none !important;
-  border: none !important;
-  border-radius: 0 !important;
-  backdrop-filter: none !important;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-  z-index: 50 !important;
-  opacity: 1 !important;
-  display: flex !important;
-}
-
-.cases-swiper .swiper-button-next {
-  right: -80px !important;
-}
-
-.cases-swiper .swiper-button-prev {
-  left: -80px !important;
-}
-
-.cases-swiper .swiper-button-next:hover,
-.cases-swiper .swiper-button-prev:hover {
-  color: #C6FF00 !important;
-  transform: scale(1.2) !important;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.9) !important;
-}
-
-.cases-swiper .swiper-button-next::after,
-.cases-swiper .swiper-button-prev::after {
-  font-size: 32px !important;
-  font-weight: 900 !important;
-}
+/* Старые стили для стрелок удалены - используем кастомные стрелки */
 
 /* Линии подчёркивания/бордеры — в лайме, тонкие h-[2px] */
 .underline-lime {

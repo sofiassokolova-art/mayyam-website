@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from 'swiper';
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,6 +15,7 @@ import "swiper/css/navigation";
 const Cases = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   const cases = [
     {
@@ -78,8 +80,29 @@ const Cases = () => {
       {/* Белые карточки на оранжевом фоне */}
       <div className="py-20 md:py-32">
         <div className="container-custom overflow-visible">
-                      {/* Контейнер для свайпера с местом для стрелок */}
-                      <div className="relative px-24 md:px-32 overflow-visible">
+                      {/* Контейнер для свайпера с кастомными стрелками */}
+                      <div className="relative px-16 md:px-20 overflow-visible">
+            {/* Кастомные стрелки */}
+            <button 
+              onClick={() => swiper?.slidePrev()}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-lime hover:text-ink transition-all duration-300"
+              style={{ marginLeft: '-60px' }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <polyline points="15,18 9,12 15,6"></polyline>
+              </svg>
+            </button>
+            
+            <button 
+              onClick={() => swiper?.slideNext()}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-lime hover:text-ink transition-all duration-300"
+              style={{ marginRight: '-60px' }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <polyline points="9,18 15,12 9,6"></polyline>
+              </svg>
+            </button>
+
             <motion.div
               ref={ref}
               variants={itemVariants}
@@ -88,15 +111,16 @@ const Cases = () => {
               className="cases-swiper overflow-visible"
             >
             <Swiper
-              modules={[Navigation, Autoplay]}
+              modules={[Autoplay]}
               spaceBetween={24}
               slidesPerView={1}
-              navigation={true}
+              navigation={false}
               loop={true}
               autoplay={{
                 delay: 5000,
                 disableOnInteraction: false,
               }}
+              onSwiper={setSwiper}
               breakpoints={{
                 640: {
                   slidesPerView: 2,
