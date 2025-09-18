@@ -40,7 +40,7 @@ const Manifest = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-4xl mx-auto"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-5xl mx-auto"
         >
           {/* Левая колонка - Текст */}
           <motion.div variants={itemVariants} className="space-y-8">
@@ -73,7 +73,7 @@ const Manifest = () => {
 
           {/* Правая колонка - Изображение */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="aspect-square relative overflow-hidden max-w-sm mx-auto">
+            <div className="aspect-[2/3] relative overflow-hidden max-w-sm mx-auto">
               <Image
                 src="/images/phones.png"
                 alt="Maryam with phones"
