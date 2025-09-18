@@ -40,7 +40,7 @@ const CTA = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-paper py-20 md:py-32 overflow-hidden">
+    <section id="contact" className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#FAFAFA' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}

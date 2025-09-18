@@ -33,7 +33,7 @@ const Manifest = () => {
   };
 
   return (
-    <section className="relative bg-paper py-20 md:py-32 overflow-hidden">
+    <section className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#FAFAFA' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
