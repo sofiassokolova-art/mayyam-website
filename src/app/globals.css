@@ -149,3 +149,10 @@ body {
   border-radius: 4px;
   color: #C6FF00;
 }
+
+/* Кнопка анкеты - черная при hover */
+.application-form-button:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}
