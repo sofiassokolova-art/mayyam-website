@@ -58,9 +58,9 @@ const Manifest = () => {
             </h2>
 
             {/* Основной текст */}
-            <div className="max-w-md mx-auto text-center">
+            <div className="max-w-lg mx-auto">
               <p
-                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
+                className="text-ink text-lg md:text-xl leading-[1.8] font-normal text-justify"
                 style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
               >
                 Я создаю <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>системы роста</span>, которые работают

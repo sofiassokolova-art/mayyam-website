@@ -20,7 +20,6 @@ const Header = () => {
     { href: "#about", label: "обо мне" },
     { href: "/services", label: "услуги" },
     { href: "#cases", label: "кейсы" },
-    { href: "#faq", label: "вопросы" },
     { href: "#contact", label: "контакты" },
   ];
 

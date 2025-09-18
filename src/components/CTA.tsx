@@ -40,18 +40,18 @@ const CTA = () => {
   };
 
   return (
-    <section id="contact" className="relative pt-12 pb-20 md:pt-16 md:pb-32 overflow-hidden" style={{ backgroundColor: '#FAFAFA' }}>
-      <div className="container-custom">
+    <section id="contact" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#FAFAFA' }}>
+      <div className="w-full">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-screen"
         >
           {/* Левая колонка - Изображение */}
-          <motion.div variants={itemVariants} className="relative order-1 lg:order-1">
-            <div className="aspect-[3/2] relative overflow-hidden">
+          <motion.div variants={itemVariants} className="relative order-1 lg:order-1 h-screen lg:h-auto">
+            <div className="h-full relative overflow-hidden">
               <Image
                 src="/images/portrait-overlay.png"
                 alt="Maryam portrait"
@@ -63,18 +63,18 @@ const CTA = () => {
           </motion.div>
 
           {/* Правая колонка - Контент */}
-          <motion.div variants={itemVariants} className="space-y-8 order-2 lg:order-2">
+          <motion.div variants={itemVariants} className="flex flex-col justify-center space-y-12 order-2 lg:order-2 px-8 lg:px-16 py-20">
             {/* Заголовок Связаться */}
             <h3
               className="text-ink font-bold leading-tight uppercase"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(24px, 4vw, 32px)',
+                fontSize: 'clamp(48px, 8vw, 96px)',
                 fontWeight: 800,
                 letterSpacing: '0.05em',
               }}
             >
-              Связаться
+              СВЯЗАТЬСЯ
             </h3>
 
             {/* Социальные ссылки */}
@@ -83,7 +83,7 @@ const CTA = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-ink border-b-2 border-lime"
+                  className="text-ink underline-lime"
                   style={{
                     fontFamily: 'Georgia, serif',
                     fontSize: 'clamp(16px, 2.5vw, 20px)',
