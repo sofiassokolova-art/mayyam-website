@@ -33,14 +33,14 @@ const Manifest = () => {
   };
 
   return (
-    <section className="relative bg-paper py-20 md:py-32 overflow-hidden">
+    <section className="relative py-16 md:py-24 overflow-hidden" style={{ backgroundColor: '#FAFAFA' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-4xl mx-auto"
         >
           {/* Левая колонка - Текст */}
           <motion.div variants={itemVariants} className="space-y-8">
@@ -58,9 +58,9 @@ const Manifest = () => {
             </h2>
 
             {/* Основной текст */}
-            <div className="max-w-md mx-auto lg:mx-0">
+            <div className="max-w-md mx-auto text-center">
               <p
-                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
+                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal"
                 style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
               >
                 Я создаю <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>системы роста</span>, которые работают
@@ -73,7 +73,7 @@ const Manifest = () => {
 
           {/* Правая колонка - Изображение */}
           <motion.div variants={itemVariants} className="relative">
-            <div className="aspect-square relative overflow-hidden max-w-xs mx-auto">
+            <div className="aspect-square relative overflow-hidden max-w-sm mx-auto">
               <Image
                 src="/images/phones.png"
                 alt="Maryam with phones"
