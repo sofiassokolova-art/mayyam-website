@@ -76,7 +76,7 @@ const ApplicationForm = () => {
   return (
     <section 
       id="application" 
-      className="bg-paper py-32 md:py-40" // белый фон секции
+      className="bg-paper pt-16 pb-32 md:pt-20 md:pb-40" // белый фон секции
     >
       <div className="container-custom">
         <motion.div
