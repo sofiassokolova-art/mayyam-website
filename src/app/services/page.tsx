@@ -78,7 +78,7 @@ export default function Page() {
         {/* Правая колонка - Список услуг */}
         <div className="w-full md:w-3/5 flex flex-col">
           {/* Заголовок */}
-          <div className="px-8 md:px-16 pt-16 md:pt-24 pb-8 md:pb-12">
+          <div className="px-8 md:px-16 pt-12 md:pt-16 pb-6 md:pb-8">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ export default function Page() {
                       className="text-ink group-hover:translate-x-2 transition-transform duration-200"
                       style={{
                         fontFamily: 'var(--font-raleway), sans-serif',
-                        fontSize: 'clamp(14px, 2vw, 18px)',
+                        fontSize: 'clamp(12px, 1.8vw, 16px)',
                         fontWeight: 800,
                         letterSpacing: '0.02em',
                       }}
@@ -156,7 +156,7 @@ export default function Page() {
                             className="text-neutral-600 leading-relaxed max-w-3xl"
                             style={{
                               fontFamily: 'Georgia, serif',
-                              fontSize: 'clamp(12px, 1.5vw, 14px)',
+                              fontSize: 'clamp(11px, 1.3vw, 13px)',
                               fontStyle: 'italic',
                               lineHeight: 1.7
                             }}

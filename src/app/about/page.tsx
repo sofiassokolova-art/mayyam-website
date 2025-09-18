@@ -70,7 +70,12 @@ export default function Page() {
         <div className="container-custom h-full flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-full items-center">
             {/* Левая часть - Горизонтальная картинка */}
-            <div className="lg:col-span-2 mt-8 lg:mt-16">
+            <motion.div 
+              className="lg:col-span-2 mt-8 lg:mt-16"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+            >
               <div className="aspect-[3/2] relative overflow-hidden">
                 <Image
                   src="/images/about-me.jpg"
@@ -80,7 +85,7 @@ export default function Page() {
                   priority
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Правая часть - Заголовок */}
             <div className="lg:col-span-1 flex items-center justify-center lg:justify-start">
