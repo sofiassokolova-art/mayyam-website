@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhoIHelp from "@/components/WhoIHelp";
+import Manifest from "@/components/Manifest";
 import Cases from "@/components/Cases";
 import MyApproach from "@/components/MyApproach";
 import ApplicationForm from "@/components/ApplicationForm";
 import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
@@ -13,10 +15,12 @@ export default function Home() {
       <Header />
       <Hero />
       <WhoIHelp />
+      <Manifest />
       <Cases />
       <MyApproach />
       <ApplicationForm />
       <CTA />
+      <Footer />
       <ScrollToTop />
     </main>
   );

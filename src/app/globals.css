@@ -179,4 +179,10 @@ body {
   text-wrap: balance;
 }
 
-/* Удалены дублирующие стили - используем основные стили выше */
+/* Лаймовое выделение для ключевых слов в манифесте */
+.u-lime-highlight {
+  background: rgba(198, 255, 0, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #C6FF00;
+}
