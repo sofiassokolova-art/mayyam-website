@@ -83,7 +83,7 @@ const CTA = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-ink hover:text-ink transition-colors duration-200 underline-lime border-b-2 border-lime"
+                  className="text-ink border-b-2 border-lime"
                   style={{
                     fontFamily: 'Georgia, serif',
                     fontSize: 'clamp(16px, 2.5vw, 20px)',

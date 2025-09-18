@@ -58,29 +58,22 @@ const Manifest = () => {
             </h2>
 
             {/* Основной текст */}
-            <div className="space-y-6 ml-8">
+            <div className="max-w-md mx-auto lg:mx-0">
               <p
                 className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
                 style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
               >
                 Я создаю <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>системы роста</span>, которые работают
                 вместо хаоса. Для меня важна только <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>выручка</span>,
-                измеримая в цифрах. Каждый запуск — это
-              </p>
-              
-              <p
-                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
-                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
-              >
-                <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>стратегия</span>, а не случайность. Я работаю с теми,
+                измеримая в цифрах. Каждый запуск — это <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>стратегия</span>, а не случайность. Я работаю с теми,
                 кто готов масштабироваться.
               </p>
             </div>
           </motion.div>
 
           {/* Правая колонка - Изображение */}
-          <motion.div variants={itemVariants} className="relative ml-8">
-            <div className="aspect-[3/4] relative overflow-hidden max-w-sm mx-auto lg:ml-auto lg:mr-0">
+          <motion.div variants={itemVariants} className="relative">
+            <div className="aspect-square relative overflow-hidden max-w-xs mx-auto">
               <Image
                 src="/images/phones.png"
                 alt="Maryam with phones"
