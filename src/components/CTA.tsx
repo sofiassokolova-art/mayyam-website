@@ -51,7 +51,7 @@ const CTA = () => {
         >
           {/* Левая колонка - Изображение */}
           <motion.div variants={itemVariants} className="relative order-1 lg:order-1 flex items-center justify-center p-8">
-            <div className="aspect-[3/2] relative overflow-hidden max-w-md w-full">
+            <div className="aspect-[3/2] relative overflow-hidden max-w-lg w-full">
               <Image
                 src="/images/portrait-overlay.png"
                 alt="Maryam portrait"
