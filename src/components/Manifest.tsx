@@ -46,48 +46,41 @@ const Manifest = () => {
           <motion.div variants={itemVariants} className="space-y-8">
             {/* Заголовок Манифест */}
             <h2
-              className="text-ink font-bold leading-tight"
+              className="text-ink font-bold uppercase text-center mb-12"
               style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(24px, 4vw, 32px)',
-                fontWeight: 700,
+                fontFamily: 'var(--font-playfair), serif',
+                fontWeight: 900,
+                fontSize: 'clamp(36px, 6vw, 64px)',
+                letterSpacing: '0.02em'
               }}
             >
-              Манифест
+              МАНИФЕСТ
             </h2>
 
             {/* Основной текст */}
-            <div className="space-y-6">
+            <div className="space-y-6 ml-8">
               <p
-                className="text-ink leading-relaxed"
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: 'clamp(18px, 2.5vw, 24px)',
-                  lineHeight: 1.6,
-                }}
+                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
               >
-                Я создаю <span className="u-lime-highlight italic">системы роста</span>, которые работают
-                вместо хаоса. Для меня важна только <span className="u-lime-highlight italic">выручка</span>,
+                Я создаю <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>системы роста</span>, которые работают
+                вместо хаоса. Для меня важна только <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>выручка</span>,
                 измеримая в цифрах. Каждый запуск — это
               </p>
               
               <p
-                className="text-ink leading-relaxed"
-                style={{
-                  fontFamily: 'Georgia, serif',
-                  fontSize: 'clamp(18px, 2.5vw, 24px)',
-                  lineHeight: 1.6,
-                }}
+                className="text-ink text-base md:text-[18px] leading-[1.8] font-normal text-justify"
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
               >
-                <span className="u-lime-highlight italic">стратегия</span>, а не случайность. Я работаю с теми,
+                <span className="font-serif italic px-2 py-1 rounded text-ink" style={{backgroundColor: 'rgba(198, 255, 0, 0.15)'}}>стратегия</span>, а не случайность. Я работаю с теми,
                 кто готов масштабироваться.
               </p>
             </div>
           </motion.div>
 
           {/* Правая колонка - Изображение */}
-          <motion.div variants={itemVariants} className="relative">
-            <div className="aspect-[3/4] relative overflow-hidden max-w-sm mx-auto lg:mx-0">
+          <motion.div variants={itemVariants} className="relative ml-8">
+            <div className="aspect-[3/4] relative overflow-hidden max-w-sm mx-auto lg:ml-auto lg:mr-0">
               <Image
                 src="/images/phones.png"
                 alt="Maryam with phones"

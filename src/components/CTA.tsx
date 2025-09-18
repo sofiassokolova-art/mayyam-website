@@ -51,7 +51,7 @@ const CTA = () => {
         >
           {/* Левая колонка - Изображение */}
           <motion.div variants={itemVariants} className="relative order-1 lg:order-1">
-            <div className="aspect-[4/5] relative overflow-hidden">
+            <div className="aspect-[3/2] relative overflow-hidden">
               <Image
                 src="/images/portrait-overlay.png"
                 alt="Maryam portrait"
@@ -83,7 +83,7 @@ const CTA = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-ink hover:text-ink transition-colors duration-200 underline-lime"
+                  className="text-ink hover:text-ink transition-colors duration-200 underline-lime border-b-2 border-lime"
                   style={{
                     fontFamily: 'Georgia, serif',
                     fontSize: 'clamp(16px, 2.5vw, 20px)',
@@ -96,11 +96,8 @@ const CTA = () => {
 
             {/* Копирайт */}
             <p
-              className="text-muted"
-              style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(14px, 2vw, 16px)',
-              }}
+              className="text-muted text-base md:text-[18px] leading-[1.8] font-normal"
+              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
             >
               © ИП Биктимирова, 2025
             </p>
