@@ -67,7 +67,7 @@ export default function Page() {
         <div className="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src="/images/services-portrait.jpeg"
+              src="/uslugi.JPG"
               alt="Марьям Биктимирова"
               fill
               className="object-cover grayscale"
