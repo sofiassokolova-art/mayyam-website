@@ -66,34 +66,42 @@ export default function Page() {
       </div>
 
       {/* Блок 1 - Заголовок + фото */}
-      <section className="min-h-screen flex">
-        {/* Левая половина - Картинка about-me */}
-        <div className="w-1/2 relative overflow-hidden">
-          <Image
-            src="/images/about-me.jpg"
-            alt="Марьям Биктимирова"
-            fill
-            className="object-cover grayscale"
-            priority
-          />
-        </div>
+      <section className="min-h-screen bg-white py-16">
+        <div className="container-custom h-full flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-full items-center">
+            {/* Левая часть - Горизонтальная картинка */}
+            <div className="lg:col-span-2">
+              <div className="aspect-[3/2] relative overflow-hidden">
+                <Image
+                  src="/images/about-me.jpg"
+                  alt="Марьям Биктимирова"
+                  fill
+                  className="object-cover grayscale"
+                  priority
+                />
+              </div>
+            </div>
 
-        {/* Правая половина - Заголовок */}
-        <div className="w-1/2 flex items-center justify-center bg-white px-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-ink font-thin"
-            style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontSize: 'clamp(32px, 6vw, 72px)',
-              letterSpacing: '0.05em',
-              lineHeight: 1.2,
-            }}
-          >
-            Привет, я <span className="italic underline-lime">Марьям</span>
-          </motion.h1>
+            {/* Правая часть - Заголовок */}
+            <div className="lg:col-span-1 flex items-center justify-center lg:justify-start">
+              <motion.h1
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="text-ink font-thin text-center lg:text-left"
+                style={{
+                  fontFamily: 'var(--font-raleway), sans-serif',
+                  fontSize: 'clamp(28px, 5vw, 48px)',
+                  letterSpacing: '0.05em',
+                  lineHeight: 1.3,
+                }}
+              >
+                Привет,<br />
+                <span style={{ fontSize: '28px', fontWeight: 600 }}>я — </span>
+                <span className="font-serif italic border-b-2" style={{ borderBottomColor: '#C6FF00', fontSize: '28px', fontWeight: 600 }}>Марьям</span>
+              </motion.h1>
+            </div>
+          </div>
         </div>
       </section>
 
