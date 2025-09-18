@@ -32,7 +32,7 @@ const Manifest = () => {
   };
 
   return (
-    <section className="relative bg-ink py-20 md:py-32 overflow-hidden">
+    <section className="relative bg-ink section-padding overflow-hidden">
       {/* Оранжевая текстура фона */}
       <div className="absolute inset-0 -z-10">
         <div 
@@ -56,10 +56,8 @@ const Manifest = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-white leading-tight"
+            className="text-white font-black leading-tight"
             style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontWeight: 800,
               fontSize: 'clamp(32px, 6vw, 64px)',
             }}
           >
@@ -68,26 +66,22 @@ const Manifest = () => {
 
           <motion.h2
             variants={itemVariants}
-            className="text-lime leading-tight"
+            className="text-lime font-black leading-tight"
             style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontWeight: 800,
               fontSize: 'clamp(28px, 5vw, 56px)',
             }}
           >
-            <span className="u-lime-highlight">Стратегия</span> вместо хаотичного маркетинга.
+            Стратегия вместо хаотичного маркетинга.
           </motion.h2>
 
           <motion.h2
             variants={itemVariants}
-            className="text-white leading-tight"
+            className="text-white font-black leading-tight"
             style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontWeight: 800,
               fontSize: 'clamp(24px, 4.5vw, 48px)',
             }}
           >
-            <span className="u-lime-highlight">Выручка</span> — мой главный KPI.
+            Выручка — мой главный KPI.
           </motion.h2>
         </motion.div>
       </div>

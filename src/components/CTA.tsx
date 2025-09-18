@@ -92,7 +92,7 @@ const CTA = () => {
             variants={itemVariants}
             className="text-neutral-400 text-sm"
           >
-            © Марьям, 2025
+            © ИП Биктимирова, 2025
           </motion.p>
         </motion.div>
       </div>
