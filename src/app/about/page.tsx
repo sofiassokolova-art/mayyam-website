@@ -66,25 +66,25 @@ export default function Page() {
       </div>
 
       {/* Блок 1 - Заголовок + фото */}
-      <section className="min-h-screen bg-white flex flex-col">
-        {/* Верхняя часть - Горизонтальная картинка */}
-        <div className="h-2/3 relative overflow-hidden">
+      <section className="min-h-screen flex">
+        {/* Левая половина - Картинка about-me */}
+        <div className="w-1/2 relative overflow-hidden">
           <Image
             src="/images/about-me"
             alt="Марьям Биктимирова"
             fill
-            className="object-contain grayscale"
+            className="object-cover grayscale"
             priority
           />
         </div>
 
-        {/* Нижняя часть - Заголовок смещенный */}
-        <div className="h-1/3 flex items-center bg-white px-16">
+        {/* Правая половина - Заголовок */}
+        <div className="w-1/2 flex items-center justify-center bg-white px-8">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-ink font-thin ml-16"
+            className="text-ink font-thin"
             style={{
               fontFamily: 'var(--font-raleway), sans-serif',
               fontSize: 'clamp(32px, 6vw, 72px)',
