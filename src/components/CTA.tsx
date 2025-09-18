@@ -40,57 +40,52 @@ const CTA = () => {
   };
 
   return (
-    <section id="contact" className="relative py-20 md:py-32 overflow-hidden" style={{ backgroundColor: '#FAFAFA' }}>
+    <section 
+      id="contact" 
+      className="relative py-20 md:py-32 overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, #F5F5F5 0%, #FFFFFF 100%)'
+      }}
+    >
       <div className="container-custom">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20 items-start"
         >
-          {/* Левая колонка - Изображение */}
-          <motion.div variants={itemVariants} className="relative order-2 lg:order-1">
-            <div className="aspect-[4/5] relative overflow-hidden">
-              <Image
-                src="/images/photo_2025-09-15 18.13.22.jpeg"
-                alt="Марьям"
-                fill
-                className="object-cover grayscale"
-                priority
-              />
-            </div>
-          </motion.div>
-
-          {/* Правая колонка - Контент */}
-          <motion.div variants={itemVariants} className="space-y-8 order-1 lg:order-2">
+          {/* Левая колонка - Контент */}
+          <motion.div variants={itemVariants} className="lg:col-span-2 space-y-8">
             {/* Заголовок СВЯЗАТЬСЯ */}
             <h3
               className="text-ink font-black leading-tight"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(48px, 8vw, 96px)',
+                fontSize: '48px',
+                fontWeight: 900,
                 letterSpacing: '0.02em',
               }}
             >
               СВЯЗАТЬСЯ
             </h3>
 
-            {/* Социальные ссылки */}
-            <div className="space-y-4">
+            {/* Социальные ссылки в одну линию */}
+            <div className="flex flex-wrap gap-8">
               {socialLinks.map((link) => (
-                <div key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-ink hover:text-ink transition-colors duration-200 underline-lime"
-                    style={{
-                      fontFamily: 'Georgia, serif',
-                      fontSize: 'clamp(18px, 2.5vw, 24px)',
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                </div>
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-ink hover:text-ink transition-all duration-200 relative group"
+                  style={{
+                    fontFamily: 'Georgia, serif',
+                    fontSize: '18px',
+                  }}
+                >
+                  {link.name}
+                  {/* Лаймовое подчеркивание при наведении */}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-lime transition-all duration-200 group-hover:w-full"></span>
+                </a>
               ))}
             </div>
 
@@ -99,11 +94,24 @@ const CTA = () => {
               className="text-muted"
               style={{
                 fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(14px, 2vw, 16px)',
+                fontSize: '14px',
               }}
             >
               © ИП Биктимирова, 2025
             </p>
+          </motion.div>
+
+          {/* Правая колонка - Изображение */}
+          <motion.div variants={itemVariants} className="relative lg:col-span-1">
+            <div className="aspect-[3/4] relative overflow-hidden">
+              <Image
+                src="/images/photo_2025-09-15 18.13.22.jpeg"
+                alt="Марьям"
+                fill
+                className="object-cover grayscale"
+                priority
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>
