@@ -50,8 +50,8 @@ const CTA = () => {
           className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-screen"
         >
           {/* Левая колонка - Изображение */}
-          <motion.div variants={itemVariants} className="relative order-1 lg:order-1 h-screen lg:h-auto">
-            <div className="h-full relative overflow-hidden">
+          <motion.div variants={itemVariants} className="relative order-1 lg:order-1 flex items-center justify-center p-8">
+            <div className="aspect-[3/2] relative overflow-hidden max-w-md w-full">
               <Image
                 src="/images/portrait-overlay.png"
                 alt="Maryam portrait"
@@ -69,7 +69,7 @@ const CTA = () => {
               className="text-ink font-bold leading-tight uppercase"
               style={{
                 fontFamily: 'var(--font-raleway), sans-serif',
-                fontSize: 'clamp(48px, 8vw, 96px)',
+                fontSize: 'clamp(32px, 6vw, 64px)',
                 fontWeight: 800,
                 letterSpacing: '0.05em',
               }}
@@ -83,7 +83,7 @@ const CTA = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-ink underline-lime"
+                  className="text-ink border-b-2 border-lime hover:border-ink transition-colors duration-200"
                   style={{
                     fontFamily: 'Georgia, serif',
                     fontSize: 'clamp(16px, 2.5vw, 20px)',
