@@ -298,12 +298,21 @@ ${dbAvailable ? '✅ База данных активна!' : '⚠️ Созда
 
 // GET метод для проверки статуса
 export async function GET() {
-  const dbStatus = process.env.POSTGRES_URL ? 'connected' : 'not configured';
+  const hasPostgresUrl = !!process.env.POSTGRES_URL;
+  const hasPrismaUrl = !!process.env.POSTGRES_PRISMA_URL;
+  const hasTelegramToken = !!process.env.TELEGRAM_BOT_TOKEN;
+  const hasChatId = !!process.env.TELEGRAM_CHAT_ID;
   
   return NextResponse.json({ 
     status: 'Telegram webhook endpoint active',
-    database: dbStatus,
+    environment: {
+      postgres_url: hasPostgresUrl,
+      postgres_prisma_url: hasPrismaUrl,
+      telegram_token: hasTelegramToken,
+      telegram_chat_id: hasChatId
+    },
+    database_status: hasPostgresUrl ? 'connected' : 'not configured',
     timestamp: new Date().toISOString(),
-    version: '3.0'
+    version: '3.1'
   });
 }
