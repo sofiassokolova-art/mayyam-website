@@ -141,7 +141,7 @@ const Cases = () => {
                 <SwiperSlide key={caseItem.id}>
                   {/* Белая журнальная карточка */}
                   <div 
-                    className="bg-white p-8 mx-2 transition-all duration-300 hover:scale-105 hover:shadow-xl group cursor-pointer"
+                    className="bg-white p-6 md:p-8 mx-2 transition-all duration-300 hover:scale-105 hover:shadow-xl group cursor-pointer"
                     style={{
                       minHeight: '280px',
                       borderRadius: '0px', // строго прямоугольная
