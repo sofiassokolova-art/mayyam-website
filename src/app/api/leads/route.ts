@@ -59,28 +59,22 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Отправка уведомления в Telegram
-    if (TelegramBot && process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) {
+    // Отправка уведомления всем подписчикам бота
+    if (process.env.TELEGRAM_BOT_TOKEN) {
       try {
-        const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
-        const message = `🎯 *Новая заявка #${leadId}*
-
-👤 *Имя:* ${name}
-🏢 *Бизнес:* ${business}
-💰 *Бюджет:* ${budget || 'Не указан'}
-📝 *Запрос:* ${userRequest || 'Не указан'}
-📞 *Контакты:* ${contacts}
-
-📅 *Дата:* ${new Date().toLocaleString('ru-RU')}
-
----
-🌐 *Источник:* Сайт Mayyam`;
-
-        await bot.sendMessage(process.env.TELEGRAM_CHAT_ID, message, {
-          parse_mode: 'Markdown',
+        // Импортируем функцию уведомления из bot API
+        const { notifyAllSubscribers } = await import('../bot/route');
+        
+        await notifyAllSubscribers({
+          leadId,
+          name,
+          business,
+          request: userRequest,
+          budget,
+          contacts
         });
       } catch (telegramError) {
-        console.error('Ошибка отправки в Telegram:', telegramError);
+        console.error('Ошибка отправки уведомлений:', telegramError);
         // Не прерываем процесс, если Telegram недоступен
       }
     }
