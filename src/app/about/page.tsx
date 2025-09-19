@@ -80,11 +80,11 @@ export default function Page() {
       {/* Блок 1 - Заголовок + фото */}
       <section className="min-h-screen bg-white py-16">
         <div className="container-custom h-full flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-full items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12 w-full items-center">
             {/* Левая часть - Горизонтальная картинка */}
             <motion.div 
               className="lg:col-span-2 mt-8 lg:mt-16"
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
             >
@@ -102,7 +102,7 @@ export default function Page() {
             {/* Правая часть - Заголовок */}
             <div className="lg:col-span-1 flex items-center justify-center lg:justify-start">
               <motion.h1
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="text-ink font-thin text-center lg:text-left"

@@ -68,18 +68,20 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col items-center justify-center w-8 h-8 ml-auto"
+            className={`md:hidden flex flex-col items-center justify-center w-10 h-10 ml-auto rounded-full transition-all duration-300 ${
+              isMobileMenuOpen ? "bg-black/20 backdrop-blur-sm" : ""
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <span className={`block w-6 h-0.5 transition-all duration-300 ${
               isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "rotate-45 translate-y-0.5" : ""}`}></span>
-            <span className={`block w-6 h-0.5 mt-1 transition-all duration-300 ${
+            } ${isMobileMenuOpen ? "rotate-45 translate-y-0" : ""}`}></span>
+            <span className={`block w-6 h-0.5 transition-all duration-300 ${
               isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`block w-6 h-0.5 mt-1 transition-all duration-300 ${
+            } ${isMobileMenuOpen ? "opacity-0 mt-1" : "mt-1"}`}></span>
+            <span className={`block w-6 h-0.5 transition-all duration-300 ${
               isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : ""}`}></span>
+            } ${isMobileMenuOpen ? "-rotate-45 translate-y-0 -mt-0.5" : "mt-1"}`}></span>
           </button>
         </nav>
       </div>
@@ -94,7 +96,7 @@ const Header = () => {
             transition={{ duration: 0.3 }}
             className={`md:hidden border-t transition-all duration-300 ${
               isOnHero 
-                ? "bg-black/80 backdrop-blur-md border-white/20" 
+                ? "bg-black/50 backdrop-blur-md border-white/10" 
                 : "bg-paper/95 backdrop-blur-md border-neutral-200"
             }`}
           >

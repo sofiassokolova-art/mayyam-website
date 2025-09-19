@@ -5,6 +5,11 @@ Ensure these classes are not purged by Tailwind:
 font-script text-accent underline-lime btn-capsule section-padding section-spacing container-custom u-lime-underline hr-hairline
 */
 
+/* Плавное скроллирование для якорных ссылок */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Тонкая «волосинка» для деликатных линий */
 .hr-hairline { 
   border-bottom: 0.5px solid rgba(198,255,0,.25); 
