@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
+import { TelegramMessage } from '@/types/bot';
 
 // Динамические импорты для разных сред
 async function getModules() {
@@ -26,9 +28,9 @@ function formatDate(dateString: string): string {
 
 // Функция для экспорта лидов в CSV формат
 function formatLeadsAsCSV(leads: any[]): string {
-  const headers = 'ID,Имя,Бизнес,Запрос,Бюджет,Контакты,Дата создания\n';
+  const headers = 'Номер заявки,ID,Имя,Бизнес,Запрос,Бюджет,Контакты,Дата создания\n';
   const rows = leads.map(lead => 
-    `${lead.id},"${lead.name}","${lead.business}","${lead.request || ''}","${lead.budget || ''}","${lead.contacts}","${formatDate(lead.created_at)}"`
+    `${lead.lead_number || lead.id},${lead.id},"${lead.name}","${lead.business}","${lead.request || ''}","${lead.budget || ''}","${lead.contacts}","${formatDate(lead.created_at)}"`
   ).join('\n');
   
   return headers + rows;
@@ -36,7 +38,8 @@ function formatLeadsAsCSV(leads: any[]): string {
 
 // Функция для форматирования лида
 function formatLead(lead: any, isLast = false): string {
-  const prefix = isLast ? '🆕 *Последний лид*' : `🎯 *Лид #${lead.id}*`;
+  const leadNumber = lead.lead_number || lead.id;
+  const prefix = isLast ? '🆕 *Последний лид*' : `🎯 *Лид #${leadNumber}*`;
   
   return `${prefix}
 
@@ -49,10 +52,11 @@ function formatLead(lead: any, isLast = false): string {
 }
 
 // Функция для создания таблиц
-async function ensureTables(sql: any) {
+async function ensureTables(sql: typeof import('@vercel/postgres').sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS leads (
       id SERIAL PRIMARY KEY,
+      lead_number INTEGER UNIQUE NOT NULL DEFAULT 1,
       name TEXT NOT NULL,
       business TEXT NOT NULL,
       request TEXT,
@@ -78,7 +82,7 @@ async function ensureTables(sql: any) {
 }
 
 // Функция для добавления/обновления подписчика
-async function upsertSubscriber(sql: any, message: any) {
+async function upsertSubscriber(sql: typeof import('@vercel/postgres').sql, message: TelegramMessage) {
   const { chat, from } = message;
   
   await sql`
@@ -94,14 +98,6 @@ async function upsertSubscriber(sql: any, message: any) {
   `;
 }
 
-// Функция для получения всех активных подписчиков
-async function getActiveSubscribers(sql: any) {
-  const result = await sql`
-    SELECT chat_id FROM bot_subscribers 
-    WHERE is_active = true;
-  `;
-  return result.rows.map((row: any) => row.chat_id);
-}
 
 export async function POST(request: NextRequest) {
   try {
@@ -151,8 +147,9 @@ export async function POST(request: NextRequest) {
       } else if (text === '/export_leads') {
         // Получаем всех лидов
         const result = await sql`
-          SELECT * FROM leads 
-          ORDER BY created_at DESC;
+          SELECT id, lead_number, name, business, request, budget, contacts, created_at, updated_at 
+          FROM leads 
+          ORDER BY lead_number DESC;
         `;
 
         if (result.rows.length === 0) {
@@ -168,18 +165,19 @@ export async function POST(request: NextRequest) {
 
         // Отправляем файл
         await bot.sendDocument(chatId, Buffer.from(csvData, 'utf-8'), {
-          filename: fileName,
-          contentType: 'text/csv'
-        }, {
           caption: `📊 *Экспорт лидов*\n\nВсего лидов: ${result.rows.length}\nДата экспорта: ${new Date().toLocaleString('ru-RU')}`,
           parse_mode: 'Markdown'
+        }, {
+          filename: fileName,
+          contentType: 'text/csv'
         });
 
       } else if (text === '/last_lead') {
         // Получаем последний лид
         const result = await sql`
-          SELECT * FROM leads 
-          ORDER BY created_at DESC 
+          SELECT id, lead_number, name, business, request, budget, contacts, created_at, updated_at 
+          FROM leads 
+          ORDER BY lead_number DESC 
           LIMIT 1;
         `;
 
@@ -269,64 +267,4 @@ export async function GET() {
     ],
     commands: ['/start', '/export_leads', '/last_lead', '/stats', '/unsubscribe', '/help']
   });
-}
-
-// Функция для рассылки уведомлений всем подписчикам (используется из leads API)
-export async function notifyAllSubscribers(leadData: any) {
-  try {
-    const { sql, TelegramBot } = await getModules();
-    
-    if (!sql || !TelegramBot) {
-      console.warn('Cannot send notifications: modules not available');
-      return;
-    }
-
-    const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN!, { polling: false });
-    
-    // Получаем всех активных подписчиков
-    const subscribers = await getActiveSubscribers(sql);
-    
-    if (subscribers.length === 0) {
-      console.log('No active subscribers to notify');
-      return;
-    }
-
-    const message = `🎯 *Новая заявка #${leadData.leadId}*
-
-👤 *Имя:* ${leadData.name}
-🏢 *Бизнес:* ${leadData.business}
-💰 *Бюджет:* ${leadData.budget || 'Не указан'}
-📝 *Запрос:* ${leadData.request || 'Не указан'}
-📞 *Контакты:* ${leadData.contacts}
-
-📅 *Дата:* ${new Date().toLocaleString('ru-RU')}
-
----
-🌐 *Источник:* Сайт Mayyam`;
-
-    // Рассылаем всем подписчикам
-    const notifications = subscribers.map(async (chatId: string) => {
-      try {
-        await bot.sendMessage(chatId, message, { parse_mode: 'Markdown' });
-        console.log(`Notification sent to ${chatId}`);
-      } catch (error) {
-        console.error(`Failed to send notification to ${chatId}:`, error);
-        
-        // Если пользователь заблокировал бота, деактивируем его
-        if (error.response?.body?.error_code === 403) {
-          await sql`
-            UPDATE bot_subscribers 
-            SET is_active = false 
-            WHERE chat_id = ${chatId};
-          `;
-        }
-      }
-    });
-
-    await Promise.all(notifications);
-    console.log(`Notifications sent to ${subscribers.length} subscribers`);
-
-  } catch (error) {
-    console.error('Error in notifyAllSubscribers:', error);
-  }
 }
