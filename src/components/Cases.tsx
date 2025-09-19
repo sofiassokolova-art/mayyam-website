@@ -81,24 +81,24 @@ const Cases = () => {
       <div className="py-20 md:py-32">
         <div className="container-custom overflow-visible">
                       {/* Контейнер для свайпера с кастомными стрелками */}
-                      <div className="relative px-16 md:px-20 overflow-visible">
+                      <div className="relative px-8 md:px-20 overflow-visible">
             {/* Кастомные стрелки */}
             <button 
               onClick={() => swiper?.slidePrev()}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-lime hover:text-ink transition-all duration-300"
-              style={{ marginLeft: '-60px' }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-lime hover:text-ink transition-all duration-300"
+              style={{ marginLeft: '-20px' }}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="md:w-5 md:h-5">
                 <polyline points="15,18 9,12 15,6"></polyline>
               </svg>
             </button>
             
             <button 
               onClick={() => swiper?.slideNext()}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-lime hover:text-ink transition-all duration-300"
-              style={{ marginRight: '-60px' }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-50 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-lime hover:text-ink transition-all duration-300"
+              style={{ marginRight: '-20px' }}
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="md:w-5 md:h-5">
                 <polyline points="9,18 15,12 9,6"></polyline>
               </svg>
             </button>
@@ -112,12 +112,13 @@ const Cases = () => {
             >
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={24}
+              spaceBetween={16}
               slidesPerView={1}
               navigation={false}
               loop={true}
+              speed={400}
               autoplay={{
-                delay: 5000,
+                delay: 4000,
                 disableOnInteraction: false,
               }}
               onSwiper={setSwiper}
