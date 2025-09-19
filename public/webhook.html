@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram Webhook Handler</title>
+</head>
+<body>
+    <h1>Telegram Webhook Active</h1>
+    <p>This endpoint handles Telegram bot webhooks.</p>
+    
+    <script>
+    // Обработчик для webhook запросов
+    if (window.location.search.includes('webhook=true')) {
+        // Перенаправляем на API
+        const apiUrl = '/api/webhook/telegram';
+        
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: {
+                    chat: { id: 643160759 },
+                    from: { id: 643160759, first_name: 'Test' },
+                    text: '/help'
+                }
+            })
+        }).then(response => {
+            console.log('Webhook test:', response.status);
+        });
+    }
+    </script>
+</body>
+</html>
