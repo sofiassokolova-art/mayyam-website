@@ -37,18 +37,6 @@ export default function Page() {
 
   const galleryItems = [
     {
-      image: "/images/photo_2025-09-15 18.13.22.jpeg",
-      caption: "Работаю на стыке маркетинга и продаж"
-    },
-    {
-      image: "/images/portrait-overlay.png", 
-      caption: "Верю в системы роста"
-    },
-    {
-      image: "/images/phones.png",
-      caption: "Главная метрика — результат"
-    },
-    {
       image: "/images/aboutme1_1.webp",
       caption: "За кулисами работы"
     },
@@ -123,7 +111,7 @@ export default function Page() {
       </section>
 
       {/* Блок 2 - Текст-статья */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-8 md:py-32 bg-white">
         <div className="max-w-2xl mx-auto px-8">
           <motion.div
             variants={containerVariants}
@@ -185,7 +173,7 @@ export default function Page() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="text-center border-r border-neutral-300 last:border-r-0 pr-8 last:pr-0"
+                className="text-center"
               >
                 <div
                   className="text-lime font-black mb-2"
@@ -220,7 +208,7 @@ export default function Page() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
           >
             {galleryItems.map((item, index) => (
               <motion.div
@@ -233,7 +221,7 @@ export default function Page() {
                     src={item.image}
                     alt={item.caption}
                     fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    className="object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <p

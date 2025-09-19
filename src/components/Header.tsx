@@ -69,19 +69,21 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             className={`md:hidden flex flex-col items-center justify-center w-10 h-10 ml-auto rounded-full transition-all duration-300 ${
-              isMobileMenuOpen ? "bg-black/20 backdrop-blur-sm" : ""
+              isMobileMenuOpen ? "bg-black/30 backdrop-blur-md" : ""
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${
-              isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "rotate-45 translate-y-0" : ""}`}></span>
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${
-              isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "opacity-0 mt-1" : "mt-1"}`}></span>
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${
-              isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "-rotate-45 translate-y-0 -mt-0.5" : "mt-1"}`}></span>
+            <div className="relative w-6 h-6 flex flex-col justify-center items-center">
+              <span className={`absolute block w-6 h-0.5 transition-all duration-300 ${
+                isScrolled ? "md:bg-ink bg-white" : "bg-white"
+              } ${isMobileMenuOpen ? "rotate-45" : "-translate-y-1"}`}></span>
+              <span className={`absolute block w-6 h-0.5 transition-all duration-300 ${
+                isScrolled ? "md:bg-ink bg-white" : "bg-white"
+              } ${isMobileMenuOpen ? "opacity-0" : ""}`}></span>
+              <span className={`absolute block w-6 h-0.5 transition-all duration-300 ${
+                isScrolled ? "md:bg-ink bg-white" : "bg-white"
+              } ${isMobileMenuOpen ? "-rotate-45" : "translate-y-1"}`}></span>
+            </div>
           </button>
         </nav>
       </div>
