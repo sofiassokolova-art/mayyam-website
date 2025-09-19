@@ -47,6 +47,18 @@ export default function Page() {
     {
       image: "/images/phones.png",
       caption: "Главная метрика — результат"
+    },
+    {
+      image: "/images/aboutme1_1.jpg",
+      caption: "За кулисами работы"
+    },
+    {
+      image: "/images/aboutme1_2.jpg", 
+      caption: "В процессе создания стратегии"
+    },
+    {
+      image: "/images/aboutme1_3.jpg",
+      caption: "Результаты говорят сами за себя"
     }
   ];
 
@@ -208,7 +220,7 @@ export default function Page() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
           >
             {galleryItems.map((item, index) => (
               <motion.div
