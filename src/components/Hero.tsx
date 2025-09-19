@@ -35,7 +35,7 @@ const Hero = () => {
           src="/images/hero-main.png"
           alt="Maryam"
           fill
-          className="object-cover filter grayscale"
+          className="object-cover filter grayscale md:hover:scale-105 transition-transform duration-700"
           style={{ objectPosition: '40% center' }} // сдвиг правее для мобильной версии
           priority
         />
@@ -106,10 +106,10 @@ const Hero = () => {
                 запуски, воронки, маркетинг и рост выручки под ключ
               </motion.p>
 
-              {/* CTA Buttons - улучшенные для мобиле */}
+              {/* CTA Buttons - скрыты на мобильных */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 md:gap-4 w-full sm:w-auto"
+                className="hidden md:flex flex-col sm:flex-row gap-4 md:gap-4 w-full sm:w-auto"
               >
                 <a
                   href="#application"
