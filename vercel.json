@@ -1,0 +1,10 @@
+{
+  "env": {
+    "TELEGRAM_BOT_TOKEN": "8212229355:AAG7Iy0AkC5NXT-FLKbI019LkrXhoCSMgno"
+  },
+  "build": {
+    "env": {
+      "TELEGRAM_BOT_TOKEN": "8212229355:AAG7Iy0AkC5NXT-FLKbI019LkrXhoCSMgno"
+    }
+  }
+}

@@ -53,7 +53,10 @@ export async function POST(request: NextRequest) {
 📝 *Запрос:* ${userRequest || 'Не указан'}
 📞 *Контакты:* ${contacts}
 
-📅 *Дата:* ${new Date().toLocaleString('ru-RU')}`;
+📅 *Дата:* ${new Date().toLocaleString('ru-RU')}
+
+---
+🌐 *Источник:* Сайт Mayyam`;
 
       try {
         await bot.sendMessage(process.env.TELEGRAM_CHAT_ID, message, {
