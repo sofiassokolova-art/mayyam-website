@@ -11,30 +11,80 @@ const ApplicationForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     business: "",
+    request: "",
+    budget: "",
     contacts: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Имя обязательно для заполнения';
+    }
+
+    if (!formData.business.trim()) {
+      newErrors.business = 'Описание бизнеса обязательно';
+    }
+
+    if (!formData.contacts.trim()) {
+      newErrors.contacts = 'Контакты обязательны для заполнения';
+    } else {
+      // Простая валидация email или телефона
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+      
+      if (!emailRegex.test(formData.contacts) && !phoneRegex.test(formData.contacts)) {
+        newErrors.contacts = 'Введите корректный email или телефон';
+      }
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Валидация формы
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('');
+    setErrors({});
     
     try {
-      // Имитация отправки формы
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log("Form submitted:", formData);
-      setSubmitStatus('success');
-      
-      // Очистить форму
-      setFormData({
-        name: "",
-        business: "",
-        contacts: "",
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log("Form submitted successfully:", result);
+        setSubmitStatus('success');
+        
+        // Очистить форму
+        setFormData({
+          name: "",
+          business: "",
+          request: "",
+          budget: "",
+          contacts: "",
+        });
+      } else {
+        throw new Error(result.error || 'Ошибка при отправке формы');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
@@ -44,10 +94,19 @@ const ApplicationForm = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+    
+    // Очистить ошибку для этого поля
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: '',
+      });
+    }
   };
 
   const containerVariants = {
@@ -143,13 +202,18 @@ const ApplicationForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
+                    className={`w-full bg-white text-ink border px-4 py-3 focus:outline-none transition-all duration-300 text-base ${
+                      errors.name ? 'border-red-500 focus:border-red-500' : 'border-neutral-300 focus:border-lime'
+                    }`}
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
                     }}
                     placeholder="Ваше имя"
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-2">{errors.name}</p>
+                  )}
                 </div>
 
                 {/* Поле: Ниша / Бизнес */}
@@ -164,13 +228,18 @@ const ApplicationForm = () => {
                     value={formData.business}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
+                    className={`w-full bg-white text-ink border px-4 py-3 focus:outline-none transition-all duration-300 text-base ${
+                      errors.business ? 'border-red-500 focus:border-red-500' : 'border-neutral-300 focus:border-lime'
+                    }`}
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
                     }}
                     placeholder="Опишите ваш бизнес"
                   />
+                  {errors.business && (
+                    <p className="text-red-500 text-sm mt-2">{errors.business}</p>
+                  )}
                 </div>
 
                 {/* Поле: Контакты */}
@@ -185,13 +254,18 @@ const ApplicationForm = () => {
                     value={formData.contacts}
                     onChange={handleChange}
                     required
-                    className="w-full bg-white text-ink border border-neutral-300 px-4 py-3 focus:outline-none focus:border-lime transition-all duration-300 text-base"
+                    className={`w-full bg-white text-ink border px-4 py-3 focus:outline-none transition-all duration-300 text-base ${
+                      errors.contacts ? 'border-red-500 focus:border-red-500' : 'border-neutral-300 focus:border-lime'
+                    }`}
                     style={{ 
                       fontFamily: 'Helvetica Neue, Arial, sans-serif',
                       borderRadius: '0px'
                     }}
                     placeholder="Email или Telegram"
                   />
+                  {errors.contacts && (
+                    <p className="text-red-500 text-sm mt-2">{errors.contacts}</p>
+                  )}
                 </div>
 
                 {/* Кнопка с закруглёнными углами */}
