@@ -2,7 +2,7 @@
 // Запустите: node scripts/setup-webhook.js
 
 const BOT_TOKEN = '8212229355:AAG7Iy0AkC5NXT-FLKbI019LkrXhoCSMgno';
-const WEBHOOK_URL = 'https://your-domain.vercel.app/api/bot'; // Замените на ваш домен
+const WEBHOOK_URL = 'https://mayyam-website-git-main-sofias-projects-abc2e7ea.vercel.app/api/bot';
 
 async function setupWebhook() {
   try {
@@ -66,7 +66,6 @@ const args = process.argv.slice(2);
 if (args.includes('--local')) {
   setupLocalBot();
 } else {
-  console.log('Замените WEBHOOK_URL на ваш домен, затем запустите скрипт');
-  console.log('Для локального тестирования: node scripts/setup-webhook.js --local');
-  // setupWebhook();
+  console.log('Настраиваем вебхук для продакшена...');
+  setupWebhook();
 }
