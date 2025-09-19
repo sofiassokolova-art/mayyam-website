@@ -49,15 +49,15 @@ export default function Page() {
       caption: "Главная метрика — результат"
     },
     {
-      image: "/images/aboutme1_1.jpg",
+      image: "/images/aboutme1_1.webp",
       caption: "За кулисами работы"
     },
     {
-      image: "/images/aboutme1_2.jpg", 
+      image: "/images/aboutme1_2.png", 
       caption: "В процессе создания стратегии"
     },
     {
-      image: "/images/aboutme1_3.jpg",
+      image: "/images/aboutme1_3.png",
       caption: "Результаты говорят сами за себя"
     }
   ];
