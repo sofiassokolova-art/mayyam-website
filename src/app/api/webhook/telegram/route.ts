@@ -142,7 +142,7 @@ export async function POST(request: NextRequest) {
     console.log(`📝 Processing message from ${chatId}: ${text}`);
 
     // Проверяем доступность базы данных
-    const dbAvailable = sql && process.env.POSTGRES_URL;
+    const dbAvailable = !!(sql && process.env.POSTGRES_URL);
     console.log(`🗄️ Database available: ${dbAvailable}`);
 
     if (dbAvailable) {
@@ -284,7 +284,8 @@ ${dbAvailable ? '✅ База данных активна!' : '⚠️ Созда
 
     } catch (commandError) {
       console.error('❌ Command error:', commandError);
-      await bot.sendMessage(chatId, `❌ Ошибка при выполнении команды: ${commandError.message}`);
+      const errorMessage = commandError instanceof Error ? commandError.message : 'Неизвестная ошибка';
+      await bot.sendMessage(chatId, `❌ Ошибка при выполнении команды: ${errorMessage}`);
     }
 
     console.log('✅ Webhook processed successfully');
