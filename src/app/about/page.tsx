@@ -66,7 +66,7 @@ export default function Page() {
       </div>
 
       {/* Блок 1 - Заголовок + фото */}
-      <section className="min-h-screen bg-white py-16">
+      <section className="min-h-screen lg:min-h-screen bg-white py-16 pb-8 lg:pb-16">
         <div className="container-custom h-full flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12 w-full items-center">
             {/* Левая часть - Горизонтальная картинка */}
@@ -111,7 +111,7 @@ export default function Page() {
       </section>
 
       {/* Блок 2 - Текст-статья */}
-      <section className="py-8 md:py-32 bg-white">
+      <section className="py-4 md:py-32 bg-white">
         <div className="max-w-2xl mx-auto px-8">
           <motion.div
             variants={containerVariants}
