@@ -39,8 +39,8 @@ const Hero = () => {
           style={{ objectPosition: '40% center' }} // сдвиг правее для мобильной версии
           priority
         />
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/30" />
+        {/* Dark gradient overlay - менее интенсивное на мобильных */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/20 md:from-black/80 md:via-black/50 md:to-black/30" />
       </div>
 
       {/* Content */}
