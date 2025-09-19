@@ -7,10 +7,13 @@ import Link from "next/link";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOnHero, setIsOnHero] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Определяем, находимся ли мы на Hero секции (примерно первый экран)
+      setIsOnHero(window.scrollY < window.innerHeight * 0.8);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -70,13 +73,13 @@ const Header = () => {
           >
             <span className={`block w-6 h-0.5 transition-all duration-300 ${
               isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "rotate-45 translate-y-1" : ""}`}></span>
+            } ${isMobileMenuOpen ? "rotate-45 translate-y-0.5" : ""}`}></span>
             <span className={`block w-6 h-0.5 mt-1 transition-all duration-300 ${
               isScrolled ? "md:bg-ink bg-white" : "bg-white"
             } ${isMobileMenuOpen ? "opacity-0" : ""}`}></span>
             <span className={`block w-6 h-0.5 mt-1 transition-all duration-300 ${
               isScrolled ? "md:bg-ink bg-white" : "bg-white"
-            } ${isMobileMenuOpen ? "-rotate-45 -translate-y-1" : ""}`}></span>
+            } ${isMobileMenuOpen ? "-rotate-45 -translate-y-0.5" : ""}`}></span>
           </button>
         </nav>
       </div>
@@ -89,7 +92,11 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-paper/95 backdrop-blur-md border-t border-neutral-200"
+            className={`md:hidden border-t transition-all duration-300 ${
+              isOnHero 
+                ? "bg-black/80 backdrop-blur-md border-white/20" 
+                : "bg-paper/95 backdrop-blur-md border-neutral-200"
+            }`}
           >
             <div className="container-custom py-6">
               <ul className="space-y-4">
@@ -98,7 +105,9 @@ const Header = () => {
                     {item.href.startsWith('/') ? (
                       <Link
                         href={item.href}
-                        className="block text-ink font-medium py-2 transition-colors duration-200 hover:text-lime"
+                        className={`block font-medium py-2 transition-colors duration-200 hover:text-lime ${
+                          isOnHero ? "text-white" : "text-ink"
+                        }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -106,7 +115,9 @@ const Header = () => {
                     ) : (
                       <a
                         href={item.href}
-                        className="block text-ink font-medium py-2 transition-colors duration-200 hover:text-lime"
+                        className={`block font-medium py-2 transition-colors duration-200 hover:text-lime ${
+                          isOnHero ? "text-white" : "text-ink"
+                        }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}
