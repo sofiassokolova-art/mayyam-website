@@ -2,7 +2,7 @@
 // Запустите: node scripts/setup-webhook.js
 
 const BOT_TOKEN = '8212229355:AAG7Iy0AkC5NXT-FLKbI019LkrXhoCSMgno';
-const WEBHOOK_URL = 'https://mayyam-website-git-main-sofias-projects-abc2e7ea.vercel.app/api/telegram-webhook';
+const WEBHOOK_URL = 'https://mayyam-website-git-main-sofias-projects-abc2e7ea.vercel.app/api/webhook/telegram';
 
 async function setupWebhook() {
   try {
