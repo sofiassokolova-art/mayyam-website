@@ -30,7 +30,7 @@ const Header = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-paper/80 backdrop-blur-md shadow-soft"
+          ? "md:bg-paper/80 md:backdrop-blur-md md:shadow-soft bg-transparent"
           : "bg-transparent"
       }`}
     >
@@ -69,13 +69,13 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <span className={`block w-6 h-0.5 transition-all duration-300 ${
-              isScrolled ? "bg-ink" : "bg-white"
+              isScrolled ? "md:bg-ink bg-white" : "bg-white"
             } ${isMobileMenuOpen ? "rotate-45 translate-y-1" : ""}`}></span>
             <span className={`block w-6 h-0.5 mt-1 transition-all duration-300 ${
-              isScrolled ? "bg-ink" : "bg-white"
+              isScrolled ? "md:bg-ink bg-white" : "bg-white"
             } ${isMobileMenuOpen ? "opacity-0" : ""}`}></span>
             <span className={`block w-6 h-0.5 mt-1 transition-all duration-300 ${
-              isScrolled ? "bg-ink" : "bg-white"
+              isScrolled ? "md:bg-ink bg-white" : "bg-white"
             } ${isMobileMenuOpen ? "-rotate-45 -translate-y-1" : ""}`}></span>
           </button>
         </nav>
