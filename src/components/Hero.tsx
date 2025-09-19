@@ -46,7 +46,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 h-full">
         <div className="container-custom h-full px-6 md:px-4">
-          <div className="flex items-end justify-start h-full pb-16 md:pb-20">
+          <div className="flex items-end justify-start h-full pb-24 md:pb-20">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -85,7 +85,7 @@ const Hero = () => {
                 className="text-white leading-[1.2] mb-4 text-left" // выравнивание по левому краю
                 style={{ 
                   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                  fontSize: 'clamp(19px, 4.2vw, 42px)', // увеличен на 5%
+                  fontSize: 'clamp(22px, 5vw, 50px)', // увеличен еще больше
                   fontWeight: 300
                 }}
               >
