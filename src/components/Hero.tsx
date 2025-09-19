@@ -56,23 +56,36 @@ const Hero = () => {
               {/* Main title */}
               <motion.h1
                 variants={itemVariants}
-                className="text-white leading-[0.9] mb-4 md:mb-2" // увеличенный отступ на мобиле
+                className="text-white leading-[0.9] mb-4 md:mb-2 text-left" // выравнивание по левому краю
                 style={{
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontWeight: 800,
-                  fontSize: 'clamp(48px,12vw,120px)'
+                  fontSize: 'clamp(50px,12.6vw,126px)' // увеличен на 5%
                 }}
               >
                 Марьям
               </motion.h1>
 
-              {/* Subtitle with role */}
+              {/* Last name */}
+              <motion.h1
+                variants={itemVariants}
+                className="text-white leading-[0.9] mb-2 text-left" // выравнивание по левому краю
+                style={{
+                  fontFamily: 'var(--font-raleway), sans-serif',
+                  fontWeight: 800,
+                  fontSize: 'clamp(50px,12.6vw,126px)' // увеличен на 5%
+                }}
+              >
+                Биктимирова
+              </motion.h1>
+
+              {/* Subtitle with role - перенесен после имени */}
               <motion.h2
                 variants={itemVariants}
-                className="text-white leading-[1.2] mb-1 md:mb-2 ml-4"
+                className="text-white leading-[1.2] mb-4 text-left" // выравнивание по левому краю
                 style={{ 
                   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-                  fontSize: 'clamp(18px, 4vw, 40px)', // увеличенный текст на мобиле
+                  fontSize: 'clamp(19px, 4.2vw, 42px)', // увеличен на 5%
                   fontWeight: 300
                 }}
               >
@@ -81,25 +94,12 @@ const Hero = () => {
                 продаж /
               </motion.h2>
 
-              {/* Last name */}
-              <motion.h1
-                variants={itemVariants}
-                className="text-white leading-[0.9] mb-4"
-                style={{
-                  fontFamily: 'var(--font-raleway), sans-serif',
-                  fontWeight: 800,
-                  fontSize: 'clamp(48px,12vw,120px)' // увеличенный текст на мобиле
-                }}
-              >
-                Биктимирова
-              </motion.h1>
-
-              {/* Subline - мелкий журнальный комментарий */}
+              {/* Subline - скрыт на мобильных */}
               <motion.p
                 variants={itemVariants}
-                className="text-neutral-300 mb-8 leading-relaxed max-w-lg"
+                className="text-neutral-300 mb-8 leading-relaxed max-w-lg hidden md:block"
                 style={{ 
-                  fontSize: 'clamp(16px, 3vw, 18px)', // увеличенный текст на мобиле
+                  fontSize: 'clamp(16px, 3vw, 18px)',
                   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif'
                 }}
               >
