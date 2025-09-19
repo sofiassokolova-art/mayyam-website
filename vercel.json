@@ -8,5 +8,13 @@
       "TELEGRAM_BOT_TOKEN": "8212229355:AAG7Iy0AkC5NXT-FLKbI019LkrXhoCSMgno",
       "TELEGRAM_CHAT_ID": "643160759"
     }
+  },
+  "functions": {
+    "src/app/api/bot/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/leads/route.ts": {
+      "maxDuration": 30
+    }
   }
 }
